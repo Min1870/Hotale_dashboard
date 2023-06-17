@@ -3,7 +3,7 @@ import Paths from './routes/paths'
 
 const App = () => {
   return (
-    <div>
+    <div className=' font-roboto'>
       <Paths/>
     </div>
   )
