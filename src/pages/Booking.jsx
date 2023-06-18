@@ -5,6 +5,7 @@ import { HiOutlinePlus } from "react-icons/hi";
 import { BsThreeDots } from "react-icons/bs";
 import { Checkbox, Table as ManineTable } from "@mantine/core";
 const Booking = () => {
+  // Rows Data
   const elements = [
     {
       id: "AB-357",
@@ -14,29 +15,34 @@ const Booking = () => {
       booking: true,
       roomType: "Super Delux",
       arrive: "10 Feb 2020",
-      payment: false,
+      payment: true,
+      img: "https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
     },
     {
       id: "AB-753",
-      name: "Abu Bin Ishtiyak",
-      email: "info@softnio.com",
-      package: "Continental",
+      name: "Ashley Lawson",
+      email: "ashley@softnio.com",
+      package: "Single",
       booking: true,
       roomType: "Super Delux",
-      arrive: "10 Feb 2020",
+      arrive: "11 Jan 2021",
       payment: true,
+      img: "https://dashlite.net/demo1/images/avatar/a-sm.jpg",
     },
     {
       id: "AB-159",
-      name: "Abu Bin Ishtiyak",
+      name: "Micheal Murphy",
       email: "info@softnio.com",
-      package: "Continental",
+      package: "All Suit",
       booking: false,
       roomType: "Super Delux",
       arrive: "10 Feb 2020",
       payment: false,
+      img: "https://dashlite.net/demo1/images/avatar/b-sm.jpg",
     },
   ];
+
+  // Table Header
   const ths = (
     <tr>
       <th>
@@ -57,6 +63,8 @@ const Booking = () => {
       </th>
     </tr>
   );
+
+  // Rows
   const rows = elements.map((el) => (
     <tr key={el.id} className=" font-roboto text-sm text-[#8094ae]">
       <td>
@@ -65,11 +73,23 @@ const Booking = () => {
           <span className=" text-[#6576ff]">{el.id}</span>
         </div>
       </td>
-      <td>{el.name}</td>
+      <td>
+        <div className="flex items-center gap-3">
+          <img
+            src={el.img}
+            alt=""
+            className="w-12 h-12 rounded-full object-cover"
+          />
+          <div className="flex flex-col gap-1">
+            <h1 className="text-[#364a63] font-medium">{el.name}</h1>
+            <p className=" text-xs">{el.email}</p>
+          </div>
+        </div>
+      </td>
       <td>{el.package}</td>
       <td
         className={`${
-          el.booking ? "text-teal-500" : "text-yellow-500"
+          el.booking ? "text-teal-400" : "text-yellow-400"
         } font-semibold`}
       >
         {el.booking ? "Active" : "Pending"}
@@ -78,7 +98,7 @@ const Booking = () => {
       <td>{el.arrive}</td>
       <td
         className={`${
-          el.payment ? "text-teal-500" : "text-yellow-500"
+          el.payment ? "text-teal-400" : "text-yellow-400"
         } font-semibold`}
       >
         {el.payment ? "Paid" : "Due"}
@@ -90,8 +110,10 @@ const Booking = () => {
       </td>
     </tr>
   ));
+
   return (
     <div className=" px-[22px] py-8">
+      {/* Header */}
       <div className=" flex justify-between items-center mb-7">
         <div>
           <h1 className=" font-nunito font-bold text-[28px] text-[#364a63]">
@@ -111,6 +133,8 @@ const Booking = () => {
           </button>
         </div>
       </div>
+
+      {/* Table */}
       <Table selectValues={["Send Email", "Delete Booking"]}>
         <ManineTable
           horizontalSpacing="lg"

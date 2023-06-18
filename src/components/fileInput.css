@@ -1,0 +1,30 @@
+#custom-file-input {
+  width: 100%;
+  padding: 5px;
+  padding-left: 15px;
+  border-radius: 4px;
+  position: relative;
+  border: 1px solid #dbdfea;
+  font-family: "Roboto", sans-serif;
+  color: #3c4d6c;
+}
+#custom-file-input::-webkit-file-upload-button {
+  display: none;
+}
+#custom-file-input::after {
+  content: "Browse";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #ebeef2;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 15px;
+}
+
+#custom-file-input:focus {
+  border: 1px solid #228be6;
+}
