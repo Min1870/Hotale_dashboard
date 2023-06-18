@@ -7,8 +7,8 @@ import { TbSettings } from "react-icons/tb";
 const Table = ({ children, selectValues }) => {
   // selectValue = ["Value 1","Value 2"]
   return (
-    <div className=" border-[#364a63] rounded">
-      <div className=" p-5 flex justify-between items-center">
+    <div className="border border-[#dbdfea] rounded">
+      <div className=" p-5 flex justify-between items-center border-b">
         <div className=" flex items-center gap-4">
           <Select
             placeholder="Bulk Action"
@@ -62,7 +62,7 @@ const Table = ({ children, selectValues }) => {
       {children}
       {/* Use Your Table Here */}
 
-      <div className="p-5 flex justify-between items-center font-roboto">
+      <div className="p-5 flex justify-between items-center font-roboto border-t">
         <Pagination
           total={10}
           styles={() => ({
