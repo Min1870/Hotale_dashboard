@@ -7,10 +7,12 @@ import Footer from "./components/Footer";
 const Layout = () => {
   return (
     <div>
-      <Header />
       <Sidebar />
-      <Outlet />
-      <Footer/>
+      <div>
+        <Header />
+        <Outlet />
+        <Footer />
+      </div>
     </div>
   );
 };

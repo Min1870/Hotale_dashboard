@@ -6,7 +6,7 @@ export default {
   ],
   theme: {
     fontFamily: {
-      nunito : 'Nunito Sans',
+      nunito : 'Nunito',
       roboto : 'Roboto'
     },
     extend: {},
