@@ -1,0 +1,99 @@
+
+
+.mantine-ScrollArea-thumb {
+    background-color: #6e82a550; 
+}
+
+
+.mantine-ScrollArea-scrollbar:hover {
+    background-color: transparent;
+    
+}
+
+
+
+.us-flag::after, .bell::before, .nav-menu::before, .nav-arrow::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    height: 20px;
+    width: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform-origin: 50% 50%;
+    background-color: #e5e9f2;
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+
+.us-flag:hover::after, .bell:hover::before, .nav-menu:hover::before, .nav-arrow:hover::before {
+    opacity: 1;
+    width: 45px;
+    height: 45px;
+}
+
+.bell::after {
+    content: '';
+    border-radius: 50%;
+    position: absolute;
+    top: 1px;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    border: 2px solid white;
+    background-color: #09c2de;
+}
+
+.mantine-Drawer-content {
+    background-color: #101924;
+    color: #6e82a5;
+    padding: 0;
+    margin: 0;
+}
+
+.mantine-Drawer-body {
+    padding: 0;
+}
+
+.nav-arrow::before {
+    background-color: #0b1219;
+}
+
+.mantine-Accordion-item {
+    border: none;
+}
+
+.mantine-Accordion-control{
+    padding: 0;
+}
+
+.mantine-Accordion-control:hover {
+    background-color: inherit;
+
+}
+
+.mantine-Accordion-chevron{
+    color: #9faec2;
+}
+
+.mantine-Accordion-label {
+    padding: 0;
+}
+
+
+.mantine-Accordion-content {
+    padding: 10px 35px 10px 35px;
+    color: #6e82a5;
+}
+
+
+/* .mantine-Accordion-content:hover {
+    color: #7f8dff;
+} */
+
+.side-menu.active{
+    color: #7f8dff;
+}

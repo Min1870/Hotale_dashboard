@@ -1,0 +1,101 @@
+
+
+.mantine-ScrollArea-thumb {
+    background-color: #6e82a550; 
+}
+
+
+.mantine-ScrollArea-scrollbar:hover {
+    background-color: transparent;
+    
+}
+
+
+
+ .sidebar-menu::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    height: 20px;
+    width: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform-origin: 50% 50%;
+    background-color: #0b1219;
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+
+ .sidebar-menu:hover::before {
+    opacity: 1;
+    width: 45px;
+    height: 45px;
+}
+
+
+.sidebar {
+    min-height: 100vh;
+    background-color: #101924;
+    color: #6e82a5;
+    padding: 0;
+    margin: 0;
+}
+
+.mantine-Accordion-item {
+    border: none;
+}
+
+.mantine-Accordion-control{
+    padding: 0;
+}
+
+.mantine-Accordion-control:hover {
+    background-color: inherit;
+}
+
+.mantine-Accordion-chevron{
+    color: #9faec2;
+}
+
+.mantine-Accordion-label {
+    padding: 0;
+}
+
+
+.side-menu.active{
+    color: #7f8dff;
+}
+
+/* sidebar close  */
+
+.sidebar.sidebar-close {
+    width: 74px;
+    
+}
+
+.sidebar.sidebar-close .side-menu .list-text{
+    display: none;
+}
+
+.sidebar.sidebar-close .mantine-Accordion-content {
+    margin: 0;
+    padding: 0;
+}
+
+
+.sidebar.sidebar-close .list-group {
+    margin-top: 28px;
+}
+
+
+.sidebar.sidebar-close .list-item {
+    padding-top: 8px;
+}
+
+
+.sidebar.sidebar-close .mantine-Accordion-chevron, .sidebar.sidebar-close .logo-container{
+    display: none;
+}
