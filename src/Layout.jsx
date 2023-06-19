@@ -5,10 +5,11 @@ import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
 
 const Layout = () => {
+
   return (
-    <div>
-      <Sidebar />
-      <div>
+    <div className=" flex">
+      <Sidebar className=""/>
+      <div className="flex-grow">
         <Header />
         <Outlet />
         <Footer />
