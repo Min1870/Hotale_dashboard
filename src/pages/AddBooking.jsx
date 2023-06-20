@@ -20,7 +20,7 @@ const AddBooking = () => {
       <div className="border border-[#dbdfea] rounded p-5">
         <Grid>
           <Grid.Col sm={6} md={6} xl={3}>
-            <TextInput placeholder="First Name" label="First Name" />
+            <TextInput placeholder="First Name" label="First Name" autoFocus />
           </Grid.Col>
           <Grid.Col sm={6} md={6} xl={3}>
             <TextInput placeholder="Last Name" label="Last Name" />
