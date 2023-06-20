@@ -1,0 +1,56 @@
+.filter::before {
+  content: "";
+  position: absolute;
+  top: -0.01em;
+  right: 2px;
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  background-color: #6576ff;
+}
+.filter::after,
+.setting::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  width: 0;
+  height: 0;
+  z-index: -1;
+  border-radius: 100%;
+  background-color: #e5e9f2;
+  transition: all 300ms ease;
+}
+
+.dots::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  width: 0;
+  height: 0;
+  z-index: -1;
+  border-radius: 100%;
+  background-color: #e5e9f2;
+  transition: all 300ms ease;
+}
+
+.filter:hover::after,
+.setting:hover::after,
+.dots:hover::after {
+  width: 40px;
+  height: 40px;
+  opacity: 1;
+}
+
+.table-li {
+  padding: 5px 20px;
+}
+.table-li:hover {
+  color: #6576ff;
+  background-color: #e5e9f2;
+}
