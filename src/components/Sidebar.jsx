@@ -41,7 +41,7 @@ const Sidebar = () => {
           </div>
 
           <ScrollArea h={500} scrollbarSize={8} scrollHideDelay={500}>
-            <div className="">
+            <div className=" w-[300px]">
               <ul className="mt-4 mb-10  mx-6 space-y-5 list-group">
                 <li className="list-item">
                   <NavLink to={`/`} className="side-menu" onClick={close}>
@@ -58,7 +58,7 @@ const Sidebar = () => {
                   <Accordion className="">
                     <Accordion.Item value="photos">
                       <Accordion.Control>
-                        <div className=" side-menu ml-1 flex items-center gap-3 text-xl text-[#6e82a5]  hover:text-[#7f8dff]">
+                        <div className=" side-menu flex items-center gap-3 text-2xl text-[#6e82a5]  hover:text-[#7f8dff]">
                           <BsFillCalendarFill />
                           <span className=" list-text text-[15px] font-[700]">
                             Bookings
@@ -66,14 +66,14 @@ const Sidebar = () => {
                         </div>
                       </Accordion.Control>
                       <Accordion.Panel>
-                        <ul className="">
+                        <ul className=" booking-list space-y-3">
                           <li>
                             <NavLink
                               onClick={close}
                               to={`/booking`}
                               className="side-menu hover:text-[#7f8dff] text-[14px]"
                             >
-                              <span className=" list-text">All Bookings</span>
+                              <span className="">All Bookings</span>
                             </NavLink>
                           </li>
                           <li>
@@ -82,7 +82,7 @@ const Sidebar = () => {
                               to={`/booking-add`}
                               className="side-menu hover:text-[#7f8dff] text-[14px]"
                             >
-                              <span className=" list-text">Add Booking</span>
+                              <span className="">Add Booking</span>
                             </NavLink>
                           </li>
                           <li>
@@ -91,7 +91,7 @@ const Sidebar = () => {
                               to={`/booking-edit`}
                               className="side-menu hover:text-[#7f8dff] text-[14px]"
                             >
-                              <span className=" list-text">Edit Booking</span>
+                              <span className="">Edit Booking</span>
                             </NavLink>
                           </li>
                         </ul>

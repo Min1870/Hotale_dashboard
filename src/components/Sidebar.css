@@ -49,7 +49,7 @@
 }
 
 .mantine-Accordion-control{
-    padding: 0;
+    /* padding: 0; */
 }
 
 .mantine-Accordion-control:hover {
@@ -76,18 +76,9 @@
     
 }
 
-.sidebar.sidebar-close .side-menu .list-text{
-    display: none;
-}
-
 .sidebar.sidebar-close .mantine-Accordion-content {
     margin: 0;
     padding: 0;
-}
-
-
-.sidebar.sidebar-close .list-group {
-    margin-top: 28px;
 }
 
 
@@ -96,6 +87,6 @@
 }
 
 
-.sidebar.sidebar-close .mantine-Accordion-chevron, .sidebar.sidebar-close .logo-container{
+.sidebar.sidebar-close .side-menu .list-text, .sidebar.sidebar-close .mantine-Accordion-chevron, .sidebar.sidebar-close .logo-container,  .sidebar.sidebar-close .booking-list{
     display: none;
 }
