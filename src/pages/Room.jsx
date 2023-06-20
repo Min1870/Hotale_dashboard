@@ -9,6 +9,7 @@ import { Table as MantineTable } from "@mantine/core";
 
 import { useDisclosure } from "@mantine/hooks";
 import { Modal, Group, Button, Popover, Text } from "@mantine/core";
+import { TbCircleFilled } from "react-icons/tb";
 
 const Room = () => {
   const [roomNo, setRoomNo] = useState("");
@@ -81,11 +82,11 @@ const Room = () => {
         </div>
       </th>
       <th>Room Type</th>
-      <th>Ac/Non Ac</th>
-      <th>Meal</th>
-      <th>Bed Capacity</th>
-      <th>Rent</th>
-      <th>Status</th>
+      <th className="hidden md:table-cell">Ac/Non Ac</th>
+      <th  className="hidden md:table-cell">Meal</th>
+      <th  className="hidden md:table-cell">Bed Capacity</th>
+      <th className="hidden md:table-cell">Rent</th>
+      <th className="hidden md:table-cell">Status</th>
       <th>
         <div className=" border w-6 h-6 p-1 rounded flex justify-center items-center">
           <Popover width={200} position="bottom-end" withArrow shadow="md">
@@ -128,18 +129,18 @@ const Room = () => {
           <span className=" text-[#6576ff]">{el.roomNo}</span>
         </div>
       </td>
-      <td>{el.roomType}</td>
-      <td>{el.ac}</td>
-      <td>{el.meal}</td>
-      <td>{el.bedCapacity}</td>
-      <td className="text-gray-600"><span className="font-[500]">{el.rent}</span><span> USD</span></td>
+      <td className="flex items-center gap-2">{el.roomType} <span className={`${el?.roomType === "Single" && "text-[#f4bd0e]" || el?.roomType === "Double" && "text-[#1ee0ac]" || el?.roomType === "Delux" && "text-[#6576ff]" || el?.roomType === "Super Delux" && "text-[#1ee0ac]" ||  el?.roomType === "Suit" && "text-[#e85347]" } table-cell md:hidden text-[12px]`}><TbCircleFilled /></span> </td>
+      <td className="hidden md:table-cell">{el.ac}</td>
+      <td className="hidden md:table-cell">{el.meal}</td>
+      <td className="hidden md:table-cell">{el.bedCapacity}</td>
+      <td className="text-gray-600 hidden md:table-cell"><span className="font-[500]">{el.rent}</span><span> USD</span></td>
       <td
         className={`${
           (el.status === "Booked" && "text-[#6576ff]") ||
           (el.status === "Pending" && "text-[#f4bd0e]") ||
           (el.status === "Open" && "text-[#1ee0ac]") ||
           (el.status === "Inactive" && "text-[#e85347]")
-        } font-semibold`}
+        } font-semibold hidden md:table-cell`}
       >
         {el.status}
       </td>
@@ -152,10 +153,10 @@ const Room = () => {
   ));
 
   return (
-    <div className="mx-5">
+    <div className="py-8">
 
       {/* header  */}
-      <div className=" flex justify-between items-center mb-7">
+      <div className="mx-5 flex justify-between items-center mb-7">
         <div>
           <h1 className=" font-nunito font-bold text-[28px] text-[#364a63]">
             Room List
@@ -191,13 +192,13 @@ const Room = () => {
         opened={opened}
         onClose={close}
         size="auto"
-        title="Authentication"
+        // title="Add Room"
         centered
       >
-        <div className=" w-[520px] px-[40px] py-[36px]">
+        <div className="w-auto md:w-[520px] px-[40px] pb-[36px]">
           <form onSubmit={submitHandler}>
-            <h1 className="text-[1.15rem]">Add Room</h1>
-            <div className="grid grid-cols-2">
+            <h1 className="text-[1.15rem] font-semibold mb-5">Add Room</h1>
+            <div className="grid grid-cols-1 md:grid-cols-2">
               <div className="mb-[28px] me-5">
                 <label htmlFor="room_no" className="text-[.875rem] font-[500]">
                   Room No
@@ -357,7 +358,8 @@ const Room = () => {
       </Modal>
 
       {/* table  */}
-      <Table selectValues={["Change Status"]}>
+      <div className="mx-0 md:mx-5"> 
+         <Table selectValues={["Change Status"]}>
         <MantineTable
           horizontalSpacing="lg"
           verticalSpacing="lg"
@@ -368,6 +370,8 @@ const Room = () => {
           <tbody>{rows}</tbody>
         </MantineTable>
       </Table>
+      </div>
+     
     </div>
   );
 };
