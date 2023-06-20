@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { MdSpaceDashboard } from "react-icons/md";
-import { AiFillSetting, AiFillDashboard } from "react-icons/ai";
+import { AiFillSetting, AiFillDashboard, AiFillCalendar } from "react-icons/ai";
 import { IoIosMenu } from "react-icons/io";
 import { HiUsers } from "react-icons/hi";
 import { FaCoins, FaLayerGroup } from "react-icons/fa";
-import { BsFillCalendarFill, BsHouseDoorFill } from "react-icons/bs";
+import { BsHouseDoorFill } from "react-icons/bs";
 import "./Sidebar.css";
 import { Accordion, ScrollArea } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
@@ -41,8 +41,8 @@ const Sidebar = () => {
           </div>
 
           <ScrollArea h={500} scrollbarSize={8} scrollHideDelay={500}>
-            <div className=" w-[300px]">
-              <ul className="mt-4 mb-10  mx-6 space-y-5 list-group">
+            <div className=" w-[300px] sidebar-body">
+              <ul className="py-8 px-6 space-y-5 list-group">
                 <li className="list-item">
                   <NavLink to={`/`} className="side-menu" onClick={close}>
                     <div className="flex items-center gap-3 text-2xl  hover:text-[#7f8dff]">
@@ -58,12 +58,14 @@ const Sidebar = () => {
                   <Accordion className="">
                     <Accordion.Item value="photos">
                       <Accordion.Control>
-                        <div className=" side-menu flex items-center gap-3 text-2xl text-[#6e82a5]  hover:text-[#7f8dff]">
-                          <BsFillCalendarFill />
+                        <NavLink to={'/'} className="side-menu" onClick={close}>
+                        <div className=" flex items-center gap-3 text-2xl text-[#6e82a5]  hover:text-[#7f8dff]">
+                          <AiFillCalendar />
                           <span className=" list-text text-[15px] font-[700]">
                             Bookings
                           </span>
                         </div>
+                        </NavLink>
                       </Accordion.Control>
                       <Accordion.Panel>
                         <ul className=" booking-list space-y-3">
@@ -158,15 +160,15 @@ const Sidebar = () => {
               </ul>
 
               <div className="">
-                <div className="">
-                  {openedSidebar && <div className=" mb-6 w-full h-[1px] bg-gray-700"></div>}
+                <div className=" h-[25px] flex items-center">
+                  {openedSidebar && <div className=" w-full h-[1px] bg-gray-700"></div>}
                   {!openedSidebar && 
-                    <h4 className=" mb-4 mx-6 return uppercase text-[12px] text-[#9faec2] font-[700]">
+                    <h4 className=" mx-6 return uppercase text-[12px] text-[#9faec2] font-[700]">
                       Return to
                     </h4>}
                  
                 </div>
-                <ul className="  mx-6 space-y-5">
+                <ul className=" py-4 px-6 space-y-5">
                   <li className="list-item">
                     <Link className="side-menu">
                       <div className="flex items-center gap-3 text-2xl  hover:text-[#7f8dff]">
