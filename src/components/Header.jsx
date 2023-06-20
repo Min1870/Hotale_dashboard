@@ -11,6 +11,7 @@ import {
   AiOutlineSetting,
   AiFillSetting,
   AiFillDashboard,
+  AiFillCalendar
 } from "react-icons/ai";
 import { IoIosMenu } from "react-icons/io";
 import { BiBell, BiLeftArrowAlt } from "react-icons/bi";
@@ -21,7 +22,6 @@ import {
   BsBoxArrowRight,
   BsArrowReturnRight,
   BsArrowReturnLeft,
-  BsFillCalendarFill,
   BsHouseDoorFill,
 } from "react-icons/bs";
 import "./Header.css";
@@ -283,8 +283,8 @@ const Header = () => {
                   <Accordion className="">
                     <Accordion.Item value="photos">
                       <Accordion.Control>
-                        <div className=" ml-1 flex items-center gap-3 text-xl text-[#6e82a5]  hover:text-[#7f8dff]">
-                          <BsFillCalendarFill />
+                        <div className=" flex items-center gap-3 text-2xl text-[#6e82a5]  hover:text-[#7f8dff]">
+                          <AiFillCalendar />
                           <span className="text-[15px] font-[700]">
                             Bookings
                           </span>

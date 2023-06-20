@@ -76,6 +76,11 @@
     
 }
 
+.sidebar.sidebar-close .sidebar-body {
+    width: 74px;
+    
+}
+
 .sidebar.sidebar-close .mantine-Accordion-content {
     margin: 0;
     padding: 0;
@@ -83,7 +88,9 @@
 
 
 .sidebar.sidebar-close .list-item {
-    padding-top: 8px;
+    height: 32px;
+    display: flex;
+    align-items: center;
 }
 
 
