@@ -71,7 +71,7 @@ const AddBooking = () => {
           </Grid.Col>
           <Grid.Col sm={6} md={6} xl={3}>
             <Select
-              label="Gender"
+              label="Select an package"
               placeholder="Select an package"
               rightSection={<IoChevronDownOutline size="1rem" />}
               rightSectionWidth={30}

@@ -57,10 +57,10 @@ const Booking = () => {
       </th>
       <th>Customer</th>
       <th>Package</th>
-      <th>Booking</th>
-      <th>Room Type</th>
-      <th>Arrive</th>
-      <th>Payment</th>
+      <th className=" hidden md:table-cell">Booking</th>
+      <th className=" hidden md:table-cell truncate">Room Type</th>
+      <th className=" hidden md:table-cell">Arrive</th>
+      <th className=" hidden md:table-cell">Payment</th>
       <th className="flex justify-center">
         <Popover width={120} shadow="lg" position="bottom-end">
           <Popover.Target>
@@ -104,7 +104,7 @@ const Booking = () => {
 
   // Rows
   const rows = elements.map((el) => (
-    <tr key={el.id} className=" font-roboto text-sm text-[#8094ae]">
+    <tr key={el.id} className=" font-roboto text-[#8094ae]">
       <td>
         <div className="flex items-center gap-3">
           <Checkbox color="violet" size="xs" />{" "}
@@ -118,7 +118,7 @@ const Booking = () => {
             alt=""
             className="w-12 h-12 rounded-full object-cover"
           />
-          <div className="flex flex-col gap-1">
+          <div className="flex flex-col gap-1 w-[200px]">
             <h1 className="text-[#364a63] font-medium">{el.name}</h1>
             <p className=" text-xs">{el.email}</p>
           </div>
@@ -128,16 +128,16 @@ const Booking = () => {
       <td
         className={`${
           el.booking ? "text-teal-400" : "text-yellow-400"
-        } font-semibold`}
+        } font-semibold hidden md:table-cell`}
       >
         {el.booking ? "Active" : "Pending"}
       </td>
-      <td>{el.roomType}</td>
-      <td>{el.arrive}</td>
+      <td className=" hidden md:table-cell">{el.roomType}</td>
+      <td className=" hidden md:table-cell">{el.arrive}</td>
       <td
         className={`${
           el.payment ? "text-teal-400" : "text-yellow-400"
-        } font-semibold`}
+        } font-semibold hidden md:table-cell`}
       >
         {el.payment ? "Paid" : "Due"}
       </td>
@@ -164,9 +164,9 @@ const Booking = () => {
   ));
 
   return (
-    <div className=" px-[22px] py-8">
+    <div className="px-0 md:px-[22px] py-8">
       {/* Header */}
-      <div className=" flex justify-between items-center mb-7">
+      <div className=" flex justify-between items-center mb-7 px-5 md:p-0">
         <div>
           <h1 className=" font-nunito font-bold text-[28px] text-[#364a63]">
             Booking Lists
