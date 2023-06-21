@@ -27,7 +27,7 @@ const Paths = () => {
             <Route path="customers" element={<Customers />} />
             <Route path="invoice-list" element={<InvoiceList />} />
             <Route path="setting" element={<Setting />}>
-              <Route index element={<General />} />
+              {/* <Route index element={<General />} /> */}
               <Route path="general" element={<General />} />
               <Route path="email" element={<Email />} />
               <Route path="security" element={<Security />} />
