@@ -159,13 +159,19 @@ const Header = () => {
                     <AiOutlineUser />
                     <span className=" text-[13px]">View Profile</span>
                   </div>
-                  <div className=" cursor-pointer flex items-center gap-3  text-[#526484] font-[500] hover:text-[#6c76ff]">
+                  
+                  <div className="">
+                  <Link to={`/setting/general`} className=" cursor-pointer flex items-center gap-3  text-[#526484] font-[500] hover:text-[#6c76ff]">
                     <AiOutlineSetting />
                     <span className=" text-[13px]">Account Setting</span>
+                  </Link>
                   </div>
-                  <div className=" cursor-pointer flex items-center gap-3  text-[#526484] font-[500] hover:text-[#6c76ff]">
+                  <div>
+                    <Link className=" cursor-pointer flex items-center gap-3  text-[#526484] font-[500] hover:text-[#6c76ff]" to={`/setting/activity`}>
+
                     <BsActivity />
                     <span className=" text-[13px]">Login Activity</span>
+                    </Link>
                   </div>
                 </div>
                 <div className=" cursor-pointer px-8 py-5 flex items-center gap-3  text-[#526484] font-[500] hover:text-[#6c76ff]">
@@ -362,7 +368,7 @@ const Header = () => {
 
                 <li>
                   <NavLink
-                    to={`/setting`}
+                    to={`/setting/general`}
                     className="side-menu"
                     onClick={close}
                   >

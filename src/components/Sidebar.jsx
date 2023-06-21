@@ -13,6 +13,7 @@ import { Link, NavLink } from "react-router-dom";
 const Sidebar = () => {
   const [openedSidebar, { open, close, toggle }] = useDisclosure(false);
 
+
   return (
     <>
       <div
@@ -44,7 +45,10 @@ const Sidebar = () => {
             <div className=" w-[300px] sidebar-body">
               <ul className="py-8 px-6 space-y-5 list-group">
                 <li className="list-item">
-                  <NavLink to={`/`} className="side-menu" onClick={close}>
+                  <NavLink to={`/`} className="side-menu" onClick={()=> {
+                    close()
+                    
+                  }}>
                     <div className="flex items-center gap-3 text-2xl  hover:text-[#7f8dff]">
                       <MdSpaceDashboard />
                       <span className=" list-text text-[15px] font-[700]">
@@ -57,21 +61,24 @@ const Sidebar = () => {
                 <li className="list-item">
                   <Accordion className="">
                     <Accordion.Item value="photos">
-                      <Accordion.Control>
-                        <NavLink to={'/'} className="side-menu" onClick={close}>
-                        <div className=" flex items-center gap-3 text-2xl text-[#6e82a5]  hover:text-[#7f8dff]">
+                      <Accordion.Control >
+                        {/* <NavLink to={'/'} className="side-menu"> */}
+                        <div className={` side-menu flex items-center gap-3 text-2xl text-[#6e82a5]  hover:text-[#7f8dff]`}>
                           <AiFillCalendar />
                           <span className=" list-text text-[15px] font-[700]">
                             Bookings
                           </span>
                         </div>
-                        </NavLink>
+                        {/* </NavLink> */}
                       </Accordion.Control>
                       <Accordion.Panel>
                         <ul className=" booking-list space-y-3">
                           <li>
                             <NavLink
-                              onClick={close}
+                              onClick={()=> {
+                                close()
+                                
+                              }}
                               to={`/booking`}
                               className="side-menu hover:text-[#7f8dff] text-[14px]"
                             >
@@ -80,7 +87,10 @@ const Sidebar = () => {
                           </li>
                           <li>
                             <NavLink
-                              onClick={close}
+                              onClick={()=> {
+                                close()
+                                
+                              }}
                               to={`/booking-add`}
                               className="side-menu hover:text-[#7f8dff] text-[14px]"
                             >
@@ -89,7 +99,10 @@ const Sidebar = () => {
                           </li>
                           <li>
                             <NavLink
-                              onClick={close}
+                              onClick={()=> {
+                                close()
+                                
+                              }}
                               to={`/booking-edit`}
                               className="side-menu hover:text-[#7f8dff] text-[14px]"
                             >
@@ -103,7 +116,10 @@ const Sidebar = () => {
                 </li>
 
                 <li className="list-item">
-                  <NavLink to={`/rooms`} className="side-menu" onClick={close}>
+                  <NavLink to={`/rooms`} className="side-menu" onClick={()=> {
+                    close()
+                    
+                  }}>
                     <div className=" flex items-center gap-3 text-2xl  hover:text-[#7f8dff]">
                       <BsHouseDoorFill />
                       <span className="list-text text-[15px] font-[700]">
@@ -117,7 +133,10 @@ const Sidebar = () => {
                   <NavLink
                     to={`/customers`}
                     className="side-menu"
-                    onClick={close}
+                    onClick={()=> {
+                      close()
+                      
+                    }}
                   >
                     <div className=" flex items-center gap-3 text-2xl  hover:text-[#7f8dff]">
                       <FaCoins />
@@ -132,7 +151,10 @@ const Sidebar = () => {
                   <NavLink
                     to={`/invoice-list`}
                     className="side-menu"
-                    onClick={close}
+                    onClick={()=> {
+                      close()
+                      
+                    }}
                   >
                     <div className=" flex items-center gap-3 text-2xl  hover:text-[#7f8dff]">
                       <HiUsers />
@@ -145,9 +167,12 @@ const Sidebar = () => {
 
                 <li className="list-item">
                   <NavLink
-                    to={`/setting`}
+                    to={`/setting/general`}
                     className="side-menu"
-                    onClick={close}
+                    onClick={()=> {
+                      close()
+                      
+                    }}
                   >
                     <div className=" flex items-center gap-3 text-2xl  hover:text-[#7f8dff]">
                       <AiFillSetting />
