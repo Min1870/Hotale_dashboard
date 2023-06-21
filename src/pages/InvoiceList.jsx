@@ -8,12 +8,12 @@ import {
 } from "@mantine/core";
 import { TbCircleFilled, TbSettings } from "react-icons/tb";
 import { FiSearch } from "react-icons/fi";
-import { BsThreeDots } from "react-icons/bs";
+import { BsArrowLeft, BsThreeDots } from "react-icons/bs";
 import { HiOutlinePlus, HiPrinter } from "react-icons/hi";
 import { IoChevronDownOutline } from "react-icons/io5";
 import { useDisclosure } from "@mantine/hooks";
 import { Modal, Group, Button, Text } from "@mantine/core";
-import { IoIosArrowDown, IoIosArrowForward } from "react-icons/io";
+import { IoIosArrowDown, IoIosArrowForward, IoIosCheckmark } from "react-icons/io";
 import dayjs from "dayjs";
 
 const InvoiceList = () => {
@@ -28,6 +28,7 @@ const InvoiceList = () => {
 
   //for addInvoiceModal
   const [opened, { open, close }] = useDisclosure(false);
+  const [searchShow, setSearchShow] = useState(false);
  
   const [invoices, setInvoices] = useState([
     {
@@ -242,7 +243,7 @@ const InvoiceList = () => {
       {/* table  */}
 
       <div className="mx-0 md:mx-5 border border-[#dbdfea] rounded">
-        <div className=" p-5 flex justify-between items-center border-b">
+        {/* <div className=" p-5 flex justify-between items-center border-b">
           <div className=" flex items-center gap-4">
             <h1>All Invoices</h1>
           </div>
@@ -256,7 +257,80 @@ const InvoiceList = () => {
               </div>
             </div>
           </div>
+        </div> */}
+
+<div className=" p-5 border-b  relative">
+        <div
+          className={`w-full flex items-center gap-2 transition-all duration-300 py-2 ${
+            searchShow ? "flex" : "hidden"
+          }`}
+        >
+          <BsArrowLeft
+            className="text-xl"
+            onClick={() => setSearchShow(!searchShow)}
+          />
+          <input
+            type="text"
+            autoFocus
+            placeholder="Quick search by order id"
+            className="flex-1 outline-none pl-3 text-sm"
+          />
+          <FiSearch
+            onClick={() => setSearchShow(!searchShow)}
+            className="text-xl text-[#526484] cursor-pointer hover:text-[#7f8dff]"
+          />
         </div>
+        <div
+          className={` justify-between items-center transition-all duration-300 ${
+            searchShow ? "hidden" : "flex"
+          }`}
+        >
+          <div>
+          <h1 className="text-xl font-[500]">All Invoices</h1>
+          </div>
+          <div className=" flex items-center gap-3 text-xl text-[#526484]">
+            <div
+              className="border-r border-[#A8B1C1] pr-5 h-8 flex items-center cursor-pointer"
+              onClick={() => setSearchShow(!searchShow)}
+            >
+              <FiSearch />
+            </div>
+            <div className=" flex gap-2">
+             
+              <Popover width={200} position="bottom-end" shadow="lg">
+                <Popover.Target>
+                  <div className="setting p-2 relative cursor-pointer">
+                    <TbSettings />
+                  </div>
+                </Popover.Target>
+                <Popover.Dropdown className="px-0">
+                  <div className="text-[#364a63] text-sm">
+                    <div className="border-b pb-3 mb-3">
+                      <h1 className="text-sm font-bold px-5">SHOW</h1>
+                      <ul className=" flex flex-col gap-2 mt-3 cursor-pointer">
+                        <li className="table-li flex justify-between items-center">
+                          10 <IoIosCheckmark className="text-xl" />
+                        </li>
+                        <li className="table-li">20</li>
+                        <li className="table-li">50</li>
+                      </ul>
+                    </div>
+                    <div className="">
+                      <h1 className="font-bold px-5">ORDER</h1>
+                      <ul className=" flex flex-col gap-2 mt-3 cursor-pointer">
+                        <li className="table-li flex justify-between items-center">
+                          DESC <IoIosCheckmark className="text-xl" />
+                        </li>
+                        <li className="table-li">ASC</li>
+                      </ul>
+                    </div>
+                  </div>
+                </Popover.Dropdown>
+              </Popover>
+            </div>
+          </div>
+        </div>
+      </div>
 
         <MantineTable
           horizontalSpacing="lg"
@@ -268,56 +342,57 @@ const InvoiceList = () => {
           <tbody>{rows}</tbody>
         </MantineTable>
 
-        <div className="p-5 flex justify-between items-center font-roboto border-t">
-          <Pagination
-            total={10}
-            styles={() => ({
-              control: {
-                "&[data-active]": {
+        
+      <div className="p-5 flex justify-between items-center font-roboto border-t flex-col md:flex-row gap-4 md:gap-0">
+        <Pagination
+          total={10}
+          styles={() => ({
+            control: {
+              "&[data-active]": {
+                backgroundColor: "#ebeef2",
+                color: "#6576ff",
+              },
+              "&[data-active]:not([data-disabled])": {
+                ":hover": {
                   backgroundColor: "#ebeef2",
-                  color: "#6576ff",
                 },
-                "&[data-active]:not([data-disabled])": {
-                  ":hover": {
-                    backgroundColor: "#ebeef2",
+              },
+            },
+          })}
+        />
+        <div className=" flex items-center gap-4 text-sm text-[#526484]">
+          <span>PAGE</span>
+          <Select
+            placeholder="1"
+            maxDropdownHeight={280}
+            rightSection={<IoChevronDownOutline size="1rem" />}
+            rightSectionWidth={30}
+            styles={{
+              rightSection: { pointerEvents: "none" },
+              root: {
+                ":focus-within": {
+                  borderColor: "#6576ff",
+                  boxShadow: "0 0 0 3px rgba(101,118,255,.1)",
+                },
+              },
+
+              item: {
+                margin: "2px 0",
+                "&[data-selected]": {
+                  "&, &:hover": {
+                    backgroundColor: "#E5E9F2",
+
+                    color: "#566A92",
                   },
                 },
               },
-            })}
+            }}
+            data={["1", "2", "3"]}
+            w={60}
           />
-          <div className=" flex items-center gap-4 text-sm text-[#526484]">
-            <span>PAGE</span>
-            <Select
-              placeholder="1"
-              maxDropdownHeight={280}
-              rightSection={<IoChevronDownOutline size="1rem" />}
-              rightSectionWidth={30}
-              styles={{
-                rightSection: { pointerEvents: "none" },
-                root: {
-                  ":focus-within": {
-                    borderColor: "#6576ff",
-                    boxShadow: "0 0 0 3px rgba(101,118,255,.1)",
-                  },
-                },
-
-                item: {
-                  margin: "2px 0",
-                  "&[data-selected]": {
-                    "&, &:hover": {
-                      backgroundColor: "#E5E9F2",
-
-                      color: "#566A92",
-                    },
-                  },
-                },
-              }}
-              data={["1", "2", "3"]}
-              w={60}
-            />
-            <span>OF 102</span>
-          </div>
+          <span>OF 102</span>
         </div>
+      </div>
       </div>
     </div>
   );
