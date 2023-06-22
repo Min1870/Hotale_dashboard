@@ -56,7 +56,7 @@ const Booking = () => {
         </div>
       </th>
       <th>Customer</th>
-      <th>Package</th>
+      <th className="hidden md:table-cell">Package</th>
       <th className=" hidden md:table-cell">Booking</th>
       <th className=" hidden md:table-cell truncate">Room Type</th>
       <th className=" hidden md:table-cell">Arrive</th>
@@ -118,13 +118,13 @@ const Booking = () => {
             alt=""
             className="w-12 h-12 rounded-full object-cover"
           />
-          <div className="flex flex-col gap-1 w-[200px]">
+          <div className="flex flex-col gap-1 w-[150px]">
             <h1 className="text-[#364a63] font-medium">{el.name}</h1>
             <p className=" text-xs">{el.email}</p>
           </div>
         </div>
       </td>
-      <td>{el.package}</td>
+      <td className="hidden md:table-cell">{el.package}</td>
       <td
         className={`${
           el.booking ? "text-teal-400" : "text-yellow-400"
@@ -164,7 +164,7 @@ const Booking = () => {
   ));
 
   return (
-    <div className="px-0 md:px-[22px] py-8">
+    <div className="px-0 md:px-[22px] py-8 bg-[#F5F6FA]">
       {/* Header */}
       <div className=" flex justify-between items-center mb-7 px-5 md:p-0">
         <div>
