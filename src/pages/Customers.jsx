@@ -21,28 +21,9 @@ const Customers = () => {
     Default: "#8094AE",
   };
 
-  
-
-  const [isSmallScreen, setIsSmallScreen] = useState(false);
-  const [isMediumScreen, setIsMediumScreen] = useState(false);
-  const [isLargeScreen, setIsLargeScreen] = useState(false);
-
   const [opened, { open, close }] = useDisclosure(false);
   const isMobile = useMediaQuery("(max-width: 50em)");
 
-  
-  useEffect(() => {
-    const handleResize = () => {
-      // setIsSmallScreen(window.innerWidth <= 412);
-      setIsMediumScreen(window.innerWidth >= 768);
-      setIsLargeScreen(window.innerWidth >= 1024);
-    };
-
-    window.addEventListener("resize", handleResize);
-    handleResize(); // Check initial screen size
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
   // Rows Data
   const elements = [
     {
@@ -165,12 +146,12 @@ const Customers = () => {
           <Checkbox color="violet" size="xs" /> <span>User</span>
         </div>
       </th>
-      <th>Last Package</th>
-      {isMediumScreen && <th>Phone</th>}
-      {isLargeScreen && <th>Verified</th>}
-      {isLargeScreen && <th>Last Checkout</th>}
+      <th className=" hidden sm:table-cell">Last Package</th>
+      <th className=" hidden md:table-cell">Phone</th>
+      <th className=" hidden xl:table-cell">Verified</th>
+      <th className=" hidden xl:table-cell">Last Checkout</th>
 
-      <th>Group</th>
+      <th className=" hidden sm:table-cell">Group</th>
       <th className=" flex justify-end">
         <div className=" border p-1 justify-end flex w-6 h-6 rounded">
           <HiOutlinePlus />
@@ -192,26 +173,28 @@ const Customers = () => {
               alt=""
               className="w-12 h-12 rounded-full object-cover"
             />
-            <div className="flex flex-col gap-1">
+            <div className="flex flex-col gap-1 w-[200px]">
               <h1 className="text-[#364a63] font-medium">{el.name}</h1>
               <p className=" text-xs">{el.email}</p>
             </div>
           </div>
         </div>
       </td>
-      <td>{el.package}</td>
+      <td className=" hidden sm:table-cell">{el.package}</td>
 
-      {isMediumScreen && <td>{el.phone}</td>}
-      {isLargeScreen && (
-        <td>
-          <div className=" flex items-center gap-2 ">
-            <LuVerified className=" text-teal-400" />
-            {el.verified}
-          </div>
-        </td>
-      )}
-      {isLargeScreen && <td>{el.lastCheckout}</td>}
-      <td style={{ color: colors[el.group] }}>{el.group}</td>
+      <td className=" hidden md:table-cell">{el.phone}</td>
+
+      <td className=" hidden xl:table-cell">
+        <div className=" flex items-center gap-2 ">
+          <LuVerified className=" text-teal-400" />
+          {el.verified}
+        </div>
+      </td>
+
+      <td className=" hidden xl:table-cell">{el.lastCheckout}</td>
+      <td className=" hidden sm:table-cell" style={{ color: colors[el.group] }}>
+        {el.group}
+      </td>
 
       <td>
         <div className=" flex justify-between items-center text-xl ml-1">

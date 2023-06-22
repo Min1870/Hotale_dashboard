@@ -4,7 +4,7 @@ import { IoChevronDownOutline } from "react-icons/io5";
 
 const TopSelectedPackage = () => {
   return (
-    <div className=" border my-10 py-4 px-6 rounded space-y-5 shadow-sm">
+    <div className=" border my-5 py-4 px-6 rounded space-y-5 shadow-sm">
       <div className=" flex justify-between items-center">
         <div className=" space-y-2">
           <h1 className=" font-nunito font-[700] text-[#525684]">
@@ -46,53 +46,83 @@ const TopSelectedPackage = () => {
       </div>
 
       <div className=" space-y-5">
-      <div className=" space-y-2">
-        <div className=" flex items-center justify-between">
-          <h4 className="text-[#8094ae] text-[14px]">Strater Package</h4>
-          <p className=" text-[#8094ae] text-[14px]">58%</p>
+        <div className=" space-y-2">
+          <div className=" flex items-center justify-between">
+            <h4 className="text-[#8094ae] text-[14px]">Strater Package</h4>
+            <p className=" text-[#8094ae] text-[14px]">58%</p>
+          </div>
+          <Progress
+            radius="xs"
+            color="#6576ff"
+            value={58}
+            className=" h-[6px]"
+          />
         </div>
-        <Progress radius="xs" color="#6576ff" value={58} className=" h-[6px]" />
-      </div>
 
-      <div className=" space-y-2">
-        <div className=" flex items-center justify-between">
-          <h4 className="text-[#8094ae] text-[14px]">Honeymoon Package</h4>
-          <p className=" text-[#8094ae] text-[14px]">43%</p>
+        <div className=" space-y-2">
+          <div className=" flex items-center justify-between">
+            <h4 className="text-[#8094ae] text-[14px]">Honeymoon Package</h4>
+            <p className=" text-[#8094ae] text-[14px]">43%</p>
+          </div>
+          <Progress
+            radius="xs"
+            color="#f4bd0e"
+            value={43}
+            className=" h-[6px]"
+          />
         </div>
-        <Progress radius="xs" color="#f4bd0e" value={43} className=" h-[6px]" />
-      </div>
 
-      <div className=" space-y-2">
-        <div className=" flex items-center justify-between">
-          <h4 className="text-[#8094ae] text-[14px]">Vacation Package</h4>
-          <p className=" text-[#8094ae] text-[14px]">33%</p>
+        <div className=" space-y-2">
+          <div className=" flex items-center justify-between">
+            <h4 className="text-[#8094ae] text-[14px]">Vacation Package</h4>
+            <p className=" text-[#8094ae] text-[14px]">33%</p>
+          </div>
+          <Progress
+            radius="xs"
+            color="#1676fb"
+            value={33}
+            className=" h-[6px]"
+          />
         </div>
-        <Progress radius="xs" color="#1676fb" value={33} className=" h-[6px]" />
-      </div>
 
-      <div className=" space-y-2">
-        <div className=" flex items-center justify-between">
-          <h4 className="text-[#8094ae] text-[14px]">Continental Package</h4>
-          <p className=" text-[#8094ae] text-[14px]">29%</p>
+        <div className=" space-y-2">
+          <div className=" flex items-center justify-between">
+            <h4 className="text-[#8094ae] text-[14px]">Continental Package</h4>
+            <p className=" text-[#8094ae] text-[14px]">29%</p>
+          </div>
+          <Progress
+            radius="xs"
+            color="#ff63a5"
+            value={29}
+            className=" h-[6px]"
+          />
         </div>
-        <Progress radius="xs" color="#ff63a5" value={29} className=" h-[6px]" />
-      </div>
 
-      <div className=" space-y-2">
-        <div className=" flex items-center justify-between">
-          <h4 className="text-[#8094ae] text-[14px]">Spring Package</h4>
-          <p className=" text-[#8094ae] text-[14px]">18.49%</p>
+        <div className=" space-y-2">
+          <div className=" flex items-center justify-between">
+            <h4 className="text-[#8094ae] text-[14px]">Spring Package</h4>
+            <p className=" text-[#8094ae] text-[14px]">18.49%</p>
+          </div>
+          <Progress
+            radius="xs"
+            color="#ffa353"
+            value={18.49}
+            className=" h-[6px]"
+          />
         </div>
-        <Progress radius="xs" color="#ffa353" value={18.49} className=" h-[6px]" />
-      </div>
 
-      <div className=" space-y-2">
-        <div className=" flex items-center justify-between">
-          <h4 className="text-[#8094ae] text-[14px]">All suite Package</h4>
-          <p className=" text-[#8094ae] text-[14px]">16%</p>
+        <div className=" space-y-2">
+          <div className=" flex items-center justify-between">
+            <h4 className="text-[#8094ae] text-[14px]">All suite Package</h4>
+            <p className=" text-[#8094ae] text-[14px]">16%</p>
+          </div>
+          <Progress
+            radius="xs"
+            color="#20c997"
+            value={16}
+            className=" h-[6px]"
+          />
         </div>
-        <Progress radius="xs" color="#20c997" value={16} className=" h-[6px]" />
-      </div>
       </div>
     </div>
   );

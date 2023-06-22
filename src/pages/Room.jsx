@@ -358,7 +358,7 @@ const Room = () => {
       </Modal>
 
       {/* table  */}
-      <div className="mx-0 md:mx-5"> 
+      <div className="mx-0 md:mx-5 min-w-[450px]"> 
          <Table selectValues={["Change Status"]}>
         <MantineTable
           horizontalSpacing="lg"

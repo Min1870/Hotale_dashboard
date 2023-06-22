@@ -8,7 +8,7 @@ const EditBooking = () => {
   const [value, setValue] = useState(null);
   const [departValue, setDepartValue] = useState(null);
   return (
-    <div className="px-[22px] py-8">
+    <div className="px-[22px] py-8 bg-[#F5F6FA]">
       {/* Header */}
       <div className="mb-7">
         <h1 className=" font-nunito font-bold text-[28px] text-[#364a63]">
@@ -17,7 +17,7 @@ const EditBooking = () => {
       </div>
 
       {/* Form Card */}
-      <div className="border border-[#dbdfea] rounded p-5">
+      <div className="border border-[#dbdfea] rounded p-5 bg-white">
         <Grid>
           <Grid.Col sm={6} md={6} xl={3}>
             <TextInput

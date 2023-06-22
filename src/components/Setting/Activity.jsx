@@ -6,8 +6,124 @@ import { IoMdLock } from "react-icons/io";
 import { RiShieldStarFill } from "react-icons/ri";
 import { FiActivity } from "react-icons/fi";
 import { useDisclosure } from "@mantine/hooks";
+import { Table as MantineTable } from "@mantine/core";
+import { RxCross2 } from "react-icons/rx";
 
 const Activity = () => {
+  const ths = (
+    <tr className=" bg-[#f5f6fa] text-[#8094ae] font-roboto uppercase tracking-wider">
+      <th className="text-[11px] text-[#8094ae]">Browser <span className=" md:hidden">/ Ip</span></th>
+      <th className="text-[11px] text-[#8094ae] hidden md:table-cell">IP</th>
+      <th className="text-[11px] text-[#8094ae]">TIME</th>
+      <th className="text-[11px] text-[#8094ae]">ACTIVITY</th>
+      <th className=" table-cell"></th>
+    </tr>
+  );
+
+  const data = [
+    {
+      id: 1,
+      device: "Chrome on Window",
+      ip: "86.188.154.225",
+      time: "11:34 PM",
+      activity: "Deleted",
+    },
+    {
+      id: 2,
+      device: "Mozilla on Window",
+      ip: "192.149.122.128",
+      time: "11:34 PM",
+      activity: "Updated",
+    },
+    {
+      id: 3,
+      device: "Chrome on iMac",
+      ip: "192.149.122.128",
+      time: "11:34 PM",
+      activity: "Deleted",
+    },
+    {
+      id: 4,
+      device: "Chrome on Window",
+      ip: "192.149.122.128",
+      time: "11:34 PM",
+      activity: "Created",
+    },
+    {
+      id: 5,
+      device: "Mozilla on Window",
+      ip: "86.188.154.225",
+      time: "11:34 PM",
+      activity: "Updated",
+    },
+    {
+      id: 6,
+      device: "Chrome on iMac",
+      ip: "192.149.122.128",
+      time: "11:34 PM",
+      activity: "Created",
+    },
+    {
+      id: 7,
+      device: "Chrome on Window",
+      ip: "192.149.122.128",
+      time: "11:34 PM",
+      activity: "Updated",
+    },
+    {
+      id: 8,
+      device: "Mozilla on Window",
+      ip: "86.188.154.225",
+      time: "11:34 PM",
+      activity: "Deleted",
+    },
+    {
+      id: 1,
+      device: "Chrome on iMac",
+      ip: "192.149.122.128",
+      time: "11:34 PM",
+      activity: "Created",
+    },
+  ];
+
+  const colors = {
+    Deleted: "#e85347",
+    Updated: "#1ee0ac",
+    Created: "#6576ff",
+  };
+
+  const rows = data.map((d) => (
+    <tr key={d.id}>
+      <td className=" text-[14px] font-roboto text-[#526484] font-normal">
+        <div>
+        {d.device}
+        <div className="text-[#8094ae] text-[13px] font-roboto md:hidden">{d.ip}</div>
+        </div>
+      </td>
+      <td className=" text-[#8094ae] text-[13px] font-roboto hidden md:table-cell">{d.ip}</td>
+      <td className=" text-[#8094ae] text-[13px] font-roboto">{d.time}</td>
+      <td className=" text-[#8094ae] text-[13px] font-roboto">
+        <Badge
+          radius="xs"
+          size="sm"
+          className=""
+          style={{
+            backgroundColor: colors[d.activity],
+            color: "white",
+            fontSize: "10px",
+          }}
+        >
+          {d.activity}
+        </Badge>
+      </td>
+      <td>
+        <div className=" hover:bg-[#fce7e5] transition-all duration-200 text-[#8094ae] hover:text-[#e85347] w-6 h-6 flex items-center justify-center rounded-full">
+          <RxCross2 className=""/>
+        </div>
+      </td>
+    </tr>
+  ));
+
   const [opened, { open, close }] = useDisclosure(false);
   return (
     <>
@@ -107,119 +223,17 @@ const Activity = () => {
             </div>
           </div>
         </div>
-        <div className=" border border-[#dbdfea]">
-          <div className=" p-[24px] border-b border-[#dbdfea]">
-            <div className="flex items-center gap-10 justify-between">
-              <div className=" flex-grow">
-                <h6 className=" text-[#364a63] font-nunito  text-[16px] font-bold mb-2">
-                  Save my Activity Logs
-                </h6>
-                <p className=" text-[#526484] font-roboto text-[14px]">
-                  You can save your all activity logs including unusual activity
-                  detected.
-                </p>
-              </div>
-              <div className=""></div>
-            </div>
-          </div>
-
-          <div className=" p-[24px] border-b border-[#dbdfea]">
-            <div className="flex flex-col md:flex-row xl:flex-col 2xl:flex-row gap-5 justify-between">
-              <div className=" flex-grow">
-                <h6 className=" text-[#364a63] font-nunito  text-[16px] font-bold mb-2">
-                  Change Password
-                </h6>
-                <p className=" text-[#526484] font-roboto text-[14px]">
-                  Set a unique password to protect your account.
-                </p>
-              </div>
-              <div className=" flex items-center gap-3">
-                <p className=" text-[#8094ae] text-[12px] font-roboto italic">
-                  Last changed:{" "}
-                  <span className=" text-[#526484] text-[12px]">
-                    Oct 2, 2019
-                  </span>
-                </p>
-                <button className=" bg-[#6576ff] py-[7px] px-[18px] rounded-[5px] text-[13px] text-white font-nunito font-bold transition-all duration-100 hover:bg-[#5664d9]">
-                  Change Password
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div className=" p-[24px] border-b border-[#dbdfea]">
-            <div className="flex flex-col xl:flex-row gap-5 justify-between">
-              <div className=" flex-grow">
-                <h6 className=" text-[#364a63] font-nunito  text-[16px] font-bold mb-2">
-                  2 Factor Auth
-                  <Badge
-                    color="teal"
-                    radius="sm"
-                    variant="filled"
-                    className=" capitalize ml-4"
-                  >
-                    Enabled
-                  </Badge>
-                </h6>
-                <p className=" text-[#526484] font-roboto text-[14px]">
-                  Secure your account with 2FA security. When it is activated
-                  you will need to enter not only your password, but also a
-                  special code using app. You can receive this code by in mobile
-                  app.
-                </p>
-              </div>
-              <div className=" flex items-center">
-                <button className=" bg-[#6576ff] py-[7px] px-[18px] rounded-[5px] text-[13px] text-white font-nunito font-bold transition-all duration-100 hover:bg-[#5664d9]">
-                  Disable
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div className=" p-[24px] border-b border-[#dbdfea]">
-            <div className="flex flex-col xl:flex-row gap-5 justify-between">
-              <div className=" flex-grow">
-                <h6 className=" text-[#364a63] font-nunito  text-[16px] font-bold mb-2">
-                  Auto Logout
-                </h6>
-                <p className=" text-[#526484] font-roboto text-[14px]">
-                  Set a auto logout time to disconnect your account from all
-                  sessions.
-                </p>
-              </div>
-              <div className=" flex items-center">
-                <button className=" bg-[#6576ff] py-[7px] px-[18px] rounded-[5px] text-[13px] text-white font-nunito font-bold transition-all duration-100 hover:bg-[#5664d9]">
-                  Update
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div className=" p-[24px] border-b border-[#dbdfea]">
-            <div className="flex flex-col xl:flex-row gap-5 justify-between">
-              <div className=" flex-grow">
-                <h6 className=" text-[#364a63] font-nunito  text-[16px] font-bold mb-2">
-                  Turn on login alerts
-                  <Badge
-                    color="teal"
-                    radius="sm"
-                    variant="filled"
-                    className=" capitalize ml-2"
-                  >
-                    Enabled
-                  </Badge>
-                </h6>
-                <p className=" text-[#526484] font-roboto text-[14px]">
-                  Be notified if anyone logs in account from unknown or new
-                  device
-                </p>
-              </div>
-              <div className=" flex items-center">
-                <button className=" bg-[#6576ff] py-[7px] px-[18px] rounded-[5px] text-[13px] text-white font-nunito font-bold transition-all duration-100 hover:bg-[#5664d9]">
-                  Disable
-                </button>
-              </div>
-            </div>
+        <div className="">
+          <div className=" border border-[#dbdfea]">
+            <MantineTable
+              horizontalSpacing="sm"
+              verticalSpacing="xs"
+              highlightOnHover
+              className=" cursor-pointer"
+            >
+              <thead>{ths}</thead>
+              <tbody>{rows}</tbody>
+            </MantineTable>
           </div>
         </div>
       </div>
