@@ -21,7 +21,7 @@ const Table = ({ children, selectValues }) => {
   const [mobileMenu, setMobileMenu] = useState(false);
   // selectValue = ["Value 1","Value 2"]
   return (
-    <div className="border border-[#dbdfea] rounded">
+    <div className="border border-[#dbdfea] rounded bg-white">
       <div className=" p-5 border-b  relative">
         {/* mobile search */}
         <div

@@ -9,10 +9,10 @@ import "./Sidebar.css";
 import { Accordion, ScrollArea } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { Link, NavLink } from "react-router-dom";
+import logoWhite from "../assets/logo-white.png";
 
 const Sidebar = () => {
   const [openedSidebar, { open, close, toggle }] = useDisclosure(false);
-
 
   return (
     <>
@@ -32,11 +32,7 @@ const Sidebar = () => {
 
             <div className=" w-[117px] logo-container">
               <NavLink to={`/`} className="focus-visible:outline-none">
-                <img
-                  className=""
-                  src="https://dashlite.net/demo1/images/logo2x.png"
-                  alt=""
-                />
+                <img className="" src={logoWhite} alt="" />
               </NavLink>
             </div>
           </div>
@@ -45,10 +41,13 @@ const Sidebar = () => {
             <div className=" w-[300px] sidebar-body">
               <ul className="py-8 px-6 space-y-5 list-group">
                 <li className="list-item">
-                  <NavLink to={`/`} className="side-menu" onClick={()=> {
-                    close()
-                    
-                  }}>
+                  <NavLink
+                    to={`/`}
+                    className="side-menu"
+                    onClick={() => {
+                      close();
+                    }}
+                  >
                     <div className="flex items-center gap-3 text-2xl  hover:text-[#7f8dff]">
                       <MdSpaceDashboard />
                       <span className=" list-text text-[15px] font-[700]">
@@ -61,9 +60,11 @@ const Sidebar = () => {
                 <li className="list-item">
                   <Accordion className="">
                     <Accordion.Item value="photos">
-                      <Accordion.Control >
+                      <Accordion.Control>
                         {/* <NavLink to={'/'} className="side-menu"> */}
-                        <div className={` side-menu flex items-center gap-3 text-2xl text-[#6e82a5]  hover:text-[#7f8dff]`}>
+                        <div
+                          className={` side-menu flex items-center gap-3 text-2xl text-[#6e82a5]  hover:text-[#7f8dff]`}
+                        >
                           <AiFillCalendar />
                           <span className=" list-text text-[15px] font-[700]">
                             Bookings
@@ -75,9 +76,8 @@ const Sidebar = () => {
                         <ul className=" booking-list space-y-3">
                           <li>
                             <NavLink
-                              onClick={()=> {
-                                close()
-                                
+                              onClick={() => {
+                                close();
                               }}
                               to={`/booking`}
                               className="side-menu hover:text-[#7f8dff] text-[14px]"
@@ -87,9 +87,8 @@ const Sidebar = () => {
                           </li>
                           <li>
                             <NavLink
-                              onClick={()=> {
-                                close()
-                                
+                              onClick={() => {
+                                close();
                               }}
                               to={`/booking-add`}
                               className="side-menu hover:text-[#7f8dff] text-[14px]"
@@ -99,9 +98,8 @@ const Sidebar = () => {
                           </li>
                           <li>
                             <NavLink
-                              onClick={()=> {
-                                close()
-                                
+                              onClick={() => {
+                                close();
                               }}
                               to={`/booking-edit`}
                               className="side-menu hover:text-[#7f8dff] text-[14px]"
@@ -116,10 +114,13 @@ const Sidebar = () => {
                 </li>
 
                 <li className="list-item">
-                  <NavLink to={`/rooms`} className="side-menu" onClick={()=> {
-                    close()
-                    
-                  }}>
+                  <NavLink
+                    to={`/rooms`}
+                    className="side-menu"
+                    onClick={() => {
+                      close();
+                    }}
+                  >
                     <div className=" flex items-center gap-3 text-2xl  hover:text-[#7f8dff]">
                       <BsHouseDoorFill />
                       <span className="list-text text-[15px] font-[700]">
@@ -133,9 +134,8 @@ const Sidebar = () => {
                   <NavLink
                     to={`/customers`}
                     className="side-menu"
-                    onClick={()=> {
-                      close()
-                      
+                    onClick={() => {
+                      close();
                     }}
                   >
                     <div className=" flex items-center gap-3 text-2xl  hover:text-[#7f8dff]">
@@ -151,9 +151,8 @@ const Sidebar = () => {
                   <NavLink
                     to={`/invoice-list`}
                     className="side-menu"
-                    onClick={()=> {
-                      close()
-                      
+                    onClick={() => {
+                      close();
                     }}
                   >
                     <div className=" flex items-center gap-3 text-2xl  hover:text-[#7f8dff]">
@@ -169,9 +168,8 @@ const Sidebar = () => {
                   <NavLink
                     to={`/setting/general`}
                     className="side-menu"
-                    onClick={()=> {
-                      close()
-                      
+                    onClick={() => {
+                      close();
                     }}
                   >
                     <div className=" flex items-center gap-3 text-2xl  hover:text-[#7f8dff]">
@@ -186,12 +184,14 @@ const Sidebar = () => {
 
               <div className="">
                 <div className=" h-[25px] flex items-center">
-                  {openedSidebar && <div className=" w-full h-[1px] bg-gray-700"></div>}
-                  {!openedSidebar && 
+                  {openedSidebar && (
+                    <div className=" w-full h-[1px] bg-gray-700"></div>
+                  )}
+                  {!openedSidebar && (
                     <h4 className=" mx-6 return uppercase text-[12px] text-[#9faec2] font-[700]">
                       Return to
-                    </h4>}
-                 
+                    </h4>
+                  )}
                 </div>
                 <ul className=" py-4 px-6 space-y-5">
                   <li className="list-item">
