@@ -36,7 +36,7 @@ const Header = () => {
     <>
       <nav className=" py-4 px-2 md:px-8  flex items-center justify-between sticky z-50 bg-white top-0 shadow-sm">
         {/* left desktop */}
-        <div className=" max-lg:hidden flex items-center justify-start gap-3">
+        <div className=" max-xl:hidden flex items-center justify-start gap-3">
           <div className=" cursor-pointer text-[#6C76FF] text-2xl">
             <MdOutlineLibraryBooks />
           </div>
@@ -51,7 +51,7 @@ const Header = () => {
           </div>
         </div>
         {/* left mobile and tablet */}
-        <div className=" lg:hidden flex items-center gap-4 md:gap-8">
+        <div className=" xl:hidden flex items-center gap-4 md:gap-8">
           <div
             onClick={open}
             className=" relative nav-menu text-3xl text-gray-500 cursor-pointer"
@@ -380,33 +380,7 @@ const Header = () => {
                 </li>
               </ul>
 
-              <div className=" py-4 px-6 space-y-5">
-                <h4 className=" uppercase text-[12px] text-[#9faec2] font-[700]">
-                  Return to
-                </h4>
-                <ul className="space-y-5">
-                  <li className="">
-                    <NavLink>
-                      <div className="flex items-center gap-3 text-2xl  hover:text-[#7f8dff]">
-                        <AiFillDashboard />
-                        <span className="text-[15px] font-[700]">
-                          Main Dashboard
-                        </span>
-                      </div>
-                    </NavLink>
-                  </li>
-                  <li className="">
-                    <NavLink>
-                      <div className="flex items-center gap-3 text-xl  hover:text-[#7f8dff]">
-                        <FaLayerGroup />
-                        <span className="text-[15px] font-[700]">
-                          All Components
-                        </span>
-                      </div>
-                    </NavLink>
-                  </li>
-                </ul>
-              </div>
+              
             </div>
           </ScrollArea>
         </div>

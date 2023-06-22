@@ -4,7 +4,7 @@ import { AiFillSetting, AiFillDashboard, AiFillCalendar } from "react-icons/ai";
 import { IoIosMenu } from "react-icons/io";
 import { HiUsers } from "react-icons/hi";
 import { FaCoins, FaLayerGroup } from "react-icons/fa";
-import { BsHouseDoorFill } from "react-icons/bs";
+import { BsHouseDoorFill, BsPencilSquare, BsBoxArrowRight } from "react-icons/bs";
 import "./Sidebar.css";
 import { Accordion, ScrollArea } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
@@ -41,7 +41,7 @@ const Sidebar = () => {
             </div>
           </div>
 
-          <ScrollArea h={500} scrollbarSize={8} scrollHideDelay={500}>
+          <ScrollArea h={500}  scrollbarSize={8} scrollHideDelay={500}>
             <div className=" w-[300px] sidebar-body">
               <ul className="py-8 px-6 space-y-5 list-group">
                 <li className="list-item">
@@ -182,9 +182,11 @@ const Sidebar = () => {
                     </div>
                   </NavLink>
                 </li>
+
+               
               </ul>
 
-              <div className="">
+              {/* <div className="">
                 <div className=" h-[25px] flex items-center">
                   {openedSidebar && <div className=" w-full h-[1px] bg-gray-700"></div>}
                   {!openedSidebar && 
@@ -215,7 +217,7 @@ const Sidebar = () => {
                     </Link>
                   </li>
                 </ul>
-              </div>
+              </div> */}
             </div>
           </ScrollArea>
         </div>
