@@ -27,10 +27,29 @@ import {
 import "./Header.css";
 import { Accordion, Drawer, Popover, ScrollArea } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import { useLogoutMutation } from "../redux/api/contact";
+import { useDispatch } from "react-redux";
+import { removeUser } from "../redux/services/authSlice";
+import Cookies from "js-cookie";
 
 const Header = () => {
   const [openedDrawer, { open, close }] = useDisclosure(false);
+  const [logout] = useLogoutMutation()
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+  const token = Cookies.get("token")
+  const user = JSON.parse(Cookies.get("user"))
+
+
+  const logoutHandler = async () => {
+    const { data } = await logout(token);
+    dispatch(removeUser());
+    console.log(data);
+    if (data?.success) {
+      navigate("/login");
+    }
+  };
 
   return (
     <>
@@ -130,8 +149,8 @@ const Header = () => {
                   <div className=" text-[11px] font-[500] text-[#6C76FF]">
                     Administrator
                   </div>
-                  <div className="  text-[12px] font-[500] text-[#526484] flex items-center gap-1">
-                    Abu Bin Ishityak{" "}
+                  <div className=" text-[12px] font-[500] text-[#526484] flex items-center gap-1">
+                    {user?.name}
                     <span className=" text-lg">
                       <MdKeyboardArrowDown />
                     </span>
@@ -143,14 +162,14 @@ const Header = () => {
               <div className="">
                 <div className=" flex items-center gap-3 bg-[#e5e9f2] border-b px-8 py-5">
                   <div className=" w-10 h-10 rounded-full flex items-center justify-center bg-[#6c76ff] text-white text-sm font-[500]">
-                    AB
+                    {user.name.split("")[0].toUpperCase()}
                   </div>
                   <div>
                     <p className=" text-[13px] text-[#526484] font-[500]">
-                      Abu Bin Ishityak
+                      {user?.name}
                     </p>
                     <p className=" text-[12px] text-[#8094ae]">
-                      info@softnio.com
+                      {user?.email}
                     </p>
                   </div>
                 </div>
@@ -161,20 +180,20 @@ const Header = () => {
                   </div>
                   
                   <div className="">
-                  <Link to={`/setting/general`} className=" cursor-pointer flex items-center gap-3  text-[#526484] font-[500] hover:text-[#6c76ff]">
+                  <Link to={`/setting/general`} className=" focus-visible:outline-none cursor-pointer flex items-center gap-3  text-[#526484] font-[500] hover:text-[#6c76ff]">
                     <AiOutlineSetting />
                     <span className=" text-[13px]">Account Setting</span>
                   </Link>
                   </div>
                   <div>
-                    <Link className=" cursor-pointer flex items-center gap-3  text-[#526484] font-[500] hover:text-[#6c76ff]" to={`/setting/activity`}>
+                    <Link to={'/setting/activity'} className=" cursor-pointer flex items-center gap-3  text-[#526484] font-[500] hover:text-[#6c76ff]" to={`/setting/activity`}>
 
                     <BsActivity />
                     <span className=" text-[13px]">Login Activity</span>
                     </Link>
                   </div>
                 </div>
-                <div className=" cursor-pointer px-8 py-5 flex items-center gap-3  text-[#526484] font-[500] hover:text-[#6c76ff]">
+                <div onClick={logoutHandler} className=" cursor-pointer px-8 py-5 flex items-center gap-3  text-[#526484] font-[500] hover:text-[#6c76ff]">
                   <BsBoxArrowRight />
                   <span className=" text-[13px]">sign out</span>
                 </div>

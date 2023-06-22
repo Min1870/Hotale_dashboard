@@ -14,13 +14,21 @@ import Security from "../components/Setting/Security";
 import Activity from "../components/Setting/Activity";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
+import RouteGuard from "./RouteGuard";
 
 const Paths = () => {
   return (
     <div className="">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Layout />}>
+          <Route
+            path="/"
+            element={
+              <RouteGuard>
+                <Layout />
+              </RouteGuard>
+            }
+          >
             <Route index element={<Dashboard />} />
             <Route path="booking" element={<Booking />} />
             <Route path="booking-add" element={<AddBooking />} />
@@ -35,8 +43,8 @@ const Paths = () => {
               <Route path="activity" element={<Activity />} />
             </Route>
           </Route>
-          <Route path="/login" element={<Login/>}/>
-          <Route path="/register" element={<Register/>}/>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       </BrowserRouter>
     </div>

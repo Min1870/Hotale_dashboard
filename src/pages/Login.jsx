@@ -6,13 +6,47 @@ import {
   AiOutlineMail,
 } from "react-icons/ai";
 import { RiLockLine } from "react-icons/ri";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import "./login.css"
 import "animate.css"
+import { useLoginMutation } from "../redux/api/contact";
+import { useDispatch } from "react-redux";
+import { addUser } from "../redux/services/authSlice";
+
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
+  const [login, {isLoading}] = useLoginMutation()
+  const dispatch = useDispatch()
+  const location = useLocation()
+
+  const defEmail = location?.state?.email;
+  const defPassword = location?.state?.password;
+  console.log(defEmail, defPassword);
+
+  const [user, setUser] = useState({ email: defEmail, password: defPassword})
+  const [error, setError] = useState("")
+
+  const handleChange = (e) => {
+    const key = e.target.name;
+    const value = e.target.value;
+    setUser({...user, [key]: value})
+  }
+
+  const handleSubmit = async(e) => {
+    e.preventDefault();
+    const data = await login(user);
+    console.log(data);
+    
+    if (data?.data?.success) {
+        dispatch(addUser({ user: data?.data?.user, token: data?.data?.token }));
+
+      navigate("/");
+    }else {
+      setError("Incorrect email or password")
+    }
+  }
   return (
     <div className="bg-gray-50 overflow-hidden font-nunito grid lg:grid-cols-5 h-screen">
       {/* left login form  */}
@@ -37,25 +71,32 @@ const Login = () => {
               or use your email account
             </div>
           </div>
-          <form>
-            <div className=" relative">
+          <form onSubmit={handleSubmit}>
+            <div className=" relative mb-4">
               <input
               autoFocus
+              onChange={handleChange}
+              defaultValue={user.email}
                 type="text"
-                name=""
+                name="email"
                 placeholder="Email"
-                className=" text-gray-600 pl-12 py-4 rounded w-full outline-none bg-blue-50 mb-4"
+                className=" text-gray-600 pl-12 py-4 rounded w-full outline-none bg-blue-50"
               />
+              <small className="text-red-500">
+                  {error && error}
+                </small>
               <span className=" absolute top-[18px] left-5 text-gray-400 text-lg">
                 <AiOutlineMail />
               </span>
             </div>
-            <div className=" relative">
+            <div className=" relative mb-4">
               <input
+              onChange={handleChange}
+              defaultValue={user.password}
                 type={`${showPassword ? "text" : "password"}`}
-                name=""
+                name="password"
                 placeholder="Password"
-                className=" text-gray-600 px-12 py-4 rounded w-full outline-none bg-blue-50 mb-4"
+                className=" text-gray-600 px-12 py-4 rounded w-full outline-none bg-blue-50"
               />
               <span className=" absolute top-[18px] left-5 text-gray-400 text-lg">
                 <RiLockLine />
@@ -80,7 +121,7 @@ const Login = () => {
               Forgot your password?
             </div>
             <div className=" flex justify-center">
-              <button className=" w-[50%] uppercase text-white font-[700] text-[14px] bg-[#5664d9] px-6 py-4 rounded-full">
+              <button disabled={isLoading} className=" w-[50%] uppercase text-white font-[700] text-[14px] bg-[#5664d9] px-6 py-4 rounded-full">
                 sign in
               </button>
             </div>

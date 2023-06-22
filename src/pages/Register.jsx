@@ -9,10 +9,37 @@ import {
 import { RiLockLine } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
 import './login.css'
+import { useRegisterMutation } from "../redux/api/contact";
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
+  const [register, {isLoading}] = useRegisterMutation()
+
+  const [user, setUser] = useState({name: "", email: "", password: ""})
+  const [errors, setErrors] = useState({})
+
+  const handleChange = (e) => {
+    const key = e.target.name;
+    const value = e.target.value;
+    setUser({...user, [key]: value})
+  }
+
+  const handleSubmit = async(e) => {
+    e.preventDefault();
+    const data = await register({...user, password_confirmation: user.password});
+    // console.log(data);
+    if (data?.error?.data?.errors) {
+      // console.log(data?.error?.data?.errors);
+      setErrors(data?.error?.data?.errors);
+      
+    }
+    if (data?.data?.success) {
+      navigate("/login", {state: {email:user.email, password:user.password}});
+    }
+  }
+
+
   return (
     <div className=" bg-gray-50 overflow-hidden font-nunito grid lg:grid-cols-5 h-screen">
       {/* left */}
@@ -38,7 +65,7 @@ const Register = () => {
       {/* right register form */}
 
       <div className=" flex justify-center items-center lg:col-span-3 max-sm:mx-4">
-        <div className=" sm:w-[60%]  m-auto">
+        <div className=" w-[90%] sm:w-[60%]  m-auto">
           <div className=" space-y-5 mb-5">
             <h1 className=" text-[30px] text-[#5664d9] font-[700] text-center">
               Create Account
@@ -58,38 +85,50 @@ const Register = () => {
               or use your email for registration:
             </div>
           </div>
-          <form className="">
+          <form onSubmit={handleSubmit}>
             <div className="">
-              <div className=" relative">
+              <div className=" relative mb-4">
                 <input
                 autoFocus
+                onChange={handleChange}
                   type="text"
-                  name=""
+                  name="name"
                   placeholder="Name"
-                  className=" text-gray-600 pl-12 py-4 rounded w-full outline-none bg-blue-50 mb-4"
+                  className=" text-gray-600 pl-12 py-4 rounded w-full outline-none bg-blue-50"
                 />
+                <small className="text-red-500">
+                  {errors?.name ? errors.name[0] : ""}
+                </small>
                 <span className=" absolute top-[18px] left-5 text-gray-400 text-lg">
                   <AiOutlineUser />
                 </span>
               </div>
-              <div className=" relative">
+              <div className=" relative mb-4">
                 <input
+                onChange={handleChange}
                   type="text"
-                  name=""
+                  name="email"
                   placeholder="Email"
-                  className=" text-gray-600 pl-12 py-4 rounded w-full outline-none bg-blue-50 mb-4"
+                  className=" text-gray-600 pl-12 py-4 rounded w-full outline-none bg-blue-50"
                 />
+                <small className="text-red-500">
+                  {errors?.email ? errors.email[0] : ""}
+                </small>
                 <span className=" absolute top-[18px] left-5 text-gray-400 text-lg">
                   <AiOutlineMail />
                 </span>
               </div>
-              <div className=" relative">
+              <div className=" relative mb-8">
                 <input
+                onChange={handleChange}
                   type={`${showPassword ? "text" : "password"}`}
-                  name=""
+                  name="password"
                   placeholder="Password"
-                  className=" text-gray-600 px-12 py-4 rounded w-full outline-none bg-blue-50 mb-8"
+                  className=" text-gray-600 px-12 py-4 rounded w-full outline-none bg-blue-50"
                 />
+                <small className="text-red-500">
+                  {errors?.password ? errors.password[0] : ""}
+                </small>
                 <span className=" absolute top-[18px] left-5 text-gray-400 text-lg">
                   <RiLockLine />
                 </span>
@@ -112,7 +151,7 @@ const Register = () => {
             </div>
 
             <div className=" flex justify-center">
-              <button className=" w-[50%] uppercase text-white font-[700] text-[14px] bg-[#5664d9] px-6 py-4 rounded-full">
+              <button disabled={isLoading} type="submit" className=" w-[50%] uppercase text-white font-[700] text-[14px] bg-[#5664d9] px-6 py-4 rounded-full">
                 sign up
               </button>
             </div>
