@@ -4,12 +4,13 @@ import { Checkbox, Select } from "@mantine/core";
 import { IoIosArrowDown } from "react-icons/io";
 import { HiOutlinePlus } from "react-icons/hi";
 import { FiDownloadCloud } from "react-icons/fi";
-import { BsThreeDots } from "react-icons/bs";
+import { BsThreeDots, BsTrash } from "react-icons/bs";
 import { Table as MantineTable } from "@mantine/core";
 
 import { useDisclosure } from "@mantine/hooks";
 import { Modal, Group, Button, Popover, Text } from "@mantine/core";
 import { TbCircleFilled } from "react-icons/tb";
+import { RiEdit2Fill } from "react-icons/ri";
 
 const Room = () => {
   const [roomNo, setRoomNo] = useState("");
@@ -145,15 +146,29 @@ const Room = () => {
         {el.status}
       </td>
       <td>
-        <div className=" text-xl ml-1">
-          <BsThreeDots />
-        </div>
+        <Popover width={150} position="bottom-end" shadow="lg">
+          <Popover.Target>
+            <div className=" text-xl text-[#526483] ml-1 relative dots z-20 flex justify-center items-center">
+              <BsThreeDots />
+            </div>
+          </Popover.Target>
+          <Popover.Dropdown className=" flex flex-col py-3 px-0">
+            <div className="select-none text-sm font-medium p-2 pl-3 flex items-center gap-2 transition-all duration-500 hover:text-[#6576ff] hover:bg-slate-100">
+              <RiEdit2Fill className="text-lg" />
+              Edit
+            </div>
+            <div className="select-none text-sm font-medium p-2 pl-3 flex items-center gap-2 transition-all duration-500 hover:text-[#6576ff] hover:bg-slate-100">
+              <BsTrash className="text-lg" />
+              Delete
+            </div>
+          </Popover.Dropdown>
+        </Popover>
       </td>
     </tr>
   ));
 
   return (
-    <div className="py-8">
+    <div className="py-8 bg-[#F5F6FA]">
 
       {/* header  */}
       <div className="mx-5 flex justify-between items-center mb-7">
