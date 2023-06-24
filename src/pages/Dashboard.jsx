@@ -6,6 +6,7 @@ import { FiChevronRight } from "react-icons/fi";
 import { Popover } from "@mantine/core";
 import { TbReportAnalytics } from "react-icons/tb";
 import Card from "../components/Card";
+import IncomeCard from "../components/IncomeCard";
 
 const Dashboard = () => {
   return (
@@ -55,6 +56,7 @@ const Dashboard = () => {
         <Card />
       </div>
       <TopSelectedPackage />
+      <IncomeCard />
       <NewCustomerTable />
     </div>
   );
