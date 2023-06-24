@@ -5,7 +5,7 @@ import LineChart from "./Chart/LineChart";
 
 const IncomeCard = () => {
   return (
-    <div className=" p-5 bg-white border rounded">
+    <div className=" p-5 bg-white border rounded my-5 shadow-sm">
       <div className="flex flex-col gap-5">
         <div className="flex justify-between items-center">
           <div>
@@ -16,7 +16,7 @@ const IncomeCard = () => {
               How was your income and Expenses this month.
             </p>
           </div>
-          <div>
+          <div className="hidden md:flex">
             <Button.Group>
               <Button
                 variant="default"
@@ -40,7 +40,7 @@ const IncomeCard = () => {
           </div>
         </div>
         <div className="grid grid-cols-10">
-          <div className=" col-span-2">
+          <div className="col-span-5 md:col-span-2">
             <div className="flex flex-col gap-2">
               <h5 className=" font-medium text-[12px] text-[#6576ff]">
                 Income
@@ -54,7 +54,7 @@ const IncomeCard = () => {
               </div>
             </div>
           </div>
-          <div className=" col-span-2">
+          <div className="col-span-5 md:col-span-2">
             <div className="flex flex-col gap-2">
               <h5 className=" font-medium text-[12px] text-[#e85347]">
                 Expenses
@@ -71,6 +71,10 @@ const IncomeCard = () => {
         </div>
         <div>
           <LineChart />
+          <div className="flex justify-between items-center text-[12px] text-[#8094ae] pl-10">
+            <p>01 Jan, 2020</p>
+            <p>30 Jan, 2020</p>
+          </div>
         </div>
       </div>
     </div>

@@ -44,17 +44,17 @@ const Register = () => {
     <div className=" bg-gray-50 overflow-hidden font-nunito grid lg:grid-cols-5 h-screen">
       {/* left */}
       <div className=" animate__animated animate__fadeInLeft bg-img max-lg:hidden lg:col-span-2 flex justify-center items-center bg-blue-300">
-        <div className=" space-y-8 ">
+        <div className=" max-w-[300px] space-y-8 ">
           <h1 className=" text-[30px] text-white font-[700] text-center">
             Welcome Back!
           </h1>
-          <div className="text-white font-[500] text-center text-lg w-[60%] mx-auto">
+          <div className="text-white font-[500] text-center text-lg mx-auto">
             To keep connected with us please login with your personal info
           </div>
           <div className=" flex justify-center">
             <button
               onClick={() => navigate(`/login`)}
-              className=" w-[50%] uppercase text-white font-[700] text-[14px] border border-white px-6 py-4 rounded-full"
+              className="  uppercase text-white font-[700] text-[14px] border border-white px-14 py-4 rounded-full"
             >
               sign in
             </button>
@@ -64,8 +64,8 @@ const Register = () => {
 
       {/* right register form */}
 
-      <div className=" flex justify-center items-center lg:col-span-3 max-sm:mx-4">
-        <div className=" w-[90%] sm:w-[60%]  m-auto">
+      <div className="  col-span-3 flex justify-center items-center max-[400px]:mx-4">
+        <div className=" max-[400px]:w-[300px] w-[400px]">
           <div className=" space-y-5 mb-5">
             <h1 className=" text-[30px] text-[#5664d9] font-[700] text-center">
               Create Account
@@ -118,7 +118,7 @@ const Register = () => {
                   <AiOutlineMail />
                 </span>
               </div>
-              <div className=" relative mb-8">
+              <div className=" relative mb-4">
                 <input
                 onChange={handleChange}
                   type={`${showPassword ? "text" : "password"}`}
@@ -150,8 +150,12 @@ const Register = () => {
               </div>
             </div>
 
+            <div className=" text-[#8094ae] text-center mb-8">
+              Already have an account? <span className=" text-blue-400 ml-3 cursor-pointer" onClick={()=> navigate(`/login`)}>Login here</span>
+            </div>
+
             <div className=" flex justify-center">
-              <button disabled={isLoading} type="submit" className=" w-[50%] uppercase text-white font-[700] text-[14px] bg-[#5664d9] px-6 py-4 rounded-full">
+              <button disabled={isLoading} type="submit" className=" uppercase text-white font-[700] text-[14px] bg-[#5664d9] px-14 py-4 rounded-full">
                 sign up
               </button>
             </div>

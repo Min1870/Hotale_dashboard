@@ -7,9 +7,9 @@ import { TbNotification } from "react-icons/tb";
 
 const NewCustomerTable = () => {
   return (
-    <div className=" my-10 grid md:grid-cols-2 gap-6">
+    <div className="my-5 grid md:grid-cols-2 gap-6">
       {/* table one  */}
-      <div className=" border rounded shadow-sm">
+      <div className=" border rounded shadow-sm bg-white">
         <div className=" flex justify-between items-center px-6 py-5 border-b">
           <h4 className=" font-nunito font-[700] text-[#525684] text-[16px]">
             New Customer
@@ -197,7 +197,7 @@ const NewCustomerTable = () => {
 
       {/* table two  */}
 
-      <div className=" border rounded shadow-sm">
+      <div className=" border rounded shadow-sm bg-white">
         <div className=" flex justify-between items-center px-6 py-5 border-b">
           <h4 className=" font-nunito font-[700] text-[#525684] text-[16px]">
             Recent Activities

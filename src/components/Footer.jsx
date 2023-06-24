@@ -10,7 +10,7 @@ const Footer = () => {
   const [openedModal, { open, close }] = useDisclosure(false);
   return (
     <>
-      <div className=" py-4 px-2 md:px-8 flex flex-wrap items-center justify-between shadow-sm">
+      <div className="py-4 px-2 md:px-8 flex flex-col md:flex-row gap-2 md:gap-0 items-center justify-between shadow-sm bg-white">
         {/* left  */}
         <div className=" text-[13px] text-[#8094ae]">
           © 2023 DashLite. Template by Softnio

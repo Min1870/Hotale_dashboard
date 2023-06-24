@@ -58,3 +58,7 @@
   color: #6576ff;
   background-color: #e5e9f2;
 }
+
+.mantine-Group-root {
+  gap: 5px;
+}

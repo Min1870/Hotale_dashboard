@@ -6,13 +6,84 @@ import { FiChevronRight } from "react-icons/fi";
 import { Popover } from "@mantine/core";
 import { TbReportAnalytics } from "react-icons/tb";
 import Card from "../components/Card";
+
 import IncomeCard from "../components/IncomeCard";
+
+import SaleRevenueCard from "../components/SaleRevenueCard";
+import RoomBookingCard from "../components/RoomBookingCard";
+
+const labels = [
+  "01 Jan",
+  "02 Jan",
+  "03 Jan",
+  "04 Jan",
+  "05 Jan",
+  "06 Jan",
+  "07 Jan",
+];
+
+const data1 = {
+  labels,
+  datasets: [
+    {
+      data: [120, 150, 80, 69, 50, 105, 75],
+      backgroundColor: [
+        "#E9ECEF",
+        "#E9ECEF",
+        "#E9ECEF",
+        "#E9ECEF",
+        "#E9ECEF",
+        "#E9ECEF",
+        "#6347FF",
+      ],
+      barThickness: 6,
+    },
+  ],
+};
+
+const data2 = {
+  labels,
+  datasets: [
+    {
+      data: [12, 15, 6, 5, 15, 7, 8],
+      backgroundColor: [
+        "#E9ECEF",
+        "#E9ECEF",
+        "#E9ECEF",
+        "#E9ECEF",
+        "#E9ECEF",
+        "#E9ECEF",
+        "#6347FF",
+      ],
+      barThickness: 6,
+    },
+  ],
+};
+
+const data3 = {
+  labels,
+  datasets: [
+    {
+      data: [600, 700, 800, 500, 600, 500, 1200],
+      backgroundColor: [
+        "#E9ECEF",
+        "#E9ECEF",
+        "#E9ECEF",
+        "#E9ECEF",
+        "#E9ECEF",
+        "#E9ECEF",
+        "#6347FF",
+      ],
+      barThickness: 6,
+    },
+  ],
+};
 
 const Dashboard = () => {
   return (
-    <div className=" py-8 md:px-[22px] bg-[#F5F6FA]">
+    <div className=" pb-5 pt-8 px-5 bg-[#F5F6FA]">
       {/* Header */}
-      <div className=" flex justify-between items-center mb-7 px-5 md:p-0">
+      <div className=" flex justify-between items-center mb-7">
         <div>
           <h1 className=" font-nunito font-bold text-[28px] text-[#364a63]">
             Dashboard Overview
@@ -21,7 +92,7 @@ const Dashboard = () => {
             Welcome to Hotale Dashboard.
           </h4>
         </div>
-        <div className=" flex items-center gap-4">
+        <div className=" max-sm:hidden flex items-center gap-4">
           <Popover width={160} position="bottom-end" shadow="lg">
             <Popover.Target>
               <button className="px-3 py-[7px] transition-all duration-500 flex justify-between items-center gap-3 text-[#8094ae] border border-[#dbdfea] rounded hover:text-white hover:bg-[#526484]">
@@ -50,13 +121,43 @@ const Dashboard = () => {
           </button>
         </div>
       </div>
-      <div className=" grid grid-cols-12 gap-5">
-        <Card />
-        <Card />
-        <Card />
+      <div className=" grid md:grid-cols-3 gap-5">
+        <Card
+          data={data1}
+          title={"Total Booking"}
+          decRate={"1.93%"}
+          rate={"11,230"}
+          month={"THIS MONTH"}
+          monthCount={1913}
+          week={"THIS WEEK"}
+          weekCount={1125}
+        />
+        <Card
+          data={data2}
+          title={"Room Available"}
+          rate={"312"}
+          month={"BOOKED (MONTH)"}
+          monthCount={913}
+          week={"BOOKED (WEEK)"}
+          weekCount={125}
+        />
+        <Card
+          data={data3}
+          title={"Expenses"}
+          rate={"79358.50 USD"}
+          month={"THIS MONTH"}
+          monthCount={"3,540.59 USD"}
+          week={"THIS WEEK"}
+          weekCount={"1,259.28 USD"}
+        />
       </div>
       <TopSelectedPackage />
+
       <IncomeCard />
+      <div className=" grid md:grid-cols-2 gap-5 my-5">
+        <SaleRevenueCard />
+        <RoomBookingCard />
+      </div>
       <NewCustomerTable />
     </div>
   );

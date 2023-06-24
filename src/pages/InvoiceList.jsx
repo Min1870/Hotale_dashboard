@@ -121,7 +121,7 @@ const InvoiceList = () => {
     </tr>
   ));
   return (
-    <div className=" py-8">
+    <div className=" py-8 bg-[#F5F6FA]">
       {/* header  */}
       <div className="mx-5 flex justify-between items-center mb-7">
         <div>
@@ -242,7 +242,7 @@ const InvoiceList = () => {
 
       {/* table  */}
 
-      <div className="mx-0 md:mx-5 border border-[#dbdfea] rounded min-w-[450px]">
+      <div className="mx-0 md:mx-5 border bg-white border-[#dbdfea] rounded min-w-[450px]">
         {/* <div className=" p-5 flex justify-between items-center border-b">
           <div className=" flex items-center gap-4">
             <h1>All Invoices</h1>

@@ -4,12 +4,13 @@ import { Checkbox, Select } from "@mantine/core";
 import { IoIosArrowDown } from "react-icons/io";
 import { HiOutlinePlus } from "react-icons/hi";
 import { FiDownloadCloud } from "react-icons/fi";
-import { BsThreeDots } from "react-icons/bs";
+import { BsThreeDots, BsTrash } from "react-icons/bs";
 import { Table as MantineTable } from "@mantine/core";
 
 import { useDisclosure } from "@mantine/hooks";
 import { Modal, Group, Button, Popover, Text } from "@mantine/core";
 import { TbCircleFilled } from "react-icons/tb";
+import { RiEdit2Fill } from "react-icons/ri";
 
 const Room = () => {
   const [roomNo, setRoomNo] = useState("");
@@ -74,7 +75,7 @@ const Room = () => {
   };
 
   const ths = (
-    <tr  className="text-[13px]">
+    <tr className="text-[13px]">
       <th>
         <div className="flex items-center gap-3">
           <Checkbox color="violet" size="xs" />
@@ -83,8 +84,8 @@ const Room = () => {
       </th>
       <th>Room Type</th>
       <th className="hidden md:table-cell">Ac/Non Ac</th>
-      <th  className="hidden md:table-cell">Meal</th>
-      <th  className="hidden md:table-cell">Bed Capacity</th>
+      <th className="hidden md:table-cell">Meal</th>
+      <th className="hidden md:table-cell">Bed Capacity</th>
       <th className="hidden md:table-cell">Rent</th>
       <th className="hidden md:table-cell">Status</th>
       <th>
@@ -96,21 +97,15 @@ const Room = () => {
               </button>
             </Popover.Target>
             <Popover.Dropdown>
-              <div
-              className="flex gap-2 items-center mb-3"
-              >
+              <div className="flex gap-2 items-center mb-3">
                 <Checkbox color="violet" size="xs" />
                 <span className="text-[13px] font-[400]">Booked</span>
               </div>
-              <div
-              className="flex gap-2 items-center mb-3"
-              >
+              <div className="flex gap-2 items-center mb-3">
                 <Checkbox color="violet" size="xs" />
                 <span className="text-[13px] font-[400]">Open</span>
               </div>
-              <div
-              className="flex gap-2 items-center"
-              >
+              <div className="flex gap-2 items-center">
                 <Checkbox color="violet" size="xs" />
                 <span className="text-[13px] font-[400]">Inactive</span>
               </div>
@@ -129,11 +124,27 @@ const Room = () => {
           <span className=" text-[#6576ff]">{el.roomNo}</span>
         </div>
       </td>
-      <td className="flex items-center gap-2">{el.roomType} <span className={`${el?.roomType === "Single" && "text-[#f4bd0e]" || el?.roomType === "Double" && "text-[#1ee0ac]" || el?.roomType === "Delux" && "text-[#6576ff]" || el?.roomType === "Super Delux" && "text-[#1ee0ac]" ||  el?.roomType === "Suit" && "text-[#e85347]" } table-cell md:hidden text-[12px]`}><TbCircleFilled /></span> </td>
+      <td className="flex items-center gap-2">
+        {el.roomType}{" "}
+        <span
+          className={`${
+            (el?.roomType === "Single" && "text-[#f4bd0e]") ||
+            (el?.roomType === "Double" && "text-[#1ee0ac]") ||
+            (el?.roomType === "Delux" && "text-[#6576ff]") ||
+            (el?.roomType === "Super Delux" && "text-[#1ee0ac]") ||
+            (el?.roomType === "Suit" && "text-[#e85347]")
+          } table-cell md:hidden text-[12px]`}
+        >
+          <TbCircleFilled />
+        </span>{" "}
+      </td>
       <td className="hidden md:table-cell">{el.ac}</td>
       <td className="hidden md:table-cell">{el.meal}</td>
       <td className="hidden md:table-cell">{el.bedCapacity}</td>
-      <td className="text-gray-600 hidden md:table-cell"><span className="font-[500]">{el.rent}</span><span> USD</span></td>
+      <td className="text-gray-600 hidden md:table-cell">
+        <span className="font-[500]">{el.rent}</span>
+        <span> USD</span>
+      </td>
       <td
         className={`${
           (el.status === "Booked" && "text-[#6576ff]") ||
@@ -145,16 +156,29 @@ const Room = () => {
         {el.status}
       </td>
       <td>
-        <div className=" text-xl ml-1">
-          <BsThreeDots />
-        </div>
+        <Popover width={150} position="bottom-end" shadow="lg">
+          <Popover.Target>
+            <div className=" text-xl text-[#526483] ml-1 relative dots z-20 flex justify-center items-center">
+              <BsThreeDots />
+            </div>
+          </Popover.Target>
+          <Popover.Dropdown className=" flex flex-col py-3 px-0">
+            <div className="select-none text-sm font-medium p-2 pl-3 flex items-center gap-2 transition-all duration-500 hover:text-[#6576ff] hover:bg-slate-100">
+              <RiEdit2Fill className="text-lg" />
+              Edit
+            </div>
+            <div className="select-none text-sm font-medium p-2 pl-3 flex items-center gap-2 transition-all duration-500 hover:text-[#6576ff] hover:bg-slate-100">
+              <BsTrash className="text-lg" />
+              Delete
+            </div>
+          </Popover.Dropdown>
+        </Popover>
       </td>
     </tr>
   ));
 
   return (
-    <div className="py-8">
-
+    <div className="py-8 bg-[#F5F6FA]">
       {/* header  */}
       <div className="mx-5 flex justify-between items-center mb-7">
         <div>
@@ -358,20 +382,19 @@ const Room = () => {
       </Modal>
 
       {/* table  */}
-      <div className="mx-0 md:mx-5 min-w-[450px]"> 
-         <Table selectValues={["Change Status"]}>
-        <MantineTable
-          horizontalSpacing="lg"
-          verticalSpacing="lg"
-          highlightOnHover
-          className=" cursor-pointer"
-        >
-          <thead>{ths}</thead>
-          <tbody>{rows}</tbody>
-        </MantineTable>
-      </Table>
+      <div className="mx-0 md:mx-5 min-w-[450px]">
+        <Table selectValues={["Change Status"]}>
+          <MantineTable
+            horizontalSpacing="lg"
+            verticalSpacing="lg"
+            highlightOnHover
+            className=" cursor-pointer"
+          >
+            <thead>{ths}</thead>
+            <tbody>{rows}</tbody>
+          </MantineTable>
+        </Table>
       </div>
-     
     </div>
   );
 };
