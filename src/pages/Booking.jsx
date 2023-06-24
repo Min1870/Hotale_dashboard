@@ -8,6 +8,7 @@ import { MdEmail } from "react-icons/md";
 import { Checkbox, Table as ManineTable, Popover } from "@mantine/core";
 import "../utils/Table.css";
 import { useNavigate } from "react-router-dom";
+import { CgMenuRightAlt } from "react-icons/cg";
 const Booking = () => {
   const nav = useNavigate();
   // Rows Data
@@ -118,7 +119,7 @@ const Booking = () => {
             alt=""
             className="w-12 h-12 rounded-full object-cover"
           />
-          <div className="flex flex-col gap-1 w-[150px]">
+          <div className="flex flex-col gap-1 w-[170px] md:w-[130px]">
             <h1 className="text-[#364a63] font-medium">{el.name}</h1>
             <p className=" text-xs">{el.email}</p>
           </div>
@@ -166,7 +167,7 @@ const Booking = () => {
   return (
     <div className="px-0 md:px-[22px] py-8 bg-[#F5F6FA]">
       {/* Header */}
-      <div className=" flex justify-between items-center mb-7 px-5 md:p-0">
+      <div className=" flex justify-between items-center mb-7 px-5 md:p-0 relative">
         <div>
           <h1 className=" font-nunito font-bold text-[28px] text-[#364a63]">
             Booking Lists
@@ -175,7 +176,7 @@ const Booking = () => {
             You have total 2,595 booking's.
           </h4>
         </div>
-        <div className=" flex items-center gap-4">
+        <div className=" md:flex items-center gap-4 hidden">
           <button className=" px-[18px] py-[7px] transition-all duration-500 flex items-center gap-3 border border-[#dbdfea] rounded hover:text-white hover:bg-[#526484]">
             <FiDownloadCloud />
             <span className=" text-sm font-bold font-nunito">Export</span>
@@ -199,8 +200,29 @@ const Booking = () => {
             </Popover.Dropdown>
           </Popover>
         </div>
+        {/* mobile */}
+        <Popover position="bottom-end" shadow="lg">
+          <Popover.Target>
+            <div className="flex md:hidden w-8 h-8 border rounded border-[#dbdfea] bg-white shadow-sm p-1 justify-center items-center">
+              <CgMenuRightAlt className="text-xl" />
+            </div>
+          </Popover.Target>
+          <Popover.Dropdown className="px-0">
+            <div className="select-none hover:text-[#6576ff] hover:bg-gray-100 px-[20px] py-[10px] text-[12px] font-[500] text-[#526484] transition-all duration-[0.4s]">
+              Export
+            </div>
+            <div
+              onClick={() => nav("/booking-add")}
+              className="select-none hover:text-[#6576ff] hover:bg-gray-100 px-[20px] py-[10px] text-[12px] font-[500] text-[#526484] transition-all duration-[0.4s]"
+            >
+              Add Booking
+            </div>
+            <div className="select-none hover:text-[#6576ff] hover:bg-gray-100 px-[20px] py-[10px] text-[12px] font-[500] text-[#526484] transition-all duration-[0.4s]">
+              Import Booking
+            </div>
+          </Popover.Dropdown>
+        </Popover>
       </div>
-
       {/* Table */}
       <Table selectValues={["Send Email", "Delete Booking"]}>
         <ManineTable

@@ -44,8 +44,32 @@ export const options = {
     },
   },
 };
+const labels = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
 
-const BarChart = ({data}) => {
-  return <Bar options={options} data={data} />;
+export const data = {
+  labels,
+  datasets: [
+    {
+      data: [23, 50, 38, 40, 30, 36, 60, 45, 34, 55, 70, 90],
+      backgroundColor: "#6576ff",
+    },
+  ],
+};
+
+const BarChart = () => {
+  return <Bar options={options} data={data} height={90} />;
 };
 export default BarChart;

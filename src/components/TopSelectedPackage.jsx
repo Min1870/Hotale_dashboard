@@ -4,7 +4,7 @@ import { IoChevronDownOutline } from "react-icons/io5";
 
 const TopSelectedPackage = () => {
   return (
-    <div className=" border my-5 py-4 px-6 rounded space-y-5 shadow-sm">
+    <div className=" border my-5 py-4 px-6 rounded space-y-5 shadow-sm bg-white">
       <div className=" flex justify-between items-center">
         <div className=" space-y-2">
           <h1 className=" font-nunito font-[700] text-[#525684]">
