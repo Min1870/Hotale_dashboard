@@ -114,11 +114,11 @@ const Setting = () => {
           </div>
         </div>
       </Drawer>
-      <div className=" py-[32px] px-[22px]">
+      <div className=" bg-[#F5F6FA] py-[32px] px-[22px]">
         <div className="flex rounded-md overflow-hidden border border-[#e5e9f2] shadow-sm">
           {/* Left Side */}
           {!shouldHideLeftSide && (
-            <div className=" min-w-[320px] min-h-screen border-r  border-[#e5e9f2]">
+            <div className=" bg-white min-w-[320px] min-h-screen border-r  border-[#e5e9f2]">
               <div className="p-[24px] border-b border-[#dbdfea]">
                 <h3 className="text-[28px] text-[#364a63] font-nunito font-bold mb-2">
                   Settings
@@ -192,7 +192,7 @@ const Setting = () => {
           )}
 
           {/* Right Side */}
-          <div className={`${shouldHideLeftSide ? "w-full" : "flex-1"}`}>
+          <div className={`${shouldHideLeftSide ? "w-full" : "flex-1"} bg-white`}>
             <Outlet opened={opened} />
           </div>
         </div>

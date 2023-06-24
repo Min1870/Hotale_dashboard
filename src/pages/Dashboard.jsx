@@ -153,11 +153,13 @@ const Dashboard = () => {
       </div>
       <TopSelectedPackage />
 
-      <IncomeCard />
       <div className=" grid md:grid-cols-2 gap-5 my-5">
         <SaleRevenueCard />
         <RoomBookingCard />
       </div>
+
+      <IncomeCard />
+      
       <NewCustomerTable />
     </div>
   );
