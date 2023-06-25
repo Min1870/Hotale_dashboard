@@ -8,7 +8,7 @@ import {
 } from "react-icons/ai";
 import { RiLockLine } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
-import './login.css'
+import './Login.css'
 import { useRegisterMutation } from "../redux/api/contact";
 
 const Register = () => {

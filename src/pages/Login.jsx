@@ -7,7 +7,7 @@ import {
 } from "react-icons/ai";
 import { RiLockLine } from "react-icons/ri";
 import { useLocation, useNavigate } from "react-router-dom";
-import "./login.css"
+import "./Login.css"
 import "animate.css"
 import { useLoginMutation } from "../redux/api/contact";
 import { useDispatch } from "react-redux";
