@@ -158,7 +158,7 @@ const Dashboard = () => {
         <RoomBookingCard />
       </div>
 
-      <IncomeCard />
+      <IncomeCard/>
       
       <NewCustomerTable />
     </div>

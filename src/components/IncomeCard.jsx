@@ -5,7 +5,7 @@ import LineChart from "./Chart/LineChart";
 
 const IncomeCard = () => {
   return (
-    <div className=" p-5 bg-white border rounded my-5 shadow-sm">
+    <div className="p-5 bg-white border rounded my-5 shadow-sm">
       <div className="flex flex-col gap-5">
         <div className="flex justify-between items-center">
           <div>
@@ -69,7 +69,7 @@ const IncomeCard = () => {
             </div>
           </div>
         </div>
-        <div>
+        <div className=" w-[98%]">
           <LineChart />
           <div className="flex justify-between items-center text-[12px] text-[#8094ae] pl-10">
             <p>01 Jan, 2020</p>
