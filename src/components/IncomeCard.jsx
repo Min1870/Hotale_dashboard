@@ -69,7 +69,7 @@ const IncomeCard = () => {
             </div>
           </div>
         </div>
-        <div>
+        <div className="w-[98%]">
           <LineChart />
           <div className="flex justify-between items-center text-[12px] text-[#8094ae] pl-10">
             <p>01 Jan, 2020</p>
