@@ -25,7 +25,7 @@ const Login = () => {
   const defPassword = location?.state?.password;
   console.log(defEmail, defPassword);
 
-  const [user, setUser] = useState({ email: defEmail, password: defPassword})
+  const [user, setUser] = useState({ email: "admin@gmail.com", password: "admin123"})
   const [error, setError] = useState("")
 
   const handleChange = (e) => {
