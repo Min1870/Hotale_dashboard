@@ -190,7 +190,7 @@ const Email = () => {
           </div>
           <div className="pt-2 grid grid-cols-1">
             <div className=" mt-4">
-              <button className="px-[24px] py-[11px] bg-[#6576ff] transition-all duration-100 hover:bg-[#5664d9] text-white tracking-[0.02em] text-[15px] font-nunito rounded-[5px] font-bold">
+              <button className="px-[24px] py-[11px] bg-[#121111] transition-all duration-100 hover:bg-[#2e2e2e] text-white tracking-[0.02em] text-[15px] font-nunito rounded-[5px] font-bold">
                 Update
               </button>
             </div>

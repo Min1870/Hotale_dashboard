@@ -58,7 +58,7 @@ const Setting = () => {
             <ul className=" py-[16px] p-[24px]">
               <NavLink
                 to={""}
-                className="text-[#526484] transition duration-200 hover:text-[#6576ff] flex items-center justify-between"
+                className="text-[#526484] transition duration-200 hover:text-[#45484c] flex items-center justify-between"
               >
                 <div className=" flex items-center gap-3">
                   <MdAdminPanelSettings size={25} />
@@ -72,7 +72,7 @@ const Setting = () => {
             <ul className=" py-[16px] p-[24px]">
               <NavLink
                 to={""}
-                className="text-[#526484] transition duration-200 hover:text-[#6576ff] flex items-center justify-between"
+                className="text-[#526484] transition duration-200 hover:text-[#45484c] flex items-center justify-between"
               >
                 <div className=" flex items-center gap-3">
                   <IoMdLock size={25} />
@@ -86,7 +86,7 @@ const Setting = () => {
             <ul className=" py-[16px] p-[24px]">
               <NavLink
                 to={""}
-                className=" text-[#526484] transition duration-200 hover:text-[#6576ff] flex items-center justify-between"
+                className=" text-[#526484] transition duration-200 hover:text-[#45484c] flex items-center justify-between"
               >
                 <div className=" flex items-center gap-3">
                   <RiShieldStarFill size={25} />
@@ -100,7 +100,7 @@ const Setting = () => {
             <ul className=" py-[16px] p-[24px]">
               <NavLink
                 to={""}
-                className=" text-[#526484] transition duration-200 hover:text-[#6576ff] flex items-center justify-between"
+                className=" text-[#526484] transition duration-200 hover:text-[#45484c] flex items-center justify-between"
               >
                 <div className=" flex items-center gap-3">
                   <FiActivity size={25} />
@@ -131,7 +131,7 @@ const Setting = () => {
                 <ul className=" py-[16px] p-[24px]">
                   <NavLink
                     to="/setting/general"
-                    className=" text-[#526484] transition duration-200 hover:text-[#6576ff] flex items-center justify-between"
+                    className=" text-[#526484] transition duration-200 hover:text-[#45484c] flex items-center justify-between"
                     onClick={() => handleTabClick("general")}
                   >
                     <div className=" flex items-center gap-3">
@@ -146,7 +146,7 @@ const Setting = () => {
                 <ul className=" py-[16px] p-[24px]">
                   <NavLink
                     to="/setting/email"
-                    className=" text-[#526484] transition duration-200 hover:text-[#6576ff] flex items-center justify-between"
+                    className=" text-[#526484] transition duration-200 hover:text-[#45484c] flex items-center justify-between"
                     onClick={() => handleTabClick("email")}
                   >
                     <div className=" flex items-center gap-3">
@@ -161,7 +161,7 @@ const Setting = () => {
                 <ul className=" py-[16px] p-[24px]">
                   <NavLink
                     to="/setting/security"
-                    className=" text-[#526484] transition duration-200 hover:text-[#6576ff] flex items-center justify-between"
+                    className=" text-[#526484] transition duration-200 hover:text-[#45484c] flex items-center justify-between"
                     onClick={() => handleTabClick("security")}
                   >
                     <div className=" flex items-center gap-3">
@@ -176,7 +176,7 @@ const Setting = () => {
                 <ul className=" py-[16px] p-[24px]">
                   <NavLink
                     to="/setting/activity"
-                    className=" text-[#526484] transition duration-200 hover:text-[#6576ff] flex items-center justify-between"
+                    className=" text-[#526484] transition duration-200 hover:text-[#45484c] flex items-center justify-between"
                   >
                     <div className=" flex items-center gap-3">
                       <FiActivity size={25} />
