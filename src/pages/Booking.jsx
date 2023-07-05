@@ -53,7 +53,7 @@ const Booking = () => {
     <tr>
       <th>
         <div className="flex items-center gap-3">
-          <Checkbox color="violet" size="xs" /> <span>ID</span>
+          <Checkbox color="dark" size="xs" /> <span>ID</span>
         </div>
       </th>
       <th>Customer</th>
@@ -71,7 +71,7 @@ const Booking = () => {
           </Popover.Target>
           <Popover.Dropdown>
             <div className="flex items-center gap-3 ">
-              <Checkbox color="violet" size="xs" id="booking" />
+              <Checkbox color="dark" size="xs" id="booking" />
               <label
                 htmlFor="booking"
                 className=" font-medium text-[#526484] leading-[18px] text-[12px] select-none cursor-pointer"
@@ -80,7 +80,7 @@ const Booking = () => {
               </label>
             </div>
             <div className="flex items-center gap-3  my-3">
-              <Checkbox color="violet" size="xs" id="phone" />
+              <Checkbox color="dark" size="xs" id="phone" />
               <label
                 htmlFor="phone"
                 className=" font-medium text-[#526484] leading-[18px] text-[12px] select-none cursor-pointer"
@@ -89,7 +89,7 @@ const Booking = () => {
               </label>
             </div>
             <div className="flex items-center gap-3 ">
-              <Checkbox color="violet" size="xs" id="payment" />
+              <Checkbox color="dark" size="xs" id="payment" />
               <label
                 htmlFor="payment"
                 className=" font-medium text-[#526484] leading-[18px] text-[12px] select-none cursor-pointer"
@@ -108,7 +108,7 @@ const Booking = () => {
     <tr key={el.id} className=" font-roboto text-[#8094ae]">
       <td>
         <div className="flex items-center gap-3">
-          <Checkbox color="violet" size="xs" />{" "}
+          <Checkbox color="dark" size="xs" />{" "}
           <span className=" text-[#6576ff]">{el.id}</span>
         </div>
       </td>
@@ -150,11 +150,11 @@ const Booking = () => {
             </div>
           </Popover.Target>
           <Popover.Dropdown className=" flex flex-col py-3 px-0">
-            <div className="select-none text-sm font-medium p-2 pl-3 flex items-center gap-2 transition-all duration-500 hover:text-[#6576ff] hover:bg-slate-100">
+            <div className="select-none text-sm font-medium p-2 pl-3 flex items-center gap-2 transition-all duration-500 hover:text-[#000] hover:bg-slate-100">
               <MdEmail className="text-lg" />
               Send Email
             </div>
-            <div className="select-none text-sm font-medium p-2 pl-3 flex items-center gap-2 transition-all duration-500 hover:text-[#6576ff] hover:bg-slate-100">
+            <div className="select-none text-sm font-medium p-2 pl-3 flex items-center gap-2 transition-all duration-500 hover:text-[#000] hover:bg-slate-100">
               <RiEdit2Fill className="text-lg" />
               Edit
             </div>
@@ -183,18 +183,18 @@ const Booking = () => {
           </button>
           <Popover width={160} position="bottom-end">
             <Popover.Target>
-              <button className="text-lg p-2 rounded text-white bg-[#6576ff] hover:bg-[#5664d9] hover:border-[#6576ff] active:bg-[#515ecc]">
+              <button className="text-lg p-2 rounded text-white bg-[#000] hover:bg-[#2a2a2a] hover:border-[#000] active:bg-[#898989]">
                 <HiOutlinePlus />
               </button>
             </Popover.Target>
             <Popover.Dropdown className="px-0">
               <div
                 onClick={() => nav("/booking-add")}
-                className="select-none hover:text-[#6576ff] hover:bg-gray-100 px-[20px] py-[10px] text-[12px] font-[500] text-[#526484] transition-all duration-[0.4s]"
+                className="select-none hover:text-[#000] hover:bg-gray-100 px-[20px] py-[10px] text-[12px] font-[500] text-[#526484] transition-all duration-[0.4s]"
               >
                 Add Booking
               </div>
-              <div className="select-none hover:text-[#6576ff] hover:bg-gray-100 px-[20px] py-[10px] text-[12px] font-[500] text-[#526484] transition-all duration-[0.4s]">
+              <div className="select-none hover:text-[#000] hover:bg-gray-100 px-[20px] py-[10px] text-[12px] font-[500] text-[#526484] transition-all duration-[0.4s]">
                 Import Booking
               </div>
             </Popover.Dropdown>
@@ -208,16 +208,16 @@ const Booking = () => {
             </div>
           </Popover.Target>
           <Popover.Dropdown className="px-0">
-            <div className="select-none hover:text-[#6576ff] hover:bg-gray-100 px-[20px] py-[10px] text-[12px] font-[500] text-[#526484] transition-all duration-[0.4s]">
+            <div className="select-none hover:text-[#000] hover:bg-gray-100 px-[20px] py-[10px] text-[12px] font-[500] text-[#526484] transition-all duration-[0.4s]">
               Export
             </div>
             <div
               onClick={() => nav("/booking-add")}
-              className="select-none hover:text-[#6576ff] hover:bg-gray-100 px-[20px] py-[10px] text-[12px] font-[500] text-[#526484] transition-all duration-[0.4s]"
+              className="select-none hover:text-[#000] hover:bg-gray-100 px-[20px] py-[10px] text-[12px] font-[500] text-[#526484] transition-all duration-[0.4s]"
             >
               Add Booking
             </div>
-            <div className="select-none hover:text-[#6576ff] hover:bg-gray-100 px-[20px] py-[10px] text-[12px] font-[500] text-[#526484] transition-all duration-[0.4s]">
+            <div className="select-none hover:text-[#000] hover:bg-gray-100 px-[20px] py-[10px] text-[12px] font-[500] text-[#526484] transition-all duration-[0.4s]">
               Import Booking
             </div>
           </Popover.Dropdown>

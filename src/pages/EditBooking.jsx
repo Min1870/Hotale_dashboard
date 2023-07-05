@@ -21,6 +21,13 @@ const EditBooking = () => {
         <Grid>
           <Grid.Col sm={6} md={6} xl={3}>
             <TextInput
+              styles={{
+                input: {
+                  ":focus-within": {
+                    borderColor: "#000",
+                  },
+                },
+              }}
               placeholder="First Name"
               label="First Name"
               defaultValue="Abu Bin"
@@ -28,6 +35,13 @@ const EditBooking = () => {
           </Grid.Col>
           <Grid.Col sm={6} md={6} xl={3}>
             <TextInput
+              styles={{
+                input: {
+                  ":focus-within": {
+                    borderColor: "#000",
+                  },
+                },
+              }}
               placeholder="Last Name"
               label="Last Name"
               defaultValue="Ishtiyak"
@@ -41,13 +55,18 @@ const EditBooking = () => {
               rightSection={<IoChevronDownOutline size="1rem" />}
               rightSectionWidth={30}
               styles={{
+                input: {
+                  ":focus-within": {
+                    borderColor: "#000",
+                  },
+                },
                 rightSection: { pointerEvents: "none" },
                 item: {
                   margin: "2px 0",
                   "&[data-selected]": {
                     "&, &:hover": {
-                      backgroundColor: "#E5E9F2",
-                      color: "#566A92",
+                      backgroundColor: "#000",
+                      color: "#fff",
                     },
                   },
                 },
@@ -57,6 +76,13 @@ const EditBooking = () => {
           </Grid.Col>
           <Grid.Col sm={6} md={6} xl={3}>
             <TextInput
+              styles={{
+                input: {
+                  ":focus-within": {
+                    borderColor: "#000",
+                  },
+                },
+              }}
               placeholder="Phone"
               label="Phone"
               defaultValue="+811 847-4958"
@@ -64,6 +90,13 @@ const EditBooking = () => {
           </Grid.Col>
           <Grid.Col sm={6} md={6} xl={3}>
             <TextInput
+              styles={{
+                input: {
+                  ":focus-within": {
+                    borderColor: "#000",
+                  },
+                },
+              }}
               placeholder="Email Address"
               label="Email Address"
               defaultValue="info@softnio.com"
@@ -71,6 +104,13 @@ const EditBooking = () => {
           </Grid.Col>
           <Grid.Col sm={6} md={6} xl={3}>
             <TextInput
+              styles={{
+                input: {
+                  ":focus-within": {
+                    borderColor: "#000",
+                  },
+                },
+              }}
               placeholder="Address"
               label="Address"
               defaultValue="102 Cherry Ridge Drive, Detroit"
@@ -98,13 +138,18 @@ const EditBooking = () => {
               rightSection={<IoChevronDownOutline size="1rem" />}
               rightSectionWidth={30}
               styles={{
+                input: {
+                  ":focus-within": {
+                    borderColor: "#000",
+                  },
+                },
                 rightSection: { pointerEvents: "none" },
                 item: {
                   margin: "2px 0",
                   "&[data-selected]": {
                     "&, &:hover": {
-                      backgroundColor: "#E5E9F2",
-                      color: "#566A92",
+                      backgroundColor: "#000",
+                      color: "#fff",
                     },
                   },
                 },
@@ -125,13 +170,18 @@ const EditBooking = () => {
               rightSection={<IoChevronDownOutline size="1rem" />}
               rightSectionWidth={30}
               styles={{
+                input: {
+                  ":focus-within": {
+                    borderColor: "#000",
+                  },
+                },
                 rightSection: { pointerEvents: "none" },
                 item: {
                   margin: "2px 0",
                   "&[data-selected]": {
                     "&, &:hover": {
-                      backgroundColor: "#E5E9F2",
-                      color: "#566A92",
+                      backgroundColor: "#000",
+                      color: "#fff",
                     },
                   },
                 },
@@ -141,6 +191,21 @@ const EditBooking = () => {
           </Grid.Col>
           <Grid.Col sm={6} md={6} xl={3}>
             <DatePickerInput
+              styles={{
+                input: {
+                  ":focus-within": {
+                    borderColor: "#000",
+                  },
+                },
+                day: {
+                  "&[data-selected]": {
+                    "&, &:hover": {
+                      backgroundColor: "#000",
+                      color: "#fff",
+                    },
+                  },
+                },
+              }}
               icon={<BsCalendar4Week size="1.1rem" stroke={1.5} />}
               label="Arrive date"
               placeholder="mm-dd-yyyy"
@@ -150,6 +215,21 @@ const EditBooking = () => {
           </Grid.Col>
           <Grid.Col sm={6} md={6} xl={3}>
             <DatePickerInput
+              styles={{
+                input: {
+                  ":focus-within": {
+                    borderColor: "#000",
+                  },
+                },
+                day: {
+                  "&[data-selected]": {
+                    "&, &:hover": {
+                      backgroundColor: "#000",
+                      color: "#fff",
+                    },
+                  },
+                },
+              }}
               icon={<BsCalendar4Week size="1.1rem" stroke={1.5} />}
               label="Depart date"
               placeholder="mm-dd-yyyy"
@@ -159,6 +239,13 @@ const EditBooking = () => {
           </Grid.Col>
           <Grid.Col sm={6} md={6} xl={3}>
             <TextInput
+              styles={{
+                input: {
+                  ":focus-within": {
+                    borderColor: "#000",
+                  },
+                },
+              }}
               placeholder="Total Person"
               label="Total Person"
               defaultValue="2"
@@ -168,11 +255,16 @@ const EditBooking = () => {
             <Textarea
               placeholder="Large text area content"
               label="Note"
-              styles={{ input: { height: "150px" } }}
+              styles={{
+                input: {
+                  height: "150px",
+                  ":focus-within": { borderColor: "#000" },
+                },
+              }}
             />
           </Grid.Col>
         </Grid>
-        <button className="py-[7px] px-[18px] mt-4 text-sm font-bold font-nunito text-white rounded bg-[#6576FF] hover:bg-[#5664d9] hover:border-[#6576ff] active:bg-[#515ecc]">
+        <button className="py-[7px] px-[18px] mt-4 text-sm font-bold font-nunito text-white rounded bg-[#000] hover:bg-[#2a2a2a] active:bg-[#898989]">
           Update Booking
         </button>
       </div>
