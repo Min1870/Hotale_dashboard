@@ -19,13 +19,13 @@ const Sidebar = () => {
       <div
         className={`sticky h-fit ${
           openedSidebar && "sidebar-close"
-        } select-none w-[300px] transition-all duration-500 max-xl:hidden sidebar top-0 font-nunito`}
+        } bg-black text-gray-400 select-none w-[300px] transition-all duration-500 max-xl:hidden sidebar top-0 font-nunito`}
       >
         <div>
-          <div className="sticky top-0 z-50 bg-[#101924] flex items-center gap-5 h-[67px] px-6 border-b border-gray-700">
+          <div className="sticky top-0 z-50 flex items-center gap-5 h-[67px] px-6 border-b border-gray-700">
             <div
               onClick={toggle}
-              className=" relative sidebar-menu text-3xl cursor-pointer text-[#9faec2]"
+              className=" relative sidebar-menu text-3xl cursor-pointer "
             >
               <IoIosMenu />
             </div>
@@ -48,7 +48,7 @@ const Sidebar = () => {
                       close();
                     }}
                   >
-                    <div className="flex items-center gap-3 text-2xl  hover:text-[#7f8dff]">
+                    <div className="flex items-center gap-3 text-2xl  hover:text-white">
                       <MdSpaceDashboard />
                       <span className=" list-text text-[15px] font-[700]">
                         Dashboard
@@ -63,7 +63,7 @@ const Sidebar = () => {
                       <Accordion.Control>
                         {/* <NavLink to={'/'} className="side-menu"> */}
                         <div
-                          className={` side-menu flex items-center gap-3 text-2xl text-[#6e82a5]  hover:text-[#7f8dff]`}
+                          className={` side-menu flex items-center gap-3 text-2xl text-gray-400  hover:text-white`}
                         >
                           <AiFillCalendar />
                           <span className=" list-text text-[15px] font-[700]">
@@ -73,14 +73,14 @@ const Sidebar = () => {
                         {/* </NavLink> */}
                       </Accordion.Control>
                       <Accordion.Panel>
-                        <ul className=" booking-list space-y-3">
+                        <ul className=" text-gray-400 booking-list space-y-3">
                           <li>
                             <NavLink
                               onClick={() => {
                                 close();
                               }}
                               to={`/booking`}
-                              className="side-menu hover:text-[#7f8dff] text-[14px]"
+                              className="side-menu hover:text-white text-[14px]"
                             >
                               <span className="">All Bookings</span>
                             </NavLink>
@@ -91,7 +91,7 @@ const Sidebar = () => {
                                 close();
                               }}
                               to={`/booking-add`}
-                              className="side-menu hover:text-[#7f8dff] text-[14px]"
+                              className="side-menu hover:text-white text-[14px]"
                             >
                               <span className="">Add Booking</span>
                             </NavLink>
@@ -102,7 +102,7 @@ const Sidebar = () => {
                                 close();
                               }}
                               to={`/booking-edit`}
-                              className="side-menu hover:text-[#7f8dff] text-[14px]"
+                              className="side-menu hover:text-white text-[14px]"
                             >
                               <span className="">Edit Booking</span>
                             </NavLink>
@@ -121,7 +121,7 @@ const Sidebar = () => {
                       close();
                     }}
                   >
-                    <div className=" flex items-center gap-3 text-2xl  hover:text-[#7f8dff]">
+                    <div className=" flex items-center gap-3 text-2xl  hover:text-white">
                       <BsHouseDoorFill />
                       <span className="list-text text-[15px] font-[700]">
                         Room
@@ -138,7 +138,7 @@ const Sidebar = () => {
                       close();
                     }}
                   >
-                    <div className=" flex items-center gap-3 text-2xl  hover:text-[#7f8dff]">
+                    <div className=" flex items-center gap-3 text-2xl  hover:text-white">
                       <FaCoins />
                       <span className="list-text text-[15px] font-[700]">
                         Customers
@@ -155,7 +155,7 @@ const Sidebar = () => {
                       close();
                     }}
                   >
-                    <div className=" flex items-center gap-3 text-2xl  hover:text-[#7f8dff]">
+                    <div className=" flex items-center gap-3 text-2xl  hover:text-white">
                       <HiUsers />
                       <span className="list-text text-[15px] font-[700]">
                         Payment
@@ -172,7 +172,7 @@ const Sidebar = () => {
                       close();
                     }}
                   >
-                    <div className=" flex items-center gap-3 text-2xl  hover:text-[#7f8dff]">
+                    <div className=" flex items-center gap-3 text-2xl  hover:text-white">
                       <AiFillSetting />
                       <span className="list-text text-[15px] font-[700]">
                         Setting

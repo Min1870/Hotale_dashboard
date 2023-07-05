@@ -59,7 +59,7 @@ const Header = () => {
       <nav className=" py-4 px-2 md:px-8  flex items-center justify-between sticky z-50 bg-white top-0 shadow-sm">
         {/* left desktop */}
         <div className=" max-xl:hidden flex items-center justify-start gap-3">
-          <div className=" cursor-pointer text-[#6C76FF] text-2xl">
+          <div className=" cursor-pointer text-gray-500 text-2xl">
             <MdOutlineLibraryBooks />
           </div>
           <p className=" text-[13px] text-[#526484] font-[500]">
@@ -142,11 +142,11 @@ const Header = () => {
             <Popover width={275} trapFocus position="bottom-end" shadow="md">
               <Popover.Target>
                 <div className=" flex items-center gap-3 cursor-pointer select-none">
-                  <div className="  w-fit p-2 bg-[#6C76FF] text-white text-sm rounded-full cursor-pointer">
+                  <div className="  w-fit p-2 bg-gray-500 text-white text-sm rounded-full cursor-pointer">
                     <AiOutlineUser />
                   </div>
                   <div className=" max-md:hidden">
-                    <div className=" text-[11px] font-[500] text-[#6C76FF]">
+                    <div className=" text-[11px] font-[500] text-gray-500">
                       Administrator
                     </div>
                     <div className=" text-[12px] font-[500] text-[#526484] flex items-center gap-1">
@@ -158,10 +158,10 @@ const Header = () => {
                   </div>
                 </div>
               </Popover.Target>
-              <Popover.Dropdown className=" border-0 border-t-2 border-[#6c76ff] rounded mt-2 p-0">
+              <Popover.Dropdown className=" border-0 border-t-2 border-gray-500 rounded mt-2 p-0">
                 <div className="">
                   <div className=" flex items-center gap-3 bg-[#e5e9f2] border-b px-8 py-5">
-                    <div className=" w-10 h-10 rounded-full flex items-center justify-center bg-[#6c76ff] text-white text-sm font-[500]">
+                    <div className=" w-10 h-10 rounded-full flex items-center justify-center bg-gray-500 text-white text-sm font-[500]">
                       {user.name.split("")[0].toUpperCase()}
                     </div>
                     <div>
@@ -175,7 +175,7 @@ const Header = () => {
                   </div>
                   <div className=" px-8 py-5 space-y-5 border-b">
                     <div className="">
-                      <div className=" cursor-pointer flex items-center gap-3  text-[#526484] font-[500] hover:text-[#6c76ff]">
+                      <div className=" cursor-pointer flex items-center gap-3  text-[#526484] font-[500] hover:text-gray-700">
                         <AiOutlineUser />
                         <span className=" text-[13px]">View Profile</span>
                       </div>
@@ -184,7 +184,7 @@ const Header = () => {
                     <div className="">
                       <Link
                         to={`/setting/general`}
-                        className=" focus-visible:outline-none cursor-pointer flex items-center gap-3  text-[#526484] font-[500] hover:text-[#6c76ff]"
+                        className=" focus-visible:outline-none cursor-pointer flex items-center gap-3  text-[#526484] font-[500] hover:text-gray-700"
                       >
                         <AiOutlineSetting />
                         <span className=" text-[13px]">Account Setting</span>
@@ -192,7 +192,7 @@ const Header = () => {
                     </div>
                     <div>
                       <Link
-                        className=" focus-visible:outline-none cursor-pointer flex items-center gap-3  text-[#526484] font-[500] hover:text-[#6c76ff]"
+                        className=" focus-visible:outline-none cursor-pointer flex items-center gap-3  text-[#526484] font-[500] hover:text-gray-700"
                         to={`/setting/activity`}
                       >
                         <BsActivity />
@@ -203,7 +203,7 @@ const Header = () => {
 
                   <div
                     onClick={logoutHandler}
-                    className=" cursor-pointer px-8 py-5 flex items-center gap-3  text-[#526484] font-[500] hover:text-[#6c76ff]"
+                    className=" cursor-pointer px-8 py-5 flex items-center gap-3  text-[#526484] font-[500] hover:text-gray-700"
                   >
                     <BsBoxArrowRight />
                     <span className=" text-[13px]">sign out</span>
@@ -220,11 +220,11 @@ const Header = () => {
                 <span className="w-1 h-1 rounded-full bg-green-300"></span>
               </div>
             </Popover.Target>
-            <Popover.Dropdown className=" border-0 border-t-2 border-[#6c76ff] rounded mt-2 p-0">
+            <Popover.Dropdown className=" border-0 border-t-2 border-gray-500 rounded mt-2 p-0">
               <div className="">
                 <div className="  px-8 py-4 border-b flex items-center justify-between">
                   <p className=" text-[13px] text-[#526484]">Notification</p>
-                  <p className=" text-[13px] text-[#6c76ff] cursor-pointer">
+                  <p className=" text-[13px] text-gray-500 cursor-pointer">
                     Mark All As Read
                   </p>
                 </div>
@@ -263,7 +263,7 @@ const Header = () => {
                     </div>
                   </div>
                 </div>
-                <div className="  px-8 py-4 text-center cursor-pointer text-[13px] text-[#6c76ff]">
+                <div className="  px-8 py-4 text-center cursor-pointer text-[13px] text-gray-500">
                   View All
                 </div>
               </div>
