@@ -108,8 +108,8 @@ const InvoiceList = () => {
       <td className="w-[100px] hidden md:table-cell">
         <div >
           <div className="flex items-center gap-4">
-          <div className="p-1 rounded-sm text-[#6576ff]  transition ease-in duration-150 hover:text-white hover:bg-[#6576ff]"><HiPrinter className="text-xl"/></div>
-          <button className="text-[13px] font-semibold py-1 px-3 rounded-sm transition ease-in duration-150 text-[#6576ff] bg-[#6577ff15]  hover:text-white hover:bg-[#6576ff]">View</button>
+          <div className="p-1 rounded-sm text-black transition ease-in duration-150 hover:text-white hover:bg-black"><HiPrinter className="text-xl"/></div>
+          <button className="text-[13px] font-semibold py-1 px-3 rounded-sm transition ease-in duration-150 text-black bg-[#6577ff15]  hover:text-white hover:bg-black">View</button>
         </div>
         </div>
         
@@ -135,18 +135,18 @@ const InvoiceList = () => {
         <div className="">
           <Popover width={200} position="bottom-end" withArrow shadow="md">
             <Popover.Target>
-              <button className="text-lg p-2 rounded text-white bg-[#6576ff] hover:bg-[#5664d9] hover:border-[#6576ff] active:bg-[#515ecc]">
+              <button className="text-lg p-2 rounded text-white bg-black hover:bg-gray-600 hover:border-black active:bg-gray-600">
                 <HiOutlinePlus />
               </button>
             </Popover.Target>
-            <Popover.Dropdown>
+            <Popover.Dropdown className="px-0">
               <div
                 onClick={open}
-                className="select-none hover:text-[#6576ff] hover:bg-gray-100 px-[20px] py-[10px] text-[12px] font-[500] text-[#526484] transition-all duration-[0.4s]"
+                className="select-none hover:text-black hover:bg-gray-100 px-[20px] py-[10px] text-[12px] font-[500] text-[#526484] transition-all duration-[0.4s]"
               >
                 Add New
               </div>
-              <div className="select-none hover:text-[#6576ff] hover:bg-gray-100 px-[20px] py-[10px] text-[12px] font-[500] text-[#526484] transition-all duration-[0.4s]">
+              <div className="select-none hover:text-black hover:bg-gray-100 px-[20px] py-[10px] text-[12px] font-[500] text-[#526484] transition-all duration-[0.4s]">
                 Import
               </div>
             </Popover.Dropdown>
@@ -225,13 +225,13 @@ const InvoiceList = () => {
               <button
                 onClick={close}
                 type="submit"
-                className="bg-[#6576ff] hover:bg-[#5664d9] transition duration-200 ease-in rounded-[4px] text-white px-[18px] py-[7px] me-8 text-[0.85rem]"
+                className="bg-black hover:bg-gray-600 transition duration-200 ease-in rounded-[4px] text-white px-[18px] py-[7px] me-8 text-[0.85rem]"
               >
                 Add Room
               </button>
               <a
                 onClick={close}
-                className="cursor-pointer text-[#6576ff] hover:text-[#5664d9] transition duration-200 ease-in text-[0.85rem] font-[500]"
+                className="cursor-pointer text-black hover:text-gray-600 transition duration-200 ease-in text-[0.85rem] font-[500]"
               >
                 Cancel
               </a>

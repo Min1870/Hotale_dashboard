@@ -78,7 +78,7 @@ const Room = () => {
     <tr className="text-[13px]">
       <th>
         <div className="flex items-center gap-3">
-          <Checkbox color="violet" size="xs" />
+          <Checkbox color="dark" size="xs" />
           <span>Room No.</span>
         </div>
       </th>
@@ -98,15 +98,15 @@ const Room = () => {
             </Popover.Target>
             <Popover.Dropdown>
               <div className="flex gap-2 items-center mb-3">
-                <Checkbox color="violet" size="xs" />
+                <Checkbox color="dark" size="xs" />
                 <span className="text-[13px] font-[400]">Booked</span>
               </div>
               <div className="flex gap-2 items-center mb-3">
-                <Checkbox color="violet" size="xs" />
+                <Checkbox color="dark" size="xs" />
                 <span className="text-[13px] font-[400]">Open</span>
               </div>
               <div className="flex gap-2 items-center">
-                <Checkbox color="violet" size="xs" />
+                <Checkbox color="dark" size="xs" />
                 <span className="text-[13px] font-[400]">Inactive</span>
               </div>
             </Popover.Dropdown>
@@ -120,7 +120,7 @@ const Room = () => {
     <tr key={el.id} className=" font-roboto text-[13px] text-[#8094ae]">
       <td>
         <div className="flex items-center gap-3">
-          <Checkbox color="violet" size="xs" />{" "}
+          <Checkbox color="dark" size="xs" />{" "}
           <span className=" text-[#6576ff]">{el.roomNo}</span>
         </div>
       </td>
@@ -163,11 +163,11 @@ const Room = () => {
             </div>
           </Popover.Target>
           <Popover.Dropdown className=" flex flex-col py-3 px-0">
-            <div className="select-none text-sm font-medium p-2 pl-3 flex items-center gap-2 transition-all duration-500 hover:text-[#6576ff] hover:bg-slate-100">
+            <div className="select-none text-sm font-medium p-2 pl-3 flex items-center gap-2 transition-all duration-500 hover:text-black hover:bg-slate-100">
               <RiEdit2Fill className="text-lg" />
               Edit
             </div>
-            <div className="select-none text-sm font-medium p-2 pl-3 flex items-center gap-2 transition-all duration-500 hover:text-[#6576ff] hover:bg-slate-100">
+            <div className="select-none text-sm font-medium p-2 pl-3 flex items-center gap-2 transition-all duration-500 hover:text-black hover:bg-slate-100">
               <BsTrash className="text-lg" />
               Delete
             </div>
@@ -192,18 +192,18 @@ const Room = () => {
         <div className="">
           <Popover width={200} position="bottom-end" withArrow shadow="md">
             <Popover.Target>
-              <button className="text-lg p-2 rounded text-white bg-[#6576ff] hover:bg-[#5664d9] hover:border-[#6576ff] active:bg-[#515ecc]">
+              <button className="text-lg p-2 rounded text-white bg-black hover:bg-gray-600 hover:border-gray-600 active:bg-gray-600">
                 <HiOutlinePlus />
               </button>
             </Popover.Target>
-            <Popover.Dropdown>
+            <Popover.Dropdown className="px-0">
               <div
                 onClick={open}
-                className="select-none hover:text-[#6576ff] hover:bg-gray-100 px-[20px] py-[10px] text-[12px] font-[500] text-[#526484] transition-all duration-[0.4s]"
+                className="select-none hover:text-black hover:bg-gray-100 px-[20px] py-[10px] text-[12px] font-[500] text-[#526484] transition-all duration-[0.4s]"
               >
                 Add Room
               </div>
-              <div className="select-none hover:text-[#6576ff] hover:bg-gray-100 px-[20px] py-[10px] text-[12px] font-[500] text-[#526484] transition-all duration-[0.4s]">
+              <div className="select-none hover:text-black hover:bg-gray-100 px-[20px] py-[10px] text-[12px] font-[500] text-[#526484] transition-all duration-[0.4s]">
                 Import Room
               </div>
             </Popover.Dropdown>
@@ -243,11 +243,10 @@ const Room = () => {
                   Room Type
                 </label>
                 <Select
-                  className=" w-full text-[0.8rem]  focus:border-[#6576ff] focus:ring-2 focus:ring-gray-200  mt-[.5rem]"
+                  className=" w-full text-[0.8rem] focus:border-gray-500 focus:ring-2 focus:ring-gray-200  mt-[.5rem]"
                   placeholder="Room Type"
                   rightSection={<IoIosArrowDown size="1rem" />}
                   rightSectionWidth={30}
-                  styles={{ rightSection: { pointerEvents: "none" } }}
                   data={[
                     { value: "Delux", label: "Delux" },
                     { value: "Super Delux", label: "Super Delux" },
@@ -258,6 +257,20 @@ const Room = () => {
                   name="room_type"
                   value={roomType}
                   onChange={setRoomType}
+
+                  styles={(theme) => ({
+                    item: {
+                      // applies styles to selected item
+                      '&[data-selected]': {
+                        '&, &:hover': {
+                          backgroundColor:
+                            theme.colorScheme === 'dark' ? theme.colors.dark[1] : theme.colors.dark[9],
+                          color: theme.colorScheme === 'dark' ? theme.white : theme.colors.gray[0],
+                        },
+                      },
+                    },
+                    rightSection: { pointerEvents: "none"},
+                  })}
                 />
               </div>
 
@@ -270,7 +283,18 @@ const Room = () => {
                   placeholder="Air Condition"
                   rightSection={<IoIosArrowDown size="1rem" />}
                   rightSectionWidth={30}
-                  styles={{ rightSection: { pointerEvents: "none" } }}
+                  styles={(theme) => ({
+                    item: {
+                      '&[data-selected]': {
+                        '&, &:hover': {
+                          backgroundColor:
+                            theme.colorScheme === 'dark' ? theme.colors.dark[1] : theme.colors.dark[9],
+                          color: theme.colorScheme === 'dark' ? theme.white : theme.colors.gray[0],
+                        },
+                      },
+                    },
+                    rightSection: { pointerEvents: "none"},
+                  })}
                   data={[
                     { value: "AC", label: "AC" },
                     { value: "None", label: "None" },
@@ -309,7 +333,18 @@ const Room = () => {
                   placeholder="Meal"
                   rightSection={<IoIosArrowDown size="1rem" />}
                   rightSectionWidth={30}
-                  styles={{ rightSection: { pointerEvents: "none" } }}
+                  styles={(theme) => ({
+                    item: {
+                      '&[data-selected]': {
+                        '&, &:hover': {
+                          backgroundColor:
+                            theme.colorScheme === 'dark' ? theme.colors.dark[1] : theme.colors.dark[9],
+                          color: theme.colorScheme === 'dark' ? theme.white : theme.colors.gray[0],
+                        },
+                      },
+                    },
+                    rightSection: { pointerEvents: "none"},
+                  })}
                   data={[
                     { value: "None", label: "None" },
                     { value: "Breakfast", label: "Breakfast" },
@@ -348,7 +383,18 @@ const Room = () => {
                   placeholder="Status"
                   rightSection={<IoIosArrowDown size="1rem" />}
                   rightSectionWidth={30}
-                  styles={{ rightSection: { pointerEvents: "none" } }}
+                  styles={(theme) => ({
+                    item: {
+                      '&[data-selected]': {
+                        '&, &:hover': {
+                          backgroundColor:
+                            theme.colorScheme === 'dark' ? theme.colors.dark[1] : theme.colors.dark[9],
+                          color: theme.colorScheme === 'dark' ? theme.white : theme.colors.gray[0],
+                        },
+                      },
+                    },
+                    rightSection: { pointerEvents: "none"},
+                  })}
                   data={[
                     { value: "Open", label: "Open" },
                     { value: "Inactive", label: "Inactive" },
@@ -366,13 +412,13 @@ const Room = () => {
               <button
                 onClick={close}
                 type="submit"
-                className="bg-[#6576ff] hover:bg-[#5664d9] transition duration-200 ease-in rounded-[4px] text-white px-[18px] py-[7px] me-8 text-[0.85rem]"
+                className="bg-black hover:bg-gray-600 transition duration-200 ease-in rounded-[4px] text-white px-[18px] py-[7px] me-8 text-[0.85rem]"
               >
                 Add Room
               </button>
               <a
                 onClick={close}
-                className="cursor-pointer text-[#6576ff] hover:text-[#5664d9] transition duration-200 ease-in text-[0.85rem] font-[500]"
+                className="cursor-pointer text-black hover:text-gray-600 transition duration-200 ease-in text-[0.85rem] font-[500]"
               >
                 Cancel
               </a>
