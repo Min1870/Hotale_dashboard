@@ -53,7 +53,7 @@ const Login = () => {
       <div className="  col-span-3 flex justify-center items-center max-[400px]:mx-4">
         <div className=" max-[400px]:w-[300px] w-[400px]">
           <div className=" space-y-5 mb-5">
-            <h1 className=" text-[30px] text-[#5664d9] font-[700] text-center">
+            <h1 className=" text-[30px] text-gray-700 font-[700] text-center">
               Sign in to Hotale Dashboard
             </h1>
             <div className=" flex items-center gap-3 justify-center">
@@ -118,10 +118,10 @@ const Login = () => {
               )}
             </div>
             <div className=" text-[#8094ae] text-center mb-8">
-              Do not have an account? <span className=" text-blue-400 ml-3 cursor-pointer" onClick={()=> navigate(`/register`)}>Register here</span>
+              Do not have an account? <span className=" text-gray-500 hover:text-gray-700 ml-3 cursor-pointer" onClick={()=> navigate(`/register`)}>Register here</span>
             </div>
             <div className=" flex justify-center">
-              <button disabled={isLoading} className="uppercase text-white font-[700] text-[14px] bg-[#5664d9] px-14 py-4 rounded-full">
+              <button disabled={isLoading} className={` ${isLoading && 'cursor-not-allowed bg-gray-500'} uppercase text-white font-[700] text-[14px] bg-black px-14 py-4 rounded-full`}>
                 sign in
               </button>
             </div>
