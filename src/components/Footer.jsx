@@ -10,7 +10,7 @@ const Footer = () => {
   const [openedModal, { open, close }] = useDisclosure(false);
   return (
     <>
-      <div className="py-4 px-2 md:px-8 flex flex-col md:flex-row gap-2 md:gap-0 items-center justify-between shadow-sm bg-white">
+      <div className="py-4 px-2 md:px-8 flex flex-col md:flex-row gap-2 md:gap-0 md:items-center justify-between shadow-sm bg-white">
         {/* left  */}
         <div className=" text-[13px] text-[#8094ae]">
           © 2023 DashLite. Template by Softnio
@@ -19,7 +19,7 @@ const Footer = () => {
         <div className=" flex items-center gap-10">
           <Popover width={150} trapFocus position="top-end" shadow="md">
             <Popover.Target>
-              <div className=" flex items-center gap-2  text-[13px] text-[#6c76ff] hover:text-[#5664D9] cursor-pointer">
+              <div className=" flex items-center gap-2  text-[13px] text-gray-500 hover:text-gray-700 cursor-pointer">
                 English{" "}
                 <span>
                   <MdKeyboardArrowUp />
@@ -45,7 +45,7 @@ const Footer = () => {
           </Popover>
           <div
             onClick={open}
-            className=" flex items-center gap-2  text-[13px] text-[#6c76ff] hover:text-[#5664D9] cursor-pointer"
+            className=" flex items-center gap-2  text-[13px] text-gray-500 hover:text-gray-700 cursor-pointer"
           >
             <span className=" text-lg">
               <TbWorld />

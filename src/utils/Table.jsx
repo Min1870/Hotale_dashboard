@@ -56,10 +56,10 @@ const Table = ({ children, selectValues }) => {
               rightSectionWidth={30}
               styles={{
                 rightSection: { pointerEvents: "none" },
-                root: {
+                input: {
                   ":focus-within": {
-                    borderColor: "#6576ff",
-                    boxShadow: "0 0 0 3px rgba(101,118,255,.1)",
+                    borderColor: "black",
+                    boxShadow: "0 0 3px 2px rgba(0,0,0,.1)",
                   },
                 },
 
@@ -67,9 +67,9 @@ const Table = ({ children, selectValues }) => {
                   margin: "2px 0",
                   "&[data-selected]": {
                     "&, &:hover": {
-                      backgroundColor: "#E5E9F2",
+                      backgroundColor: "#000",
 
-                      color: "#566A92",
+                      color: "#fff",
                     },
                   },
                 },
@@ -109,7 +109,7 @@ const Table = ({ children, selectValues }) => {
                     </div>
                     <div className="px-5 flex flex-col items-start gap-3">
                       <div className="flex items-center gap-2">
-                        <Checkbox color="violet" id="email" />
+                        <Checkbox color="dark" id="email" />
                         <label htmlFor="email" className="text-[13px]">
                           Email Verified
                         </label>
@@ -125,6 +125,11 @@ const Table = ({ children, selectValues }) => {
                               }
                               rightSectionWidth={30}
                               styles={{
+                                input: {
+                                  "&:focus-within": {
+                                    borderColor: "#000",
+                                  },
+                                },
                                 rightSection: { pointerEvents: "none" },
 
                                 label: {
@@ -137,8 +142,8 @@ const Table = ({ children, selectValues }) => {
                                   margin: "2px 0",
                                   "&[data-selected]": {
                                     "&, &:hover": {
-                                      backgroundColor: "#E5E9F2",
-                                      color: "#566A92",
+                                      backgroundColor: "#000",
+                                      color: "#fff",
                                     },
                                   },
                                 },
@@ -155,6 +160,11 @@ const Table = ({ children, selectValues }) => {
                               }
                               rightSectionWidth={30}
                               styles={{
+                                input: {
+                                  "&:focus-within": {
+                                    borderColor: "#000",
+                                  },
+                                },
                                 rightSection: { pointerEvents: "none" },
                                 label: {
                                   fontSize: "11px",
@@ -166,8 +176,8 @@ const Table = ({ children, selectValues }) => {
                                   margin: "2px 0",
                                   "&[data-selected]": {
                                     "&, &:hover": {
-                                      backgroundColor: "#E5E9F2",
-                                      color: "#566A92",
+                                      backgroundColor: "#000",
+                                      color: "#fff",
                                     },
                                   },
                                 },
@@ -187,10 +197,10 @@ const Table = ({ children, selectValues }) => {
                       </button>
                     </div>
                     <div className="flex justify-between items-center border-t pt-3 px-5">
-                      <h1 className="text-[13px] text-[#7f8dff] cursor-pointer">
+                      <h1 className="text-[13px] text-[#000] cursor-pointer">
                         Reset Filter
                       </h1>
-                      <h1 className="text-[13px] text-[#7f8dff] cursor-pointer">
+                      <h1 className="text-[13px] text-[#000] cursor-pointer">
                         Save Filter
                       </h1>
                     </div>
@@ -263,7 +273,7 @@ const Table = ({ children, selectValues }) => {
                     </div>
                     <div className="px-5 flex flex-col items-start gap-3">
                       <div className="flex items-center gap-2">
-                        <Checkbox color="violet" id="email" />
+                        <Checkbox color="dark" id="email" />
                         <label htmlFor="email" className="text-[13px]">
                           Email Verified
                         </label>
@@ -279,6 +289,11 @@ const Table = ({ children, selectValues }) => {
                               }
                               rightSectionWidth={30}
                               styles={{
+                                input: {
+                                  "&:focus-within": {
+                                    borderColor: "#000",
+                                  },
+                                },
                                 rightSection: { pointerEvents: "none" },
 
                                 label: {
@@ -291,8 +306,8 @@ const Table = ({ children, selectValues }) => {
                                   margin: "2px 0",
                                   "&[data-selected]": {
                                     "&, &:hover": {
-                                      backgroundColor: "#E5E9F2",
-                                      color: "#566A92",
+                                      backgroundColor: "#000",
+                                      color: "#fff",
                                     },
                                   },
                                 },
@@ -309,6 +324,11 @@ const Table = ({ children, selectValues }) => {
                               }
                               rightSectionWidth={30}
                               styles={{
+                                input: {
+                                  "&:focus-within": {
+                                    borderColor: "#000",
+                                  },
+                                },
                                 rightSection: { pointerEvents: "none" },
                                 label: {
                                   fontSize: "11px",
@@ -320,8 +340,8 @@ const Table = ({ children, selectValues }) => {
                                   margin: "2px 0",
                                   "&[data-selected]": {
                                     "&, &:hover": {
-                                      backgroundColor: "#E5E9F2",
-                                      color: "#566A92",
+                                      backgroundColor: "#000",
+                                      color: "#fff",
                                     },
                                   },
                                 },
@@ -341,10 +361,10 @@ const Table = ({ children, selectValues }) => {
                       </button>
                     </div>
                     <div className="flex justify-between items-center border-t pt-3 px-5">
-                      <h1 className="text-[13px] text-[#7f8dff] cursor-pointer">
+                      <h1 className="text-[13px] text-[#000] cursor-pointer">
                         Reset Filter
                       </h1>
-                      <h1 className="text-[13px] text-[#7f8dff] cursor-pointer">
+                      <h1 className="text-[13px] text-[#000] cursor-pointer">
                         Save Filter
                       </h1>
                     </div>
@@ -395,12 +415,12 @@ const Table = ({ children, selectValues }) => {
           styles={() => ({
             control: {
               "&[data-active]": {
-                backgroundColor: "#ebeef2",
-                color: "#6576ff",
+                backgroundColor: "#000",
+                color: "white",
               },
               "&[data-active]:not([data-disabled])": {
                 ":hover": {
-                  backgroundColor: "#ebeef2",
+                  backgroundColor: "#898989",
                 },
               },
             },
@@ -415,10 +435,10 @@ const Table = ({ children, selectValues }) => {
             rightSectionWidth={30}
             styles={{
               rightSection: { pointerEvents: "none" },
-              root: {
+              input: {
                 ":focus-within": {
-                  borderColor: "#6576ff",
-                  boxShadow: "0 0 0 3px rgba(101,118,255,.1)",
+                  borderColor: "black",
+                  boxShadow: "0 0 3px 2px rgba(0,0,0,.1)",
                 },
               },
 
@@ -426,9 +446,9 @@ const Table = ({ children, selectValues }) => {
                 margin: "2px 0",
                 "&[data-selected]": {
                   "&, &:hover": {
-                    backgroundColor: "#E5E9F2",
+                    backgroundColor: "#000",
 
-                    color: "#566A92",
+                    color: "#fff",
                   },
                 },
               },
