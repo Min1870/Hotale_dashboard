@@ -33,7 +33,7 @@ const Security = () => {
             <ul className=" py-[16px] p-[24px]">
               <NavLink
                 to="/setting/general"
-                className="text-[#526484] transition duration-200 hover:text-[#6576ff] flex items-center justify-between"
+                className="text-[#526484] transition duration-200 hover:text-[#121111] flex items-center justify-between"
               >
                 <div className=" flex items-center gap-3">
                   <MdAdminPanelSettings size={25} />
@@ -47,7 +47,7 @@ const Security = () => {
             <ul className=" py-[16px] p-[24px]">
               <NavLink
                 to="/setting/email"
-                className="text-[#526484] transition duration-200 hover:text-[#6576ff] flex items-center justify-between"
+                className="text-[#526484] transition duration-200 hover:text-[#121111] flex items-center justify-between"
               >
                 <div className=" flex items-center gap-3">
                   <IoMdLock size={25} />
@@ -61,7 +61,7 @@ const Security = () => {
             <ul className=" py-[16px] p-[24px]">
               <NavLink
                 to="/setting/security"
-                className=" text-[#526484] transition duration-200 hover:text-[#6576ff] flex items-center justify-between"
+                className=" text-[#526484] transition duration-200 hover:text-[#121111] flex items-center justify-between"
               >
                 <div className=" flex items-center gap-3">
                   <RiShieldStarFill size={25} />
@@ -75,7 +75,7 @@ const Security = () => {
             <ul className=" py-[16px] p-[24px]">
               <NavLink
                 to="/setting/activity"
-                className=" text-[#526484] transition duration-200 hover:text-[#6576ff] flex items-center justify-between"
+                className=" text-[#526484] transition duration-200 hover:text-[#121111] flex items-center justify-between"
               >
                 <div className=" flex items-center gap-3">
                   <FiActivity size={25} />
@@ -125,6 +125,7 @@ const Security = () => {
             <div className="">
               <Switch
                 checked={checked}
+                color="gray"
                 onChange={(event) => setChecked(event.currentTarget.checked)}
                 size="md"
               />
@@ -147,7 +148,7 @@ const Security = () => {
                 Last changed:{" "}
                 <span className=" text-[#526484] text-[12px]">Oct 2, 2019</span>
               </p>
-              <button className=" bg-[#6576ff] py-[7px] px-[18px] rounded-[5px] text-[13px] text-white font-nunito font-bold transition-all duration-100 hover:bg-[#5664d9]">
+              <button className=" bg-[#121111] py-[7px] px-[18px] rounded-[5px] text-[13px] text-white font-nunito font-bold transition-all duration-100 hover:bg-[#2e2e2e]">
                 Change Password
               </button>
             </div>
@@ -175,7 +176,7 @@ const Security = () => {
               </p>
             </div>
             <div className=" flex items-center">
-              <button className=" bg-[#6576ff] py-[7px] px-[18px] rounded-[5px] text-[13px] text-white font-nunito font-bold transition-all duration-100 hover:bg-[#5664d9]">
+              <button className=" bg-[#121111] py-[7px] px-[18px] rounded-[5px] text-[13px] text-white font-nunito font-bold transition-all duration-100 hover:bg-[#2e2e2e]">
                 Disable
               </button>
             </div>
@@ -194,7 +195,7 @@ const Security = () => {
               </p>
             </div>
             <div className=" flex items-center">
-              <button className=" bg-[#6576ff] py-[7px] px-[18px] rounded-[5px] text-[13px] text-white font-nunito font-bold transition-all duration-100 hover:bg-[#5664d9]">
+              <button className=" bg-[#121111] py-[7px] px-[18px] rounded-[5px] text-[13px] text-white font-nunito font-bold transition-all duration-100 hover:bg-[#2e2e2e]">
                 Update
               </button>
             </div>
@@ -220,7 +221,7 @@ const Security = () => {
               </p>
             </div>
             <div className=" flex items-center">
-              <button className=" bg-[#6576ff] py-[7px] px-[18px] rounded-[5px] text-[13px] text-white font-nunito font-bold transition-all duration-100 hover:bg-[#5664d9]">
+              <button className=" bg-[#121111] py-[7px] px-[18px] rounded-[5px] text-[13px] text-white font-nunito font-bold transition-all duration-100 hover:bg-[#2e2e2e]">
                 Disable
               </button>
             </div>

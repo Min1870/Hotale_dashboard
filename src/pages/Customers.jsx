@@ -245,7 +245,7 @@ const Customers = () => {
                     />
                   </p>
                   <div className="items-center gap-4 hidden sm:flex">
-                    <button className="py-[7px] px-[18px] bg-[#ffffff] border transition-all duration-500 border-[#dbdfea] rounded flex items-center hover:text-white hover:bg-[#526484]">
+                    <button className="py-[7px] px-[18px] bg-[#ffffff] border transition-all duration-500 border-[#dbdfea] rounded flex items-center hover:text-white hover:bg-black">
                       <FiDownloadCloud className="" size={18} />
                       <span className="font-bold text-[13px] font-nunito tracking-[0.32px]  pl-[8px] ml-[4px]">
                         Export
@@ -258,7 +258,7 @@ const Customers = () => {
                       width={180}
                     >
                       <Menu.Target>
-                        <button className="text-lg p-2 rounded text-white bg-[#6576ff] hover:bg-[#5664d9] hover:border-[#6576ff] active:bg-[#515ecc]">
+                        <button className="text-lg p-2 rounded text-white bg-black hover:bg-black/80 hover:border-black/80 active:bg-black/70">
                           <HiOutlinePlus />
                         </button>
                       </Menu.Target>
