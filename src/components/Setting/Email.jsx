@@ -121,7 +121,15 @@ const Email = () => {
               </span>
             </div>
             <div className=" flex-grow mt-4">
-              <TextInput defaultValue={"info@softnio.com"} />
+              <TextInput
+              styles={{
+                input: {
+                  ":focus-within": {
+                    borderColor: "#000",
+                  },
+                },
+              }}
+              defaultValue={"info@softnio.com"} />
             </div>
           </div>
           <div className="grid grid-cols-1 xl:grid-cols-2">
@@ -137,7 +145,15 @@ const Email = () => {
               </span>
             </div>
             <div className=" flex-grow mt-4">
-              <TextInput defaultValue={"Nio35@**"} />
+              <TextInput
+              styles={{
+                input: {
+                  ":focus-within": {
+                    borderColor: "#000",
+                  },
+                },
+              }}
+              defaultValue={"Nio35@**"} />
             </div>
           </div>
           <div className="grid grid-cols-1 xl:grid-cols-2">
@@ -153,7 +169,15 @@ const Email = () => {
               </span>
             </div>
             <div className=" flex-grow mt-4">
-              <TextInput defaultValue={"https://www.softnio.com"} />
+              <TextInput
+              styles={{
+                input: {
+                  ":focus-within": {
+                    borderColor: "#000",
+                  },
+                },
+              }}
+              defaultValue={"https://www.softnio.com"} />
             </div>
           </div>
           <div className="grid grid-cols-1 xl:grid-cols-2">
@@ -169,7 +193,15 @@ const Email = () => {
               </span>
             </div>
             <div className=" flex-grow mt-4">
-              <TextInput defaultValue={"921"} />
+              <TextInput
+              styles={{
+                input: {
+                  ":focus-within": {
+                    borderColor: "#000",
+                  },
+                },
+              }}
+              defaultValue={"921"} />
             </div>
           </div>
           <div className="grid grid-cols-1 xl:grid-cols-2">
@@ -185,7 +217,15 @@ const Email = () => {
               </span>
             </div>
             <div className=" flex-grow mt-4">
-              <TextInput defaultValue={"ITS"} />
+              <TextInput
+              styles={{
+                input: {
+                  ":focus-within": {
+                    borderColor: "#000",
+                  },
+                },
+              }}
+              defaultValue={"ITS"} />
             </div>
           </div>
           <div className="pt-2 grid grid-cols-1">
