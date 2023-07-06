@@ -4,7 +4,7 @@ import { Checkbox, Select } from "@mantine/core";
 import { IoIosArrowDown } from "react-icons/io";
 import { HiOutlinePlus } from "react-icons/hi";
 import { FiDownloadCloud } from "react-icons/fi";
-import { BsThreeDots, BsTrash } from "react-icons/bs";
+import { BsFillCloudUploadFill, BsThreeDots, BsTrash } from "react-icons/bs";
 import { Table as MantineTable } from "@mantine/core";
 
 import { useDisclosure } from "@mantine/hooks";
@@ -229,7 +229,7 @@ const Room = () => {
                 </label>
                 <input
                   placeholder="Room No"
-                  className=" w-full text-[0.8rem] px-[16px] py-[7px] rounded-[4px]  focus:border-[#6576ff] focus:ring-2 focus:ring-gray-200 outline-none border border-gray-300 mt-[.5rem]"
+                  className=" w-full text-[0.8rem] px-[16px] py-[7px] rounded-[4px]  focus:border-black focus:ring-2 focus:ring-gray-200 outline-none border border-gray-300 mt-[.5rem]"
                   type="text"
                   id="room_no"
                   name="room_no"
@@ -243,7 +243,7 @@ const Room = () => {
                   Room Type
                 </label>
                 <Select
-                  className=" w-full text-[0.8rem] focus:border-gray-500 focus:ring-2 focus:ring-gray-200  mt-[.5rem]"
+                  className=" w-full text-[0.8rem focus:ring-2 focus:ring-gray-200  mt-[.5rem]"
                   placeholder="Room Type"
                   rightSection={<IoIosArrowDown size="1rem" />}
                   rightSectionWidth={30}
@@ -257,19 +257,29 @@ const Room = () => {
                   name="room_type"
                   value={roomType}
                   onChange={setRoomType}
-
                   styles={(theme) => ({
+                    input: {
+                      ":focus-within": {
+                        borderColor: "black",
+                        boxShadow: "0 0 3px 2px rgba(0,0,0,.1)",
+                      },
+                    },
                     item: {
                       // applies styles to selected item
-                      '&[data-selected]': {
-                        '&, &:hover': {
+                      "&[data-selected]": {
+                        "&, &:hover": {
                           backgroundColor:
-                            theme.colorScheme === 'dark' ? theme.colors.dark[1] : theme.colors.dark[9],
-                          color: theme.colorScheme === 'dark' ? theme.white : theme.colors.gray[0],
+                            theme.colorScheme === "dark"
+                              ? theme.colors.dark[1]
+                              : theme.colors.dark[9],
+                          color:
+                            theme.colorScheme === "dark"
+                              ? theme.white
+                              : theme.colors.gray[0],
                         },
                       },
                     },
-                    rightSection: { pointerEvents: "none"},
+                    rightSection: { pointerEvents: "none" },
                   })}
                 />
               </div>
@@ -284,16 +294,27 @@ const Room = () => {
                   rightSection={<IoIosArrowDown size="1rem" />}
                   rightSectionWidth={30}
                   styles={(theme) => ({
+                    input: {
+                      ":focus-within": {
+                        borderColor: "black",
+                        boxShadow: "0 0 3px 2px rgba(0,0,0,.1)",
+                      },
+                    },
                     item: {
-                      '&[data-selected]': {
-                        '&, &:hover': {
+                      "&[data-selected]": {
+                        "&, &:hover": {
                           backgroundColor:
-                            theme.colorScheme === 'dark' ? theme.colors.dark[1] : theme.colors.dark[9],
-                          color: theme.colorScheme === 'dark' ? theme.white : theme.colors.gray[0],
+                            theme.colorScheme === "dark"
+                              ? theme.colors.dark[1]
+                              : theme.colors.dark[9],
+                          color:
+                            theme.colorScheme === "dark"
+                              ? theme.white
+                              : theme.colors.gray[0],
                         },
                       },
                     },
-                    rightSection: { pointerEvents: "none"},
+                    rightSection: { pointerEvents: "none" },
                   })}
                   data={[
                     { value: "AC", label: "AC" },
@@ -315,7 +336,7 @@ const Room = () => {
                 </label>
                 <input
                   placeholder="Bed Capacity"
-                  className=" w-full text-[0.8rem] px-[16px] py-[7px] rounded-[4px]  focus:border-[#6576ff] focus:ring-2 focus:ring-gray-200 outline-none border border-gray-300 mt-[.5rem]"
+                  className=" w-full text-[0.8rem] px-[16px] py-[7px] rounded-[4px]  focus:border-black focus:ring-2 focus:ring-gray-200 outline-none border border-gray-300 mt-[.5rem]"
                   type="text"
                   id="bed_capacity"
                   name="bed_capacity"
@@ -334,16 +355,27 @@ const Room = () => {
                   rightSection={<IoIosArrowDown size="1rem" />}
                   rightSectionWidth={30}
                   styles={(theme) => ({
+                    input: {
+                      ":focus-within": {
+                        borderColor: "black",
+                        boxShadow: "0 0 3px 2px rgba(0,0,0,.1)",
+                      },
+                    },
                     item: {
-                      '&[data-selected]': {
-                        '&, &:hover': {
+                      "&[data-selected]": {
+                        "&, &:hover": {
                           backgroundColor:
-                            theme.colorScheme === 'dark' ? theme.colors.dark[1] : theme.colors.dark[9],
-                          color: theme.colorScheme === 'dark' ? theme.white : theme.colors.gray[0],
+                            theme.colorScheme === "dark"
+                              ? theme.colors.dark[1]
+                              : theme.colors.dark[9],
+                          color:
+                            theme.colorScheme === "dark"
+                              ? theme.white
+                              : theme.colors.gray[0],
                         },
                       },
                     },
-                    rightSection: { pointerEvents: "none"},
+                    rightSection: { pointerEvents: "none" },
                   })}
                   data={[
                     { value: "None", label: "None" },
@@ -359,13 +391,13 @@ const Room = () => {
                 />
               </div>
 
-              <div className="mb-[28px me-5">
+              <div className="mb-[28px] me-5">
                 <label htmlFor="rent" className="text-[.875rem] font-[500]">
                   Rent
                 </label>
                 <input
                   placeholder="Rent"
-                  className=" w-full text-[0.8rem] px-[16px] py-[7px] rounded-[4px]  focus:border-[#6576ff] focus:ring-2 focus:ring-gray-200 outline-none border border-gray-300 mt-[.5rem]"
+                  className=" w-full text-[0.8rem] px-[16px] py-[7px] rounded-[4px]  focus:border-black focus:ring-2 focus:ring-gray-200 outline-none border border-gray-300 mt-[.5rem]"
                   type="text"
                   id="rent"
                   name="rent"
@@ -384,16 +416,27 @@ const Room = () => {
                   rightSection={<IoIosArrowDown size="1rem" />}
                   rightSectionWidth={30}
                   styles={(theme) => ({
+                    input: {
+                      ":focus-within": {
+                        borderColor: "black",
+                        boxShadow: "0 0 3px 2px rgba(0,0,0,.1)",
+                      },
+                    },
                     item: {
-                      '&[data-selected]': {
-                        '&, &:hover': {
+                      "&[data-selected]": {
+                        "&, &:hover": {
                           backgroundColor:
-                            theme.colorScheme === 'dark' ? theme.colors.dark[1] : theme.colors.dark[9],
-                          color: theme.colorScheme === 'dark' ? theme.white : theme.colors.gray[0],
+                            theme.colorScheme === "dark"
+                              ? theme.colors.dark[1]
+                              : theme.colors.dark[9],
+                          color:
+                            theme.colorScheme === "dark"
+                              ? theme.white
+                              : theme.colors.gray[0],
                         },
                       },
                     },
-                    rightSection: { pointerEvents: "none"},
+                    rightSection: { pointerEvents: "none" },
                   })}
                   data={[
                     { value: "Open", label: "Open" },
@@ -405,6 +448,29 @@ const Room = () => {
                   value={status}
                   onChange={setStatus}
                 />
+              </div>
+
+              <div className="mb-[28px] me-5">
+                <label
+                  htmlFor="images"
+                  className="text-[.875rem] font-[500]"
+                >
+                  Images
+                </label>
+                <div className="relative w-full text-[0.8rem] px-[16px] py-[7px] rounded-[4px]  focus:border-black focus:ring-2 focus:ring-gray-200 outline-none border border-gray-300 mt-[.5rem]">
+                  <span className="flex items-center gap-2"><BsFillCloudUploadFill  className="text-xl"/>Upload from files</span>
+                  
+                  <input
+                  multiple
+                  placeholder="Upload from files"
+                  className="absolute top-1 opacity-0 w-full rounded-[4px]"
+                  type="file"
+                  id="images"
+                  name="images"
+                 
+                />
+                </div>
+                
               </div>
             </div>
 
