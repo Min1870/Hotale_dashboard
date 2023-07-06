@@ -14,7 +14,7 @@ const NewCustomerTable = () => {
           <h4 className=" font-nunito font-[700] text-[#525684] text-[16px]">
             New Customer
           </h4>
-          <p className=" text-[14px] text-[#5664d9] font-[500]">View All</p>
+          <p className=" text-[14px] text-gray-700 font-[500]">View All</p>
         </div>
         <div className=" flex justify-between items-center px-6 py-4 border-b">
           <div className=" flex items-center gap-4">
@@ -204,7 +204,7 @@ const NewCustomerTable = () => {
           </h4>
           <div className=" flex items-center gap-4">
             <p className=" text-[14px] text-[#8094ae] cursor-pointer">Cancel</p>
-            <p className=" text-[14px] text-gray-500 border-b-2 border-[#5664d9] font-[500] cursor-pointer">
+            <p className=" text-[14px] text-gray-500 border-b-2 border-gray-500 font-[500] cursor-pointer">
               All
             </p>
           </div>

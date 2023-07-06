@@ -13,7 +13,7 @@ const Card = ({
   decRate,
 }) => {
   return (
-    <div className="col-span-6 lg:col-span-1 bg-white border border-[#dbdfea] rounded p-5 text-[#364a63] shadow-sm">
+    <div className=" col-span-6 lg:col-span-1 bg-white hover:bg-gray-900 hover:text-gray-200 transition-all duration-700 border border-[#dbdfea] rounded p-5 text-[#364a63] shadow-sm">
       <div className=" flex flex-col gap-1">
         <div className="flex justify-between items-center ">
           <h1 className="font-nunito text-[17px] font-bold ">{title}</h1>
@@ -28,16 +28,16 @@ const Card = ({
         <div className=" flex justify-between items-end">
           <div className="flex lg:items-center lg:gap-5 flex-col gap-3 md:flex-row">
             <div>
-              <h1 className="text-[11px] text-[#8094ae] tracking-widest">
+              <h1 className="text-[11px] tracking-widest">
                 {month}
               </h1>
-              <p className=" text-[15px] text-[#364a63]">{monthCount}</p>
+              <p className=" text-[15px]">{monthCount}</p>
             </div>
             <div>
-              <h1 className="text-[11px] text-[#8094ae] tracking-widest">
+              <h1 className="text-[11px] tracking-widest">
                 {week}
               </h1>
-              <p className=" text-[15px] text-[#364a63]">{weekCount}</p>
+              <p className=" text-[15px]">{weekCount}</p>
             </div>
           </div>
           <div className=" w-[90px] h-[65px] mt-2">
