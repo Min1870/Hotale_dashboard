@@ -283,8 +283,8 @@ const Header = () => {
         }}
         className=" "
       >
-        <div className=" font-nunito">
-          <div className=" sticky top-0 z-50 bg-[#101924] flex items-center gap-5 py-4 px-6 border-b border-gray-700">
+        <div className=" font-nunito bg-black text-gray-400 min-h-screen">
+          <div className=" sticky top-0 z-50 flex items-center gap-5 py-4 px-6 border-b border-gray-700">
             <div
               onClick={close}
               className=" relative nav-arrow text-3xl cursor-pointer text-[#9faec2]"
@@ -299,12 +299,11 @@ const Header = () => {
             </div>
           </div>
 
-          <ScrollArea h={500} scrollbarSize={8} scrollHideDelay={500}>
             <div>
               <ul className=" drawer-body py-8 px-6 space-y-5">
                 <li className="">
                   <NavLink to={`/`} className="side-menu" onClick={close}>
-                    <div className="flex items-center gap-3 text-2xl  hover:text-[#7f8dff]">
+                    <div className="flex items-center gap-3 text-2xl  hover:text-white">
                       <MdSpaceDashboard />
                       <span className="text-[15px] font-[700]">Dashboard</span>
                     </div>
@@ -315,7 +314,7 @@ const Header = () => {
                   <Accordion className="">
                     <Accordion.Item value="photos">
                       <Accordion.Control>
-                        <div className=" flex items-center gap-3 text-2xl text-[#6e82a5]  hover:text-[#7f8dff]">
+                        <div className=" flex items-center gap-3 text-2xl text-gray-400  hover:text-white">
                           <AiFillCalendar />
                           <span className="text-[15px] font-[700]">
                             Bookings
@@ -328,7 +327,7 @@ const Header = () => {
                             <NavLink
                               onClick={close}
                               to={`/booking`}
-                              className="side-menu hover:text-[#7f8dff] text-[14px]"
+                              className="side-menu text-gray-400 hover:text-white text-[14px]"
                             >
                               All Bookings
                             </NavLink>
@@ -337,7 +336,7 @@ const Header = () => {
                             <NavLink
                               onClick={close}
                               to={`/booking-add`}
-                              className="side-menu hover:text-[#7f8dff] text-[14px]"
+                              className="side-menu text-gray-400 hover:text-white text-[14px]"
                             >
                               Add Booking
                             </NavLink>
@@ -346,7 +345,7 @@ const Header = () => {
                             <NavLink
                               onClick={close}
                               to={`/booking-edit`}
-                              className="side-menu hover:text-[#7f8dff] text-[14px]"
+                              className="side-menu text-gray-400 hover:text-white text-[14px]"
                             >
                               Edit Booking
                             </NavLink>
@@ -359,7 +358,7 @@ const Header = () => {
 
                 <li>
                   <NavLink to={`/rooms`} className="side-menu" onClick={close}>
-                    <div className=" flex items-center gap-3 text-2xl  hover:text-[#7f8dff]">
+                    <div className=" flex items-center gap-3 text-2xl  hover:text-white">
                       <BsHouseDoorFill />
                       <span className="text-[15px] font-[700]">Room</span>
                     </div>
@@ -372,7 +371,7 @@ const Header = () => {
                     className="side-menu"
                     onClick={close}
                   >
-                    <div className=" flex items-center gap-3 text-2xl  hover:text-[#7f8dff]">
+                    <div className=" flex items-center gap-3 text-2xl  hover:text-white">
                       <FaCoins />
                       <span className="text-[15px] font-[700]">Customers</span>
                     </div>
@@ -385,7 +384,7 @@ const Header = () => {
                     className="side-menu"
                     onClick={close}
                   >
-                    <div className=" flex items-center gap-3 text-2xl  hover:text-[#7f8dff]">
+                    <div className=" flex items-center gap-3 text-2xl  hover:text-white">
                       <HiUsers />
                       <span className="text-[15px] font-[700]">Payment</span>
                     </div>
@@ -398,7 +397,7 @@ const Header = () => {
                     className="side-menu"
                     onClick={close}
                   >
-                    <div className=" flex items-center gap-3 text-2xl  hover:text-[#7f8dff]">
+                    <div className=" flex items-center gap-3 text-2xl  hover:text-white">
                       <AiFillSetting />
                       <span className="text-[15px] font-[700]">Setting</span>
                     </div>
@@ -406,7 +405,6 @@ const Header = () => {
                 </li>
               </ul>
             </div>
-          </ScrollArea>
         </div>
       </Drawer>
     </>
