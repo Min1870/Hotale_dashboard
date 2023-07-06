@@ -104,18 +104,18 @@ const Dashboard = () => {
               </button>
             </Popover.Target>
             <Popover.Dropdown className="px-0">
-              <div className="select-none hover:text-[#6576ff] hover:bg-gray-100 px-[20px] py-[10px] text-[12px] font-[500] text-[#526484] transition-all duration-[0.4s]">
+              <div className="select-none hover:text-gray-700 hover:bg-gray-100 px-[20px] py-[10px] text-[12px] font-[500] text-[#526484] transition-all duration-[0.4s]">
                 Last 30 Days
               </div>
-              <div className="select-none hover:text-[#6576ff] hover:bg-gray-100 px-[20px] py-[10px] text-[12px] font-[500] text-[#526484] transition-all duration-[0.4s]">
+              <div className="select-none hover:text-gray-700 hover:bg-gray-100 px-[20px] py-[10px] text-[12px] font-[500] text-[#526484] transition-all duration-[0.4s]">
                 Last 6 Months
               </div>
-              <div className="select-none hover:text-[#6576ff] hover:bg-gray-100 px-[20px] py-[10px] text-[12px] font-[500] text-[#526484] transition-all duration-[0.4s]">
+              <div className="select-none hover:text-gray-700 hover:bg-gray-100 px-[20px] py-[10px] text-[12px] font-[500] text-[#526484] transition-all duration-[0.4s]">
                 Last 1 Years
               </div>
             </Popover.Dropdown>
           </Popover>
-          <button className="flex items-center gap-3 px-[18px] py-[7px] text-[13px] font-nunito font-semibold rounded text-white bg-[#6576ff] hover:bg-[#5664d9] hover:border-[#6576ff] active:bg-[#515ecc]">
+          <button className="flex items-center gap-3 px-[18px] py-[7px] text-[13px] font-nunito font-semibold rounded text-white bg-black hover:bg-gray-700">
             <TbReportAnalytics className="text-lg" />
             Reports
           </button>
