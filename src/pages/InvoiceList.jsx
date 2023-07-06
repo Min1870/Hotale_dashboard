@@ -172,7 +172,7 @@ const InvoiceList = () => {
                 </label>
                 <input
                   placeholder="Payment ID"
-                  className=" w-full text-[0.8rem] px-[16px] py-[7px] rounded-[4px]  focus:border-[#6576ff] focus:ring-2 focus:ring-gray-200 outline-none border border-gray-300 mt-[.5rem]"
+                  className=" w-full text-[0.8rem] px-[16px] py-[7px] rounded-[4px]  focus:border-black focus:ring-2 focus:ring-gray-200 outline-none border border-gray-300 mt-[.5rem]"
                   type="text"
                   id="PaymentID"
                   name="PaymentID"
@@ -190,7 +190,7 @@ const InvoiceList = () => {
                 </label>
                 <input
                   placeholder="Amount"
-                  className=" w-full text-[0.8rem] px-[16px] py-[7px] rounded-[4px]  focus:border-[#6576ff] focus:ring-2 focus:ring-gray-200 outline-none border border-gray-300 mt-[.5rem]"
+                  className=" w-full text-[0.8rem] px-[16px] py-[7px] rounded-[4px]  focus:border-black focus:ring-2 focus:ring-gray-200 outline-none border border-gray-300 mt-[.5rem]"
                   type="text"
                   id="amount"
                   name="amount"
@@ -208,7 +208,24 @@ const InvoiceList = () => {
                   placeholder="Status"
                   rightSection={<IoIosArrowDown size="1rem" />}
                   rightSectionWidth={30}
-                  styles={{ rightSection: { pointerEvents: "none" } }}
+                  styles={(theme) => ({
+                    input: {
+                      ":focus-within": {
+                        borderColor: "black",
+                        boxShadow: "0 0 3px 2px rgba(0,0,0,.1)",
+                      },
+                    },
+                    item: {
+                      '&[data-selected]': {
+                        '&, &:hover': {
+                          backgroundColor:
+                            theme.colorScheme === 'dark' ? theme.colors.dark[1] : theme.colors.dark[9],
+                          color: theme.colorScheme === 'dark' ? theme.white : theme.colors.gray[0],
+                        },
+                      },
+                    },
+                    rightSection: { pointerEvents: "none"},
+                  })}
                   data={[
                     { value: "Complete", label: "Complete" },
                     { value: "Pending", label: "Pending" },
