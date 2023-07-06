@@ -121,7 +121,16 @@ const General = () => {
               </span>
             </div>
             <div className=" flex-grow mt-4">
-              <TextInput defaultValue={"Dashlite HMS"} />
+              <TextInput
+                styles={{
+                  input: {
+                    ":focus-within": {
+                      borderColor: "#000",
+                    },
+                  },
+                }}
+                defaultValue={"Hotale"}
+              />
             </div>
           </div>
           <div className="grid grid-cols-1 xl:grid-cols-2">
@@ -159,6 +168,13 @@ const General = () => {
             </div>
             <div className=" flex-grow mt-4">
               <TextInput
+                styles={{
+                  input: {
+                    ":focus-within": {
+                      borderColor: "#000",
+                    },
+                  },
+                }}
                 defaultValue={"323  Hinkle Lake Road, Cambridge, Massachusetts"}
               />
             </div>
@@ -177,6 +193,13 @@ const General = () => {
             </div>
             <div className=" flex-grow mt-4">
               <TextInput
+                styles={{
+                  input: {
+                    ":focus-within": {
+                      borderColor: "#000",
+                    },
+                  },
+                }}
                 defaultValue={"© 2023, DashLite. All Rights Reserved"}
               />
             </div>
@@ -194,7 +217,16 @@ const General = () => {
               </span>
             </div>
             <div className=" flex-grow mt-4">
-              <TextInput defaultValue={"https://www.softnio.com"} />
+              <TextInput
+                styles={{
+                  input: {
+                    ":focus-within": {
+                      borderColor: "#000",
+                    },
+                  },
+                }}
+                defaultValue={"https://www.softnio.com"}
+              />
             </div>
           </div>
           <div className="grid grid-cols-1 xl:grid-cols-2">
@@ -210,7 +242,16 @@ const General = () => {
               </span>
             </div>
             <div className=" flex-grow mt-4">
-              <TextInput defaultValue={"https://www.facebook.com"} />
+              <TextInput
+                styles={{
+                  input: {
+                    ":focus-within": {
+                      borderColor: "#000",
+                    },
+                  },
+                }}
+                defaultValue={"https://www.facebook.com"}
+              />
             </div>
           </div>
           <div className="grid grid-cols-1 xl:grid-cols-2">
@@ -226,7 +267,16 @@ const General = () => {
               </span>
             </div>
             <div className=" flex-grow mt-4">
-              <TextInput defaultValue={"https://www.instagram.com"} />
+              <TextInput
+                styles={{
+                  input: {
+                    ":focus-within": {
+                      borderColor: "#000",
+                    },
+                  },
+                }}
+                defaultValue={"https://www.instagram.com"}
+              />
             </div>
           </div>
           <div className="grid grid-cols-1 xl:grid-cols-2">
@@ -242,7 +292,7 @@ const General = () => {
               </span>
             </div>
             <div className=" flex-grow mt-4">
-              <Switch label="Offlline" size="md" color="indigo" />
+              <Switch label="Offlline" size="md" color="dark" />
             </div>
           </div>
           <div className="pt-2 grid grid-cols-1">
