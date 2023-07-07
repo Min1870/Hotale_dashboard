@@ -13,13 +13,20 @@ import { HiOutlinePlus, HiPrinter } from "react-icons/hi";
 import { IoChevronDownOutline } from "react-icons/io5";
 import { useDisclosure } from "@mantine/hooks";
 import { Modal, Group, Button, Text } from "@mantine/core";
-import { IoIosArrowDown, IoIosArrowForward, IoIosCheckmark } from "react-icons/io";
+import {
+  IoIosArrowDown,
+  IoIosArrowForward,
+  IoIosCheckmark,
+} from "react-icons/io";
 import dayjs from "dayjs";
 
 const InvoiceList = () => {
-  
-  const time = new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
-  const fullDate = dayjs().format('DD MMMM YYYY').toString() + ", " + time;
+  const time = new Date().toLocaleString("en-US", {
+    hour: "numeric",
+    minute: "numeric",
+    hour12: true,
+  });
+  const fullDate = dayjs().format("DD MMMM YYYY").toString() + ", " + time;
 
   const [paymentID, setPaymentID] = useState("");
   const [amount, setAmount] = useState("");
@@ -29,7 +36,7 @@ const InvoiceList = () => {
   //for addInvoiceModal
   const [opened, { open, close }] = useDisclosure(false);
   const [searchShow, setSearchShow] = useState(false);
- 
+
   const [invoices, setInvoices] = useState([
     {
       paymentID: "746F5K2",
@@ -63,10 +70,10 @@ const InvoiceList = () => {
     },
   ]);
 
-  const InvoiceData = { paymentID,date, amount, status };
+  const InvoiceData = { paymentID, date, amount, status };
   const submitHandler = (e) => {
     e.preventDefault();
-    setDate(fullDate)
+    setDate(fullDate);
     setInvoices([...invoices, InvoiceData]);
   };
 
@@ -82,17 +89,26 @@ const InvoiceList = () => {
 
   const rows = invoices.map((el) => (
     <tr key={el.paymentID} className=" font-roboto text-[13px] text-[#8094ae]">
-      <td><span className="text-[#6576ff] font-[500]">#{el?.paymentID}</span>
-      <p className="table-cell md:hidden">{el?.date}</p></td>
+      <td>
+        <span className="text-[#6576ff] font-[500]">#{el?.paymentID}</span>
+        <p className="table-cell md:hidden">{el?.date}</p>
+      </td>
       <td className="hidden md:table-cell">{el?.date}</td>
       <td className="font-semibold text-gray-600">
-        <span>$ {el?.amount.length === 0 ? '00':el?.amount}.00</span>
-        <p className={`${
-          (el.status === "Pending" && "text-[#f4bd0e]") ||
-          (el.status === "Complete" && "text-[#1ee0ac]")
-        } font-[500] md:hidden table-cell`}><div className="flex gap-1 items-center">
-        <span className="text-[8px]"><TbCircleFilled /></span>{el.status}
-        </div></p>
+        <span>$ {el?.amount.length === 0 ? "00" : el?.amount}.00</span>
+        <p
+          className={`${
+            (el.status === "Pending" && "text-[#f4bd0e]") ||
+            (el.status === "Complete" && "text-[#1ee0ac]")
+          } font-[500] md:hidden table-cell`}
+        >
+          <div className="flex gap-1 items-center">
+            <span className="text-[8px]">
+              <TbCircleFilled />
+            </span>
+            {el.status}
+          </div>
+        </p>
       </td>
       <td
         className={`${
@@ -101,22 +117,28 @@ const InvoiceList = () => {
         } font-[500] hidden md:table-cell`}
       >
         <div className="flex gap-1 items-center text-[13px]">
-        <span className="text-[8px]"><TbCircleFilled /></span>{el.status}
+          <span className="text-[8px]">
+            <TbCircleFilled />
+          </span>
+          {el.status}
         </div>
-       
       </td>
       <td className="w-[100px] hidden md:table-cell">
-        <div >
+        <div>
           <div className="flex items-center gap-4">
-          <div className="p-1 rounded-sm text-black transition ease-in duration-150 hover:text-white hover:bg-black"><HiPrinter className="text-xl"/></div>
-          <button className="text-[13px] font-semibold py-1 px-3 rounded-sm transition ease-in duration-150 text-black bg-[#6577ff15]  hover:text-white hover:bg-black">View</button>
+            <div className="p-1 rounded-sm text-black transition ease-in duration-150 hover:text-white hover:bg-black">
+              <HiPrinter className="text-xl" />
+            </div>
+            <button className="text-[13px] font-semibold py-1 px-3 rounded-sm transition ease-in duration-150 text-black bg-[#6577ff15]  hover:text-white hover:bg-black">
+              View
+            </button>
+          </div>
         </div>
-        </div>
-        
       </td>
       <td className="table-cell md:hidden">
-      <div className="text-xl"><IoIosArrowForward /></div>
-        
+        <div className="text-xl">
+          <IoIosArrowForward />
+        </div>
       </td>
     </tr>
   ));
@@ -167,7 +189,10 @@ const InvoiceList = () => {
             <h1 className="text-[1.15rem] font-semibold mb-5">Add Invoice</h1>
             <div className="grid grid-cols-1 md:grid-cols-2">
               <div className="mb-[28px] me-5">
-                <label htmlFor="PaymentID" className="text-[.875rem] font-[500]">
+                <label
+                  htmlFor="PaymentID"
+                  className="text-[.875rem] font-[500]"
+                >
                   Payment ID
                 </label>
                 <input
@@ -182,11 +207,8 @@ const InvoiceList = () => {
               </div>
 
               <div className="mb-[28px] me-5">
-                <label
-                  htmlFor="amount"
-                  className="text-[.875rem] font-[500]"
-                >
-                 Amount
+                <label htmlFor="amount" className="text-[.875rem] font-[500]">
+                  Amount
                 </label>
                 <input
                   placeholder="Amount"
@@ -216,15 +238,20 @@ const InvoiceList = () => {
                       },
                     },
                     item: {
-                      '&[data-selected]': {
-                        '&, &:hover': {
+                      "&[data-selected]": {
+                        "&, &:hover": {
                           backgroundColor:
-                            theme.colorScheme === 'dark' ? theme.colors.dark[1] : theme.colors.dark[9],
-                          color: theme.colorScheme === 'dark' ? theme.white : theme.colors.gray[0],
+                            theme.colorScheme === "dark"
+                              ? theme.colors.dark[1]
+                              : theme.colors.dark[9],
+                          color:
+                            theme.colorScheme === "dark"
+                              ? theme.white
+                              : theme.colors.gray[0],
                         },
                       },
                     },
-                    rightSection: { pointerEvents: "none"},
+                    rightSection: { pointerEvents: "none" },
                   })}
                   data={[
                     { value: "Complete", label: "Complete" },
@@ -276,78 +303,77 @@ const InvoiceList = () => {
           </div>
         </div> */}
 
-<div className=" p-5 border-b  relative">
-        <div
-          className={`w-full flex items-center gap-2 transition-all duration-300 py-2 ${
-            searchShow ? "flex" : "hidden"
-          }`}
-        >
-          <BsArrowLeft
-            className="text-xl"
-            onClick={() => setSearchShow(!searchShow)}
-          />
-          <input
-            type="text"
-            autoFocus
-            placeholder="Quick search by order id"
-            className="flex-1 outline-none pl-3 text-sm"
-          />
-          <FiSearch
-            onClick={() => setSearchShow(!searchShow)}
-            className="text-xl text-[#526484] cursor-pointer hover:text-[#7f8dff]"
-          />
-        </div>
-        <div
-          className={` justify-between items-center transition-all duration-300 ${
-            searchShow ? "hidden" : "flex"
-          }`}
-        >
-          <div>
-          <h1 className="text-xl font-[500]">All Invoices</h1>
-          </div>
-          <div className=" flex items-center gap-3 text-xl text-[#526484]">
-            <div
-              className="border-r border-[#A8B1C1] pr-5 h-8 flex items-center cursor-pointer"
+        <div className=" p-5 border-b  relative">
+          <div
+            className={`w-full flex items-center gap-2 transition-all duration-300 py-2 ${
+              searchShow ? "flex" : "hidden"
+            }`}
+          >
+            <BsArrowLeft
+              className="text-xl"
               onClick={() => setSearchShow(!searchShow)}
-            >
-              <FiSearch />
+            />
+            <input
+              type="text"
+              autoFocus
+              placeholder="Quick search by order id"
+              className="flex-1 outline-none pl-3 text-sm"
+            />
+            <FiSearch
+              onClick={() => setSearchShow(!searchShow)}
+              className="text-xl text-[#526484] cursor-pointer hover:text-[#7f8dff]"
+            />
+          </div>
+          <div
+            className={` justify-between items-center transition-all duration-300 ${
+              searchShow ? "hidden" : "flex"
+            }`}
+          >
+            <div>
+              <h1 className="text-xl font-[500]">All Invoices</h1>
             </div>
-            <div className=" flex gap-2">
-             
-              <Popover width={200} position="bottom-end" shadow="lg">
-                <Popover.Target>
-                  <div className="setting p-2 relative cursor-pointer">
-                    <TbSettings />
-                  </div>
-                </Popover.Target>
-                <Popover.Dropdown className="px-0">
-                  <div className="text-[#364a63] text-sm">
-                    <div className="border-b pb-3 mb-3">
-                      <h1 className="text-sm font-bold px-5">SHOW</h1>
-                      <ul className=" flex flex-col gap-2 mt-3 cursor-pointer">
-                        <li className="table-li flex justify-between items-center">
-                          10 <IoIosCheckmark className="text-xl" />
-                        </li>
-                        <li className="table-li">20</li>
-                        <li className="table-li">50</li>
-                      </ul>
+            <div className=" flex items-center gap-3 text-xl text-[#526484]">
+              <div
+                className="border-r border-[#A8B1C1] pr-5 h-8 flex items-center cursor-pointer"
+                onClick={() => setSearchShow(!searchShow)}
+              >
+                <FiSearch />
+              </div>
+              <div className=" flex gap-2">
+                <Popover width={200} position="bottom-end" shadow="lg">
+                  <Popover.Target>
+                    <div className="setting p-2 relative cursor-pointer">
+                      <TbSettings />
                     </div>
-                    <div className="">
-                      <h1 className="font-bold px-5">ORDER</h1>
-                      <ul className=" flex flex-col gap-2 mt-3 cursor-pointer">
-                        <li className="table-li flex justify-between items-center">
-                          DESC <IoIosCheckmark className="text-xl" />
-                        </li>
-                        <li className="table-li">ASC</li>
-                      </ul>
+                  </Popover.Target>
+                  <Popover.Dropdown className="px-0">
+                    <div className="text-[#364a63] text-sm">
+                      <div className="border-b pb-3 mb-3">
+                        <h1 className="text-sm font-bold px-5">SHOW</h1>
+                        <ul className=" flex flex-col gap-2 mt-3 cursor-pointer">
+                          <li className="table-li flex justify-between items-center">
+                            10 <IoIosCheckmark className="text-xl" />
+                          </li>
+                          <li className="table-li">20</li>
+                          <li className="table-li">50</li>
+                        </ul>
+                      </div>
+                      <div className="">
+                        <h1 className="font-bold px-5">ORDER</h1>
+                        <ul className=" flex flex-col gap-2 mt-3 cursor-pointer">
+                          <li className="table-li flex justify-between items-center">
+                            DESC <IoIosCheckmark className="text-xl" />
+                          </li>
+                          <li className="table-li">ASC</li>
+                        </ul>
+                      </div>
                     </div>
-                  </div>
-                </Popover.Dropdown>
-              </Popover>
+                  </Popover.Dropdown>
+                </Popover>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
         <MantineTable
           horizontalSpacing="lg"
@@ -359,57 +385,56 @@ const InvoiceList = () => {
           <tbody>{rows}</tbody>
         </MantineTable>
 
-        
-      <div className="p-5 flex justify-between items-center font-roboto border-t flex-col md:flex-row gap-4 md:gap-0">
-        <Pagination
-          total={10}
-          styles={() => ({
-            control: {
-              "&[data-active]": {
-                backgroundColor: "#ebeef2",
-                color: "#6576ff",
-              },
-              "&[data-active]:not([data-disabled])": {
-                ":hover": {
-                  backgroundColor: "#ebeef2",
+        <div className="p-5 flex justify-between items-center font-roboto border-t flex-col md:flex-row gap-4 md:gap-0">
+          <Pagination
+            total={10}
+            styles={() => ({
+              control: {
+                "&[data-active]": {
+                  backgroundColor: "#000",
+                  color: "white",
                 },
-              },
-            },
-          })}
-        />
-        <div className=" flex items-center gap-4 text-sm text-[#526484]">
-          <span>PAGE</span>
-          <Select
-            placeholder="1"
-            maxDropdownHeight={280}
-            rightSection={<IoChevronDownOutline size="1rem" />}
-            rightSectionWidth={30}
-            styles={{
-              rightSection: { pointerEvents: "none" },
-              root: {
-                ":focus-within": {
-                  borderColor: "#6576ff",
-                  boxShadow: "0 0 0 3px rgba(101,118,255,.1)",
-                },
-              },
-
-              item: {
-                margin: "2px 0",
-                "&[data-selected]": {
-                  "&, &:hover": {
-                    backgroundColor: "#E5E9F2",
-
-                    color: "#566A92",
+                "&[data-active]:not([data-disabled])": {
+                  ":hover": {
+                    backgroundColor: "#898989",
                   },
                 },
               },
-            }}
-            data={["1", "2", "3"]}
-            w={60}
+            })}
           />
-          <span>OF 102</span>
+          <div className=" flex items-center gap-4 text-sm text-[#526484]">
+            <span>PAGE</span>
+            <Select
+              placeholder="1"
+              maxDropdownHeight={280}
+              rightSection={<IoChevronDownOutline size="1rem" />}
+              rightSectionWidth={30}
+              styles={{
+                rightSection: { pointerEvents: "none" },
+                input: {
+                  ":focus-within": {
+                    borderColor: "black",
+                    boxShadow: "0 0 3px 2px rgba(0,0,0,.1)",
+                  },
+                },
+
+                item: {
+                  margin: "2px 0",
+                  "&[data-selected]": {
+                    "&, &:hover": {
+                      backgroundColor: "#000",
+
+                      color: "#fff",
+                    },
+                  },
+                },
+              }}
+              data={["1", "2", "3"]}
+              w={60}
+            />
+            <span>OF 102</span>
+          </div>
         </div>
-      </div>
       </div>
     </div>
   );
