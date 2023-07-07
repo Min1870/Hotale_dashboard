@@ -113,21 +113,51 @@ const Sidebar = () => {
                   </Accordion>
                 </li>
 
+
                 <li className="list-item">
-                  <NavLink
-                    to={`/rooms`}
-                    className="side-menu"
-                    onClick={() => {
-                      close();
-                    }}
-                  >
-                    <div className=" flex items-center gap-3 text-2xl  hover:text-white">
-                      <BsHouseDoorFill />
-                      <span className="list-text text-[15px] font-[700]">
-                        Room
-                      </span>
-                    </div>
-                  </NavLink>
+                  <Accordion className="">
+                    <Accordion.Item value="photos">
+                      <Accordion.Control>
+                        {/* <NavLink to={'/'} className="side-menu"> */}
+                        <div
+                          className={` side-menu flex items-center gap-3 text-2xl text-gray-400  hover:text-white`}
+                        >
+                          <BsHouseDoorFill />
+                          <span className=" list-text text-[15px] font-[700]">
+                            Room
+                          </span>
+                        </div>
+                        {/* </NavLink> */}
+                      </Accordion.Control>
+                      <Accordion.Panel>
+                        <ul className=" text-gray-400 booking-list space-y-3">
+                          
+                          <li>
+                            <NavLink
+                              onClick={() => {
+                                close();
+                              }}
+                              to={`/rooms`}
+                              className="side-menu hover:text-white text-[14px]"
+                            >
+                              <span className="">All Rooms</span>
+                            </NavLink>
+                          </li>
+                          <li>
+                            <NavLink
+                              onClick={() => {
+                                close();
+                              }}
+                              to={`/room-add`}
+                              className="side-menu hover:text-white text-[14px]"
+                            >
+                              <span className="">Add Room</span>
+                            </NavLink>
+                          </li>
+                        </ul>
+                      </Accordion.Panel>
+                    </Accordion.Item>
+                  </Accordion>
                 </li>
 
                 <li className="list-item">
@@ -147,6 +177,8 @@ const Sidebar = () => {
                   </NavLink>
                 </li>
 
+                
+
                 <li className="list-item">
                   <NavLink
                     to={`/invoice-list`}
@@ -162,6 +194,51 @@ const Sidebar = () => {
                       </span>
                     </div>
                   </NavLink>
+                </li>
+
+                <li className="list-item">
+                  <Accordion className="">
+                    <Accordion.Item value="photos">
+                      <Accordion.Control>
+                        {/* <NavLink to={'/'} className="side-menu"> */}
+                        <div
+                          className={` side-menu flex items-center gap-3 text-2xl text-gray-400  hover:text-white`}
+                        >
+                          <BsPencilSquare />
+                          <span className=" list-text text-[15px] font-[700]">
+                            Blog
+                          </span>
+                        </div>
+                        {/* </NavLink> */}
+                      </Accordion.Control>
+                      <Accordion.Panel>
+                        <ul className=" text-gray-400 booking-list space-y-3">
+                        <li>
+                            <NavLink
+                              onClick={() => {
+                                close();
+                              }}
+                              to={`/blogs`}
+                              className="side-menu hover:text-white text-[14px]"
+                            >
+                              <span className="">All Blogs</span>
+                            </NavLink>
+                          </li>
+                          <li>
+                            <NavLink
+                              onClick={() => {
+                                close();
+                              }}
+                              to={`/blog-add`}
+                              className="side-menu hover:text-white text-[14px]"
+                            >
+                              <span className="">Add Blog</span>
+                            </NavLink>
+                          </li>
+                        </ul>
+                      </Accordion.Panel>
+                    </Accordion.Item>
+                  </Accordion>
                 </li>
 
                 <li className="list-item">
