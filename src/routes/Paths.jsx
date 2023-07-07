@@ -15,6 +15,9 @@ import Activity from "../components/Setting/Activity";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
 import RouteGuard from "./RouteGuard";
+import AddRoom from "../pages/AddRoom";
+import AddBlog from "../pages/AddBlog";
+import Blogs from "../pages/Blogs";
 
 const Paths = () => {
   return (
@@ -34,6 +37,9 @@ const Paths = () => {
             <Route path="booking-add" element={<AddBooking />} />
             <Route path="booking-edit" element={<EditBooking />} />
             <Route path="rooms" element={<Room />} />
+            <Route path="room-add" element={<AddRoom />} />
+            <Route path="blogs" element={<Blogs />} />
+            <Route path="blog-add" element={<AddBlog />}/>
             <Route path="customers" element={<Customers />} />
             <Route path="invoice-list" element={<InvoiceList />} />
             <Route path="setting" element={<Setting />}>
