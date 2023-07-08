@@ -11,19 +11,21 @@ import { useDisclosure } from "@mantine/hooks";
 import { Modal, Group, Button, Popover, Text } from "@mantine/core";
 import { TbCircleFilled } from "react-icons/tb";
 import { RiEdit2Fill } from "react-icons/ri";
+import { useNavigate } from "react-router-dom";
 
 const Room = () => {
-  const [roomNo, setRoomNo] = useState("");
-  const [roomType, setRoomType] = useState("Single");
-  const [ac, setAc] = useState("AC");
-  const [meal, setMeal] = useState("None");
-  const [bedCapacity, setBedCapacity] = useState("");
-  const [rent, setRent] = useState("");
-  const [status, setStatus] = useState("Open");
-  const [id, setId] = useState(Date.now() * Math.random());
+  const nav = useNavigate();
+  // const [roomNo, setRoomNo] = useState("");
+  // const [roomType, setRoomType] = useState("Single");
+  // const [ac, setAc] = useState("AC");
+  // const [meal, setMeal] = useState("None");
+  // const [bedCapacity, setBedCapacity] = useState("");
+  // const [rent, setRent] = useState("");
+  // const [status, setStatus] = useState("Open");
+  // const [id, setId] = useState(Date.now() * Math.random());
 
   //for addRoomModal
-  const [opened, { open, close }] = useDisclosure(false);
+  // const [opened, { open, close }] = useDisclosure(false);
 
   const [rooms, setRooms] = useState([
     {
@@ -67,12 +69,12 @@ const Room = () => {
       status: "Inactive",
     },
   ]);
-  const data = { id, roomNo, roomType, ac, meal, bedCapacity, rent, status };
-  const submitHandler = (e) => {
-    e.preventDefault();
-    setId(Date.now() * Math.random());
-    setRooms([...rooms, data]);
-  };
+  // const data = { id, roomNo, roomType, ac, meal, bedCapacity, rent, status };
+  // const submitHandler = (e) => {
+  //   e.preventDefault();
+  //   setId(Date.now() * Math.random());
+  //   setRooms([...rooms, data]);
+  // };
 
   const ths = (
     <tr className="text-[13px]">
@@ -198,7 +200,7 @@ const Room = () => {
             </Popover.Target>
             <Popover.Dropdown className="px-0">
               <div
-                onClick={open}
+                onClick={() => nav("/room-add")}
                 className="select-none hover:text-black hover:bg-gray-100 px-[20px] py-[10px] text-[12px] font-[500] text-[#526484] transition-all duration-[0.4s]"
               >
                 Add Room
@@ -212,7 +214,7 @@ const Room = () => {
       </div>
 
       {/* form model */}
-      <Modal
+      {/* <Modal
         opened={opened}
         onClose={close}
         size="auto"
@@ -491,7 +493,7 @@ const Room = () => {
             </div>
           </form>
         </div>
-      </Modal>
+      </Modal> */}
 
       {/* table  */}
       <div className="mx-0 md:mx-5">
