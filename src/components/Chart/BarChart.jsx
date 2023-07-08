@@ -64,7 +64,7 @@ export const data = {
   datasets: [
     {
       data: [23, 50, 38, 40, 30, 36, 60, 45, 34, 55, 70, 90],
-      backgroundColor: "#6576ff",
+      backgroundColor: "#2B2730",
     },
   ],
 };
