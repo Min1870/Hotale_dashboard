@@ -4,7 +4,11 @@ import { AiFillSetting, AiFillDashboard, AiFillCalendar } from "react-icons/ai";
 import { IoIosMenu } from "react-icons/io";
 import { HiUsers } from "react-icons/hi";
 import { FaCoins, FaLayerGroup } from "react-icons/fa";
-import { BsHouseDoorFill, BsPencilSquare, BsBoxArrowRight } from "react-icons/bs";
+import {
+  BsHouseDoorFill,
+  BsPencilSquare,
+  BsBoxArrowRight,
+} from "react-icons/bs";
 import "./Sidebar.css";
 import { Accordion, ScrollArea } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
@@ -17,7 +21,7 @@ const Sidebar = () => {
   return (
     <>
       <div
-        className={`sticky h-fit ${
+        className={`sticky h-screen ${
           openedSidebar && "sidebar-close"
         } bg-black text-gray-400 select-none w-[300px] transition-all duration-500 max-xl:hidden sidebar top-0 font-nunito`}
       >
@@ -37,7 +41,7 @@ const Sidebar = () => {
             </div>
           </div>
 
-          <ScrollArea h={500}  scrollbarSize={8} scrollHideDelay={500}>
+          <ScrollArea h={500} scrollbarSize={8} scrollHideDelay={500}>
             <div className=" w-[300px] sidebar-body">
               <ul className="py-8 px-6 space-y-5 list-group">
                 <li className="list-item">
@@ -113,7 +117,6 @@ const Sidebar = () => {
                   </Accordion>
                 </li>
 
-
                 <li className="list-item">
                   <Accordion className="">
                     <Accordion.Item value="photos">
@@ -131,7 +134,6 @@ const Sidebar = () => {
                       </Accordion.Control>
                       <Accordion.Panel>
                         <ul className=" text-gray-400 booking-list space-y-3">
-                          
                           <li>
                             <NavLink
                               onClick={() => {
@@ -177,8 +179,6 @@ const Sidebar = () => {
                   </NavLink>
                 </li>
 
-                
-
                 <li className="list-item">
                   <NavLink
                     to={`/invoice-list`}
@@ -213,7 +213,7 @@ const Sidebar = () => {
                       </Accordion.Control>
                       <Accordion.Panel>
                         <ul className=" text-gray-400 booking-list space-y-3">
-                        <li>
+                          <li>
                             <NavLink
                               onClick={() => {
                                 close();
@@ -257,44 +257,7 @@ const Sidebar = () => {
                     </div>
                   </NavLink>
                 </li>
-
-               
               </ul>
-
-              {/* <div className="">
-                <div className=" h-[25px] flex items-center">
-                  {openedSidebar && (
-                    <div className=" w-full h-[1px] bg-gray-700"></div>
-                  )}
-                  {!openedSidebar && (
-                    <h4 className=" mx-6 return uppercase text-[12px] text-[#9faec2] font-[700]">
-                      Return to
-                    </h4>
-                  )}
-                </div>
-                <ul className=" py-4 px-6 space-y-5">
-                  <li className="list-item">
-                    <Link className="side-menu">
-                      <div className="flex items-center gap-3 text-2xl  hover:text-[#7f8dff]">
-                        <AiFillDashboard />
-                        <span className="list-text text-[15px] font-[700]">
-                          Main Dashboard
-                        </span>
-                      </div>
-                    </Link>
-                  </li>
-                  <li className="list-item">
-                    <Link className="side-menu">
-                      <div className="flex items-center gap-3 text-xl  hover:text-[#7f8dff]">
-                        <FaLayerGroup />
-                        <span className="list-text text-[15px] font-[700]">
-                          All Components
-                        </span>
-                      </div>
-                    </Link>
-                  </li>
-                </ul>
-              </div> */}
             </div>
           </ScrollArea>
         </div>

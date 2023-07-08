@@ -23,6 +23,7 @@ import {
   BsArrowReturnRight,
   BsArrowReturnLeft,
   BsHouseDoorFill,
+  BsPencilSquare,
 } from "react-icons/bs";
 import "./Header.css";
 import { Accordion, Drawer, Popover, ScrollArea } from "@mantine/core";
@@ -88,7 +89,7 @@ const Header = () => {
         </div>
         {/* right  */}
         <div className=" flex items-center gap-5  justify-end">
-          <div classNames=" ">
+          <div>
             <Popover width={170} trapFocus position="bottom-end" shadow="md">
               <Popover.Target>
                 <div className=" max-sm:hidden cursor-pointer relative us-flag">
@@ -138,7 +139,7 @@ const Header = () => {
             </Popover>
           </div>
 
-          <div classNames=" ">
+          <div>
             <Popover width={275} trapFocus position="bottom-end" shadow="md">
               <Popover.Target>
                 <div className=" flex items-center gap-3 cursor-pointer select-none">
@@ -299,112 +300,189 @@ const Header = () => {
             </div>
           </div>
 
-            <div>
-              <ul className=" drawer-body py-8 px-6 space-y-5">
-                <li className="">
-                  <NavLink to={`/`} className="side-menu" onClick={close}>
-                    <div className="flex items-center gap-3 text-2xl  hover:text-white">
-                      <MdSpaceDashboard />
-                      <span className="text-[15px] font-[700]">Dashboard</span>
-                    </div>
-                  </NavLink>
-                </li>
+          <div>
+            <ul className=" drawer-body py-8 px-6 space-y-5">
+              <li className="">
+                <NavLink to={`/`} className="side-menu" onClick={close}>
+                  <div className="flex items-center gap-3 text-2xl  hover:text-white">
+                    <MdSpaceDashboard />
+                    <span className="text-[15px] font-[700]">Dashboard</span>
+                  </div>
+                </NavLink>
+              </li>
 
-                <li>
-                  <Accordion className="">
-                    <Accordion.Item value="photos">
-                      <Accordion.Control>
-                        <div className=" flex items-center gap-3 text-2xl text-gray-400  hover:text-white">
-                          <AiFillCalendar />
-                          <span className="text-[15px] font-[700]">
-                            Bookings
-                          </span>
-                        </div>
-                      </Accordion.Control>
-                      <Accordion.Panel>
-                        <ul className=" space-y-3">
-                          <li>
-                            <NavLink
-                              onClick={close}
-                              to={`/booking`}
-                              className="side-menu text-gray-400 hover:text-white text-[14px]"
-                            >
-                              All Bookings
-                            </NavLink>
-                          </li>
-                          <li>
-                            <NavLink
-                              onClick={close}
-                              to={`/booking-add`}
-                              className="side-menu text-gray-400 hover:text-white text-[14px]"
-                            >
-                              Add Booking
-                            </NavLink>
-                          </li>
-                          <li>
-                            <NavLink
-                              onClick={close}
-                              to={`/booking-edit`}
-                              className="side-menu text-gray-400 hover:text-white text-[14px]"
-                            >
-                              Edit Booking
-                            </NavLink>
-                          </li>
-                        </ul>
-                      </Accordion.Panel>
-                    </Accordion.Item>
-                  </Accordion>
-                </li>
+              <li>
+                <Accordion className="">
+                  <Accordion.Item value="photos">
+                    <Accordion.Control>
+                      <div className=" flex items-center gap-3 text-2xl text-gray-400  hover:text-white">
+                        <AiFillCalendar />
+                        <span className="text-[15px] font-[700]">Bookings</span>
+                      </div>
+                    </Accordion.Control>
+                    <Accordion.Panel>
+                      <ul className=" space-y-3">
+                        <li>
+                          <NavLink
+                            onClick={close}
+                            to={`/booking`}
+                            className="side-menu text-gray-400 hover:text-white text-[14px]"
+                          >
+                            All Bookings
+                          </NavLink>
+                        </li>
+                        <li>
+                          <NavLink
+                            onClick={close}
+                            to={`/booking-add`}
+                            className="side-menu text-gray-400 hover:text-white text-[14px]"
+                          >
+                            Add Booking
+                          </NavLink>
+                        </li>
+                        <li>
+                          <NavLink
+                            onClick={close}
+                            to={`/booking-edit`}
+                            className="side-menu text-gray-400 hover:text-white text-[14px]"
+                          >
+                            Edit Booking
+                          </NavLink>
+                        </li>
+                      </ul>
+                    </Accordion.Panel>
+                  </Accordion.Item>
+                </Accordion>
+              </li>
 
-                <li>
-                  <NavLink to={`/rooms`} className="side-menu" onClick={close}>
-                    <div className=" flex items-center gap-3 text-2xl  hover:text-white">
-                      <BsHouseDoorFill />
-                      <span className="text-[15px] font-[700]">Room</span>
-                    </div>
-                  </NavLink>
-                </li>
+              <li>
+                <Accordion className="">
+                  <Accordion.Item value="photos">
+                    <Accordion.Control>
+                      {/* <NavLink to={'/'} className="side-menu"> */}
+                      <div
+                        className={` side-menu flex items-center gap-3 text-2xl text-gray-400  hover:text-white`}
+                      >
+                        <BsHouseDoorFill />
+                        <span className=" list-text text-[15px] font-[700]">
+                          Room
+                        </span>
+                      </div>
+                      {/* </NavLink> */}
+                    </Accordion.Control>
+                    <Accordion.Panel>
+                      <ul className=" text-gray-400 booking-list space-y-3">
+                        <li>
+                          <NavLink
+                            onClick={() => {
+                              close();
+                            }}
+                            to={`/rooms`}
+                            className="side-menu hover:text-white text-[14px]"
+                          >
+                            <span className="">All Rooms</span>
+                          </NavLink>
+                        </li>
+                        <li>
+                          <NavLink
+                            onClick={() => {
+                              close();
+                            }}
+                            to={`/room-add`}
+                            className="side-menu hover:text-white text-[14px]"
+                          >
+                            <span className="">Add Room</span>
+                          </NavLink>
+                        </li>
+                      </ul>
+                    </Accordion.Panel>
+                  </Accordion.Item>
+                </Accordion>
+              </li>
 
-                <li>
-                  <NavLink
-                    to={`/customers`}
-                    className="side-menu"
-                    onClick={close}
-                  >
-                    <div className=" flex items-center gap-3 text-2xl  hover:text-white">
-                      <FaCoins />
-                      <span className="text-[15px] font-[700]">Customers</span>
-                    </div>
-                  </NavLink>
-                </li>
+              <li>
+                <NavLink
+                  to={`/customers`}
+                  className="side-menu"
+                  onClick={close}
+                >
+                  <div className=" flex items-center gap-3 text-2xl  hover:text-white">
+                    <FaCoins />
+                    <span className="text-[15px] font-[700]">Customers</span>
+                  </div>
+                </NavLink>
+              </li>
 
-                <li>
-                  <NavLink
-                    to={`/invoice-list`}
-                    className="side-menu"
-                    onClick={close}
-                  >
-                    <div className=" flex items-center gap-3 text-2xl  hover:text-white">
-                      <HiUsers />
-                      <span className="text-[15px] font-[700]">Payment</span>
-                    </div>
-                  </NavLink>
-                </li>
-
-                <li>
-                  <NavLink
-                    to={`/setting/general`}
-                    className="side-menu"
-                    onClick={close}
-                  >
-                    <div className=" flex items-center gap-3 text-2xl  hover:text-white">
-                      <AiFillSetting />
-                      <span className="text-[15px] font-[700]">Setting</span>
-                    </div>
-                  </NavLink>
-                </li>
-              </ul>
-            </div>
+              <li>
+                <NavLink
+                  to={`/invoice-list`}
+                  className="side-menu"
+                  onClick={close}
+                >
+                  <div className=" flex items-center gap-3 text-2xl  hover:text-white">
+                    <HiUsers />
+                    <span className="text-[15px] font-[700]">Payment</span>
+                  </div>
+                </NavLink>
+              </li>
+              <li>
+                <Accordion className="">
+                  <Accordion.Item value="photos">
+                    <Accordion.Control>
+                      {/* <NavLink to={'/'} className="side-menu"> */}
+                      <div
+                        className={` side-menu flex items-center gap-3 text-2xl text-gray-400  hover:text-white`}
+                      >
+                        <BsPencilSquare />
+                        <span className=" list-text text-[15px] font-[700]">
+                          Blog
+                        </span>
+                      </div>
+                      {/* </NavLink> */}
+                    </Accordion.Control>
+                    <Accordion.Panel>
+                      <ul className=" text-gray-400 booking-list space-y-3">
+                        <li>
+                          <NavLink
+                            onClick={() => {
+                              close();
+                            }}
+                            to={`/blogs`}
+                            className="side-menu hover:text-white text-[14px]"
+                          >
+                            <span className="">All Blogs</span>
+                          </NavLink>
+                        </li>
+                        <li>
+                          <NavLink
+                            onClick={() => {
+                              close();
+                            }}
+                            to={`/blog-add`}
+                            className="side-menu hover:text-white text-[14px]"
+                          >
+                            <span className="">Add Blog</span>
+                          </NavLink>
+                        </li>
+                      </ul>
+                    </Accordion.Panel>
+                  </Accordion.Item>
+                </Accordion>
+              </li>
+              <li>
+                <NavLink
+                  to={`/setting/general`}
+                  className="side-menu"
+                  onClick={close}
+                >
+                  <div className=" flex items-center gap-3 text-2xl  hover:text-white">
+                    <AiFillSetting />
+                    <span className="text-[15px] font-[700]">Setting</span>
+                  </div>
+                </NavLink>
+              </li>
+            </ul>
+          </div>
         </div>
       </Drawer>
     </>

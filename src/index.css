@@ -1,9 +1,49 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+.hover-underline-animation_blog {
+  @apply inline-flex relative;
+}
 
+.hover-underline-animation_blog::after {
+  @apply absolute inline-flex w-full transform scale-x-0 h-[1px] bottom-1 left-0 bg-[#848484] origin-center transition-transform duration-200 ease-out;
+  content: "";
+}
+
+.hover-underline-animation_blog:hover::after {
+  @apply transform scale-x-100 origin-center;
+}
+
+.ql-picker.ql-font .ql-picker-item {
+  font-size: 0;
+}
+.ql-picker.ql-font .ql-picker-item::before {
+  content: attr(data-value) !important;
+  font-size: 14px;
+}
+
+.ql-picker.ql-font .ql-picker-label[data-value="Nunito"]::before,
+.ql-picker.ql-font .ql-picker-item[data-value="Nunito"]::before {
+  font-family: "Nunito", sans-serif;
+  content: "Nunito" !important;
+}
+.ql-picker.ql-font .ql-picker-label[data-value="Roboto"]::before,
+.ql-picker.ql-font .ql-picker-item[data-value="Roboto"]::before {
+  font-family: "Roboto", sans-serif;
+  content: "Roboto" !important;
+}
+
+/* Set content font-families */
+.ql-font-Nunito {
+  font-family: "Nunito";
+}
+.ql-font-Roboto {
+  font-family: "Roboto";
+}
+
+.ql-container {
+  height: 280px;
+}

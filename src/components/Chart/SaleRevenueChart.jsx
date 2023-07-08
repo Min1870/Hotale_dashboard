@@ -26,14 +26,12 @@ export const options = {
     legend: false,
     title: {
       display: false,
-      
     },
     tooltip: {
       callbacks: {
-         title : () => null // or function () { return null; }
-      }
-   }
-   
+        title: () => null, // or function () { return null; }
+      },
+    },
   },
 
   scales: {
@@ -100,6 +98,6 @@ export const data = {
 };
 
 const SaleRevenueChart = () => {
-  return <Bar options={options} data={data}/>;
+  return <Bar options={options} data={data} />;
 };
 export default SaleRevenueChart;
